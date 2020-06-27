@@ -11,25 +11,25 @@ using System.Data.SqlClient;
 
 namespace MASYEV1
 {
-    public partial class FrmCadCliente : MetroFramework.Forms.MetroForm
+    public partial class FrmCadFornecedor : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = Conecta.abrirConexao();
-        public FrmCadCliente()
+        public FrmCadFornecedor()
         {
             InitializeComponent();
         }
 
-        public void CarregaDgvCliente()
+        public void CarregaDgvFornecedor()
         {
             SqlConnection con = Conecta.abrirConexao();
-            String query = "select * from Cliente";
+            String query = "select * from Fornecedor";
             SqlCommand cmd = new SqlCommand(query, con);
             Conecta.abrirConexao();
             cmd.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable clie = new DataTable();
-            da.Fill(clie);
-            dgvCliente.DataSource = clie;
+            DataTable forne = new DataTable();
+            da.Fill(forne);
+            dgvFornecedor.DataSource = forne;
             Conecta.fecharConexao();
         }
 
@@ -44,26 +44,26 @@ namespace MASYEV1
             {
                 SqlConnection con = Conecta.abrirConexao();
                 SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "IserirCliente";
+                cmd.CommandText = "InserirFornecedor";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@nome", txtNome.Text);
-                cmd.Parameters.AddWithValue("@cpf", txtCpf.Text);
+                cmd.Parameters.AddWithValue("@cnpj", txtCnpj.Text);
                 cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text);
                 cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text);
                 cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-                cmd.Parameters.Add("@data_nacimento", SqlDbType.Date, 31).Value = dateTimePicker1.Text;
+                cmd.Parameters.Add("@data", SqlDbType.Date, 31).Value = dtpData.Text;
                 Conecta.abrirConexao();
                 cmd.ExecuteNonQuery();
-                CarregaDgvCliente();
-                MessageBox.Show("Cliente cadastrado com sucesso!", "Cadastro", MessageBoxButtons.OK);
+                CarregaDgvFornecedor();
+                MessageBox.Show("Fornecedor cadastrado com sucesso!", "Cadastro", MessageBoxButtons.OK);
                 Conecta.fecharConexao();
                 txtId.Text = "";
                 txtNome.Text = "";
-                txtCpf.Text = "";
+                txtCnpj.Text = "";
                 txtEndereco.Text = "";
                 txtTelefone.Text = "";
                 txtEmail.Text = "";
-                dateTimePicker1.Text = "";
+                dtpData.Text = "";
             }
             catch (Exception er)
             {
@@ -77,27 +77,27 @@ namespace MASYEV1
             {
                 SqlConnection con = Conecta.abrirConexao();
                 SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "AtualizarCliente";
+                cmd.CommandText = "AtualizarFornecedor";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@id", this.txtId.Text);
                 cmd.Parameters.AddWithValue("@nome", this.txtNome.Text);
-                cmd.Parameters.AddWithValue("@cpf", this.txtCpf.Text);
+                cmd.Parameters.AddWithValue("@cnpj", this.txtCnpj.Text);
                 cmd.Parameters.AddWithValue("@endereco", this.txtEndereco.Text);
                 cmd.Parameters.AddWithValue("@telefone", this.txtTelefone.Text);
                 cmd.Parameters.AddWithValue("@email", this.txtEmail.Text);
-                cmd.Parameters.Add("@data_nacimento", SqlDbType.Date, 31).Value = dateTimePicker1.Text;
+                cmd.Parameters.Add("@data", SqlDbType.Date, 31).Value = dtpData.Text;
                 Conecta.abrirConexao();
                 cmd.ExecuteNonQuery();
-                CarregaDgvCliente();
-                MessageBox.Show("Cliente atualizado com sucesso!", "Atualiza", MessageBoxButtons.OK);
+                CarregaDgvFornecedor();
+                MessageBox.Show("Fornecedor atualizado com sucesso!", "Atualiza", MessageBoxButtons.OK);
                 Conecta.fecharConexao();
                 txtId.Text = "";
                 txtNome.Text = "";
-                txtCpf.Text = "";
+                txtCnpj.Text = "";
                 txtEndereco.Text = "";
                 txtTelefone.Text = "";
                 txtEmail.Text = "";
-                dateTimePicker1.Text = "";
+                dtpData.Text = "";
             }
             catch (Exception er)
             {
@@ -111,21 +111,21 @@ namespace MASYEV1
             {
                 SqlConnection con = Conecta.abrirConexao();
                 SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "ExcluirCliente";
+                cmd.CommandText = "ExcluirFornecedor";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Id", this.txtId.Text);
                 Conecta.abrirConexao();
                 cmd.ExecuteNonQuery();
-                CarregaDgvCliente();
-                MessageBox.Show("Cliente apagado com sucesso!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                CarregaDgvFornecedor();
+                MessageBox.Show("Fornecedor apagado com sucesso!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Conecta.fecharConexao();
                 txtId.Text = "";
                 txtNome.Text = "";
-                txtCpf.Text = "";
+                txtCnpj.Text = "";
                 txtEndereco.Text = "";
                 txtTelefone.Text = "";
                 txtEmail.Text = "";
-                dateTimePicker1.Text = "";
+                dtpData.Text = "";
             }
             catch (Exception er)
             {
@@ -139,25 +139,25 @@ namespace MASYEV1
             {
                 SqlConnection con = Conecta.abrirConexao();
                 SqlCommand cmd = con.CreateCommand();
-                cmd.CommandText = "LocalizarCliente";
+                cmd.CommandText = "LocalizarFornecedor";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@cpf", this.txtCpf.Text);
+                cmd.Parameters.AddWithValue("@cnpj", this.txtCnpj.Text);
                 Conecta.abrirConexao();
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
                     txtId.Text = rd["Id"].ToString();
                     txtNome.Text = rd["nome"].ToString();
-                    txtCpf.Text = rd["cpf"].ToString();
+                    txtCnpj.Text = rd["cnpj"].ToString();
                     txtEndereco.Text = rd["endereco"].ToString();
                     txtTelefone.Text = rd["telefone"].ToString();
                     txtEmail.Text = rd["email"].ToString();
-                    dateTimePicker1.Text = rd["data_nacimento"].ToString();
+                    dtpData.Text = rd["data"].ToString();
                     Conecta.fecharConexao();
                 }
                 else
                 {
-                    MessageBox.Show("Este Cliente não foi encontrado en nosa !", "Sem registro!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show("Este fornecedor não foi encontrado em nossa base de dados !", "Sem registro!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     Conecta.fecharConexao();
                 }
             }
@@ -166,24 +166,24 @@ namespace MASYEV1
             }
         }
 
-        private void FrmCadCliente_Load(object sender, EventArgs e)
-        {
-            CarregaDgvCliente();
-        }
-
-        private void dgvCliente_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        private void dgvFornecedor_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.dgvCliente.Rows[e.RowIndex];
+                DataGridViewRow row = this.dgvFornecedor.Rows[e.RowIndex];
                 txtId.Text = row.Cells[0].Value.ToString();
                 txtNome.Text = row.Cells[1].Value.ToString();
-                txtCpf.Text = row.Cells[2].Value.ToString();
+                txtCnpj.Text = row.Cells[2].Value.ToString();
                 txtEndereco.Text = row.Cells[3].Value.ToString();
                 txtTelefone.Text = row.Cells[4].Value.ToString();
                 txtEmail.Text = row.Cells[5].Value.ToString();
-                dateTimePicker1.Text = row.Cells[6].Value.ToString();
+                dtpData.Text = row.Cells[6].Value.ToString();
             }
+        }
+
+        private void FrmCadFornecedor_Load(object sender, EventArgs e)
+        {
+            CarregaDgvFornecedor();
         }
     }
 }

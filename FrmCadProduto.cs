@@ -69,7 +69,7 @@ namespace MASYEV1
                 Conecta.abrirConexao();
                 cmd.ExecuteNonQuery();
                 CarregaDgvProduto();
-                MessageBox.Show("Registro inserido com sucesso!", "Cadastro", MessageBoxButtons.OK);
+                MessageBox.Show("Produto cadastrado com sucesso!", "Cadastro", MessageBoxButtons.OK);
                 Conecta.fecharConexao();
                 txtId.Text = "";
                 txtCodigo.Text = "";
@@ -103,7 +103,7 @@ namespace MASYEV1
                 Conecta.abrirConexao();
                 cmd.ExecuteNonQuery();
                 CarregaDgvProduto();
-                MessageBox.Show("Registro inserido com sucesso!", "Cadastro", MessageBoxButtons.OK);
+                MessageBox.Show("Produto atualizado com sucesso!", "Atualiza", MessageBoxButtons.OK);
                 Conecta.fecharConexao();
                 txtId.Text = "";
                 txtCodigo.Text = "";
@@ -131,7 +131,7 @@ namespace MASYEV1
                 Conecta.abrirConexao();
                 cmd.ExecuteNonQuery();
                 CarregaDgvProduto();
-                MessageBox.Show("Registro apagado com sucesso!", "Excluir Registro", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show("Produto apagado com sucesso!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Conecta.fecharConexao();
                 txtId.Text = "";
                 txtCodigo.Text = "";

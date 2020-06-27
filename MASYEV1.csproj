@@ -64,6 +64,12 @@
     <Compile Include="FrmCadCliente.Designer.cs">
       <DependentUpon>FrmCadCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCadFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCadFornecedor.Designer.cs">
+      <DependentUpon>FrmCadFornecedor.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCadLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -92,6 +98,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FrmCadCliente.resx">
       <DependentUpon>FrmCadCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCadFornecedor.resx">
+      <DependentUpon>FrmCadFornecedor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCadLogin.resx">
       <DependentUpon>FrmCadLogin.cs</DependentUpon>

@@ -39,5 +39,19 @@ namespace MASYEV1
         {
             Environment.Exit(0);
         }
+
+        private void clientesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCadCliente cli = new FrmCadCliente();
+            cli.Show();
+        }
+
+        private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCadFornecedor forne = new FrmCadFornecedor();
+            forne.Show();
+        }
+
+       
     }
 }
