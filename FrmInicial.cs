@@ -57,5 +57,11 @@ namespace MASYEV1
             FrmCaixaVenda cvenda = new FrmCaixaVenda();
             cvenda.Show();
         }
+
+        private void caixaCompraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmCaixaCompra ccompra = new FrmCaixaCompra();
+            ccompra.Show();
+        }
     }
 }

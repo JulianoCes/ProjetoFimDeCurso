@@ -131,6 +131,7 @@
             this.caixaCompraToolStripMenuItem.Name = "caixaCompraToolStripMenuItem";
             this.caixaCompraToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
             this.caixaCompraToolStripMenuItem.Text = "Caixa Compra";
+            this.caixaCompraToolStripMenuItem.Click += new System.EventHandler(this.caixaCompraToolStripMenuItem_Click);
             // 
             // relatóriosToolStripMenuItem
             // 

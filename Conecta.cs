@@ -10,7 +10,7 @@ namespace MASYEV1
 {
     class Conecta
     {
-        private static string str = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\programas\\ProjetoPCC\\DBcasa_carne.mdf;Integrated Security=True;Connect Timeout=30";
+        private static string str = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\programas\\ProjetoPCC\\ProjetoFimDeCurso\\DBcasa_carne.mdf;Integrated Security=True;Connect Timeout=30";
         private static SqlConnection con = null;
         public static SqlConnection abrirConexao()
         {

@@ -29,9 +29,11 @@ namespace MASYEV1
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable produto = new DataTable();
             da.Fill(produto);
-            dgvProduto.DataSource = produto;
+            DgvProduto.DataSource = produto;
             Conecta.fecharConexao();
         }
+
+
         public void CarregaCbxTipo()
         {
             String pro = "SELECT Id, nome FROM produto";
@@ -63,9 +65,7 @@ namespace MASYEV1
                 cmd.Parameters.AddWithValue("@codigo", txtCodigo.Text);
                 cmd.Parameters.AddWithValue("@tipo", cbxTipo.Text);
                 cmd.Parameters.AddWithValue("@Nome", txtNome.Text);
-                cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text);
-                cmd.Parameters.Add("@valorcompra",SqlDbType.Decimal, 3).Value = txtValorCompra.Text;
-                cmd.Parameters.Add("@Valorvenda", SqlDbType.Decimal, 3).Value = txtValorVenda.Text;
+                cmd.Parameters.AddWithValue("@marca", txtMarca.Text);
                 Conecta.abrirConexao();
                 cmd.ExecuteNonQuery();
                 CarregaDgvProduto();
@@ -75,9 +75,7 @@ namespace MASYEV1
                 txtCodigo.Text = "";
                 cbxTipo.Text = "";
                 txtNome.Text = "";
-                txtQuantidade.Text = "";
-                txtValorCompra.Text = "";
-                txtValorVenda.Text = "";
+                txtMarca.Text = "";
             }
             catch (Exception er)
             {
@@ -97,9 +95,7 @@ namespace MASYEV1
                 cmd.Parameters.AddWithValue("@codigo", this.txtCodigo.Text);
                 cmd.Parameters.AddWithValue("@tipo", this.cbxTipo.Text);
                 cmd.Parameters.AddWithValue("@Nome", this.txtNome.Text);
-                cmd.Parameters.AddWithValue("quantidade", this.txtQuantidade.Text);
-                cmd.Parameters.Add("@valocompra", SqlDbType.Decimal, 3).Value = txtValorCompra.Text;
-                cmd.Parameters.Add("@Valorvenda", SqlDbType.Decimal, 3).Value = txtValorVenda.Text;
+                cmd.Parameters.AddWithValue("@marca", this.txtMarca.Text);
                 Conecta.abrirConexao();
                 cmd.ExecuteNonQuery();
                 CarregaDgvProduto();
@@ -109,9 +105,7 @@ namespace MASYEV1
                 txtCodigo.Text = "";
                 cbxTipo.Text = "";
                 txtNome.Text = "";
-                txtQuantidade.Text = "";
-                txtValorCompra.Text = "";
-                txtValorVenda.Text = "";
+                txtMarca.Text = "";
             }
             catch (Exception er)
             {
@@ -137,9 +131,7 @@ namespace MASYEV1
                 txtCodigo.Text = "";
                 cbxTipo.Text = "";
                 txtNome.Text = "";
-                txtQuantidade.Text = "";
-                txtValorCompra.Text = "";
-                txtValorVenda.Text = "";
+                txtMarca.Text = "";
             }
             catch (Exception er)
             {
@@ -164,9 +156,7 @@ namespace MASYEV1
                     txtCodigo.Text = rd["codigo"].ToString();
                     cbxTipo.Text = rd["tipo"].ToString();
                     txtNome.Text = rd["nome"].ToString();
-                    txtQuantidade.Text = rd["quantidade"].ToString();
-                    txtValorCompra.Text = rd["valor_compra"].ToString();
-                    txtValorVenda.Text = rd["valor_venda"].ToString();
+                    txtMarca.Text = rd["marca"].ToString();
                     Conecta.fecharConexao();
                 }
                 else
@@ -180,18 +170,16 @@ namespace MASYEV1
             }
         }
 
-        private void dgvProduto_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        private void DgvProduto_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
-                DataGridViewRow row = this.dgvProduto.Rows[e.RowIndex];
+                DataGridViewRow row = this.DgvProduto.Rows[e.RowIndex];
                 txtId.Text = row.Cells[0].Value.ToString();
                 txtCodigo.Text = row.Cells[1].Value.ToString();
                 cbxTipo.Text = row.Cells[2].Value.ToString();
                 txtNome.Text = row.Cells[3].Value.ToString();
-                txtQuantidade.Text = row.Cells[4].Value.ToString();
-                txtValorCompra.Text = row.Cells[5].Value.ToString();
-                txtValorVenda.Text = row.Cells[6].Value.ToString();
+                txtMarca.Text = row.Cells[4].Value.ToString();
             }
         }
 
