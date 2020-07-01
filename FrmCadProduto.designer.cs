@@ -172,7 +172,8 @@
             "Suino",
             "Aves",
             "Frios",
-            "Embutidos"});
+            "Embutidos",
+            "Coveniencia"});
             this.cbxTipo.Location = new System.Drawing.Point(58, 124);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(204, 21);

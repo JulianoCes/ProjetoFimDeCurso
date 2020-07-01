@@ -35,9 +35,8 @@
             this.btnAdicionarItem = new System.Windows.Forms.Button();
             this.DgvCaixaCompra = new System.Windows.Forms.DataGridView();
             this.txtValorTotal = new System.Windows.Forms.TextBox();
-            this.txtvalor = new System.Windows.Forms.TextBox();
-            this.txtquantidade = new System.Windows.Forms.TextBox();
-            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
             this.lblQuantidade = new System.Windows.Forms.Label();
             this.lblValorTotal = new System.Windows.Forms.Label();
             this.lblValor = new System.Windows.Forms.Label();
@@ -45,9 +44,17 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.lblTipo = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.txtnome = new System.Windows.Forms.TextBox();
-            this.lblnome = new System.Windows.Forms.Label();
+            this.lblKgOuUnit = new System.Windows.Forms.Label();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.lblId = new System.Windows.Forms.Label();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.cbxNomeProduto = new System.Windows.Forms.ComboBox();
+            this.cbxMarcaProduto = new System.Windows.Forms.ComboBox();
+            this.txtLogado = new System.Windows.Forms.TextBox();
+            this.lblLogado = new System.Windows.Forms.Label();
+            this.bntLocalizar = new System.Windows.Forms.Button();
+            this.cbxCodigo = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.DgvCaixaCompra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -65,6 +72,7 @@
             // 
             // button4
             // 
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button4.Location = new System.Drawing.Point(323, 349);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(128, 21);
@@ -74,6 +82,7 @@
             // 
             // btnExcluirItem
             // 
+            this.btnExcluirItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluirItem.Location = new System.Drawing.Point(464, 187);
             this.btnExcluirItem.Name = "btnExcluirItem";
             this.btnExcluirItem.Size = new System.Drawing.Size(102, 26);
@@ -83,16 +92,17 @@
             // 
             // button2
             // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button2.Location = new System.Drawing.Point(320, 187);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(131, 26);
             this.button2.TabIndex = 30;
             this.button2.Text = "Editar Item";
             this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // btnAdicionarItem
             // 
+            this.btnAdicionarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAdicionarItem.Location = new System.Drawing.Point(175, 187);
             this.btnAdicionarItem.Name = "btnAdicionarItem";
             this.btnAdicionarItem.Size = new System.Drawing.Size(113, 26);
@@ -117,32 +127,25 @@
             this.txtValorTotal.Size = new System.Drawing.Size(86, 20);
             this.txtValorTotal.TabIndex = 27;
             // 
-            // txtvalor
+            // txtValor
             // 
-            this.txtvalor.Location = new System.Drawing.Point(274, 160);
-            this.txtvalor.Name = "txtvalor";
-            this.txtvalor.Size = new System.Drawing.Size(100, 20);
-            this.txtvalor.TabIndex = 26;
+            this.txtValor.Location = new System.Drawing.Point(269, 161);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(100, 20);
+            this.txtValor.TabIndex = 26;
             // 
-            // txtquantidade
+            // txtQuantidade
             // 
-            this.txtquantidade.Location = new System.Drawing.Point(105, 160);
-            this.txtquantidade.Name = "txtquantidade";
-            this.txtquantidade.Size = new System.Drawing.Size(55, 20);
-            this.txtquantidade.TabIndex = 25;
-            // 
-            // txtCodigo
-            // 
-            this.txtCodigo.Location = new System.Drawing.Point(78, 63);
-            this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(283, 20);
-            this.txtCodigo.TabIndex = 24;
+            this.txtQuantidade.Location = new System.Drawing.Point(95, 157);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(55, 20);
+            this.txtQuantidade.TabIndex = 25;
             // 
             // lblQuantidade
             // 
             this.lblQuantidade.AutoSize = true;
             this.lblQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantidade.Location = new System.Drawing.Point(27, 160);
+            this.lblQuantidade.Location = new System.Drawing.Point(17, 160);
             this.lblQuantidade.Name = "lblQuantidade";
             this.lblQuantidade.Size = new System.Drawing.Size(72, 13);
             this.lblQuantidade.TabIndex = 22;
@@ -162,7 +165,7 @@
             // 
             this.lblValor.AutoSize = true;
             this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(237, 163);
+            this.lblValor.Location = new System.Drawing.Point(227, 164);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(36, 13);
             this.lblValor.TabIndex = 20;
@@ -182,7 +185,7 @@
             // 
             this.lblCodigo.AutoSize = true;
             this.lblCodigo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCodigo.Location = new System.Drawing.Point(29, 66);
+            this.lblCodigo.Location = new System.Drawing.Point(119, 66);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(46, 13);
             this.lblCodigo.TabIndex = 18;
@@ -191,63 +194,136 @@
             // cbxTipo
             // 
             this.cbxTipo.FormattingEnabled = true;
-            this.cbxTipo.Items.AddRange(new object[] {
-            "Bovino",
-            "Suino",
-            "Aves",
-            "Frios",
-            "Embutidos",
-            "Coveniência"});
-            this.cbxTipo.Location = new System.Drawing.Point(78, 97);
+            this.cbxTipo.Location = new System.Drawing.Point(55, 112);
             this.cbxTipo.Name = "cbxTipo";
-            this.cbxTipo.Size = new System.Drawing.Size(204, 21);
+            this.cbxTipo.Size = new System.Drawing.Size(131, 21);
             this.cbxTipo.TabIndex = 65;
             // 
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
             this.lblTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTipo.Location = new System.Drawing.Point(29, 100);
+            this.lblTipo.Location = new System.Drawing.Point(17, 115);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(32, 13);
             this.lblTipo.TabIndex = 64;
             this.lblTipo.Text = "Tipo";
             // 
-            // label1
+            // lblKgOuUnit
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(166, 163);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 13);
-            this.label1.TabIndex = 66;
-            this.label1.Text = "Kg ou Unit";
+            this.lblKgOuUnit.AutoSize = true;
+            this.lblKgOuUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKgOuUnit.Location = new System.Drawing.Point(156, 164);
+            this.lblKgOuUnit.Name = "lblKgOuUnit";
+            this.lblKgOuUnit.Size = new System.Drawing.Size(67, 13);
+            this.lblKgOuUnit.TabIndex = 66;
+            this.lblKgOuUnit.Text = "Kg ou Unit";
             // 
-            // txtnome
+            // lblNome
             // 
-            this.txtnome.Location = new System.Drawing.Point(78, 130);
-            this.txtnome.Name = "txtnome";
-            this.txtnome.Size = new System.Drawing.Size(201, 20);
-            this.txtnome.TabIndex = 68;
+            this.lblNome.AutoSize = true;
+            this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome.Location = new System.Drawing.Point(192, 115);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(39, 13);
+            this.lblNome.TabIndex = 67;
+            this.lblNome.Text = "Nome";
             // 
-            // lblnome
+            // txtId
             // 
-            this.lblnome.AutoSize = true;
-            this.lblnome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblnome.Location = new System.Drawing.Point(27, 133);
-            this.lblnome.Name = "lblnome";
-            this.lblnome.Size = new System.Drawing.Size(39, 13);
-            this.lblnome.TabIndex = 67;
-            this.lblnome.Text = "Nome";
+            this.txtId.Location = new System.Drawing.Point(56, 66);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(47, 20);
+            this.txtId.TabIndex = 70;
+            // 
+            // lblId
+            // 
+            this.lblId.AutoSize = true;
+            this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblId.Location = new System.Drawing.Point(17, 66);
+            this.lblId.Name = "lblId";
+            this.lblId.Size = new System.Drawing.Size(20, 13);
+            this.lblId.TabIndex = 69;
+            this.lblId.Text = "ID";
+            // 
+            // lblMarca
+            // 
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblMarca.Location = new System.Drawing.Point(367, 115);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(42, 13);
+            this.lblMarca.TabIndex = 71;
+            this.lblMarca.Text = "Marca";
+            // 
+            // cbxNomeProduto
+            // 
+            this.cbxNomeProduto.FormattingEnabled = true;
+            this.cbxNomeProduto.Location = new System.Drawing.Point(230, 112);
+            this.cbxNomeProduto.Name = "cbxNomeProduto";
+            this.cbxNomeProduto.Size = new System.Drawing.Size(131, 21);
+            this.cbxNomeProduto.TabIndex = 73;
+            // 
+            // cbxMarcaProduto
+            // 
+            this.cbxMarcaProduto.FormattingEnabled = true;
+            this.cbxMarcaProduto.Location = new System.Drawing.Point(415, 112);
+            this.cbxMarcaProduto.Name = "cbxMarcaProduto";
+            this.cbxMarcaProduto.Size = new System.Drawing.Size(151, 21);
+            this.cbxMarcaProduto.TabIndex = 74;
+            // 
+            // txtLogado
+            // 
+            this.txtLogado.Location = new System.Drawing.Point(430, 160);
+            this.txtLogado.Name = "txtLogado";
+            this.txtLogado.Size = new System.Drawing.Size(136, 20);
+            this.txtLogado.TabIndex = 76;
+            // 
+            // lblLogado
+            // 
+            this.lblLogado.AutoSize = true;
+            this.lblLogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblLogado.Location = new System.Drawing.Point(375, 164);
+            this.lblLogado.Name = "lblLogado";
+            this.lblLogado.Size = new System.Drawing.Size(49, 13);
+            this.lblLogado.TabIndex = 75;
+            this.lblLogado.Text = "Logado";
+            // 
+            // bntLocalizar
+            // 
+            this.bntLocalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntLocalizar.Location = new System.Drawing.Point(464, 59);
+            this.bntLocalizar.Name = "bntLocalizar";
+            this.bntLocalizar.Size = new System.Drawing.Size(102, 33);
+            this.bntLocalizar.TabIndex = 77;
+            this.bntLocalizar.Text = "Buscar";
+            this.bntLocalizar.UseVisualStyleBackColor = true;
+            this.bntLocalizar.Click += new System.EventHandler(this.bntLocalizar_Click);
+            // 
+            // cbxCodigo
+            // 
+            this.cbxCodigo.FormattingEnabled = true;
+            this.cbxCodigo.Location = new System.Drawing.Point(175, 63);
+            this.cbxCodigo.Name = "cbxCodigo";
+            this.cbxCodigo.Size = new System.Drawing.Size(194, 21);
+            this.cbxCodigo.TabIndex = 78;
             // 
             // FrmCaixaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(610, 386);
-            this.Controls.Add(this.txtnome);
-            this.Controls.Add(this.lblnome);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbxCodigo);
+            this.Controls.Add(this.bntLocalizar);
+            this.Controls.Add(this.txtLogado);
+            this.Controls.Add(this.lblLogado);
+            this.Controls.Add(this.cbxMarcaProduto);
+            this.Controls.Add(this.cbxNomeProduto);
+            this.Controls.Add(this.lblMarca);
+            this.Controls.Add(this.txtId);
+            this.Controls.Add(this.lblId);
+            this.Controls.Add(this.lblNome);
+            this.Controls.Add(this.lblKgOuUnit);
             this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.btnSair);
@@ -257,9 +333,8 @@
             this.Controls.Add(this.btnAdicionarItem);
             this.Controls.Add(this.DgvCaixaCompra);
             this.Controls.Add(this.txtValorTotal);
-            this.Controls.Add(this.txtvalor);
-            this.Controls.Add(this.txtquantidade);
-            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.txtValor);
+            this.Controls.Add(this.txtQuantidade);
             this.Controls.Add(this.lblQuantidade);
             this.Controls.Add(this.lblValorTotal);
             this.Controls.Add(this.lblValor);
@@ -267,6 +342,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Name = "FrmCaixaCompra";
             this.Text = "Caixa Para Compra";
+            this.Load += new System.EventHandler(this.FrmCaixaCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvCaixaCompra)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -282,9 +358,8 @@
         private System.Windows.Forms.Button btnAdicionarItem;
         private System.Windows.Forms.DataGridView DgvCaixaCompra;
         private System.Windows.Forms.TextBox txtValorTotal;
-        private System.Windows.Forms.TextBox txtvalor;
-        private System.Windows.Forms.TextBox txtquantidade;
-        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.TextBox txtQuantidade;
         private System.Windows.Forms.Label lblQuantidade;
         private System.Windows.Forms.Label lblValorTotal;
         private System.Windows.Forms.Label lblValor;
@@ -292,8 +367,16 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.ComboBox cbxTipo;
         private System.Windows.Forms.Label lblTipo;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtnome;
-        private System.Windows.Forms.Label lblnome;
+        private System.Windows.Forms.Label lblKgOuUnit;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.ComboBox cbxNomeProduto;
+        private System.Windows.Forms.ComboBox cbxMarcaProduto;
+        private System.Windows.Forms.TextBox txtLogado;
+        private System.Windows.Forms.Label lblLogado;
+        private System.Windows.Forms.Button bntLocalizar;
+        private System.Windows.Forms.ComboBox cbxCodigo;
     }
 }
