@@ -24,6 +24,7 @@ namespace MASYEV1
             SqlConnection con = Conecta.abrirConexao();
             String query = "select * from EstoqueFisico ";
             SqlCommand cmd = new SqlCommand(query, con);
+            
             Conecta.abrirConexao();
             cmd.CommandType = CommandType.Text;
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -31,6 +32,7 @@ namespace MASYEV1
             da.Fill(compra);
             DgvCaixaCompra.DataSource = compra;
             Conecta.fecharConexao();
+
         }
         public void CarregacbxCodigo()
         {
@@ -93,12 +95,8 @@ namespace MASYEV1
             Conecta.fecharConexao();
         }
 
-      
-       
-
         private void bntLocalizar_Click(object sender, EventArgs e)
         {
-            //string codigoProd = Convert.ToString(cbxCodigo.Text);
             SqlConnection con = Conecta.abrirConexao();
             SqlCommand cmd = con.CreateCommand();
             cmd.CommandText = "LocalizarProduto";
@@ -137,18 +135,8 @@ namespace MASYEV1
                 CarregacbxTipo();
                 CarregacbxNomeProduto();
                 CarregacbxMarcaProduto();
-                //CarregaDgvCaixaCompra();
+                CarregaDgvCaixaCompra();
             }
-            decimal soma = 0;
-            foreach (DataGridViewRow dr in DgvCaixaCompra.Rows)
-            {
-                soma += Convert.ToDecimal(dr.Cells[0].Value);
-                txtValorTotal.Text = Convert.ToString(soma);
-            }
-            //CarregacbxCodigo();
-           // CarregacbxTipo();
-            //CarregacbxNomeProduto();
-           // CarregacbxMarcaProduto();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -176,7 +164,7 @@ namespace MASYEV1
                 reader = cmd.ExecuteReader();
                 if (reader.Read())
                 {
-                    txtLogado.Text = reader[1].ToString();
+                    txtUsuario.Text = reader[1].ToString();
                     reader.Close();
                 }
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -199,67 +187,41 @@ namespace MASYEV1
                 CarregacbxTipo();
                 CarregacbxNomeProduto();
                 CarregacbxMarcaProduto();
-                decimal soma = 0;
-                foreach (DataGridViewRow dr in DgvCaixaCompra.Rows)
-                {
-                    soma += Convert.ToDecimal(dr.Cells[5].Value);
-                    txtValorTotal.Text = Convert.ToString(soma);
-                }
             }
         }
 
         private void btnAdicionarItem_Click(object sender, EventArgs e)
         {
             SqlConnection con = Conecta.abrirConexao();
-            SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "LocalizarProduto";
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.Parameters.AddWithValue("@codigo", this.cbxCodigo.Text);
-            /*SqlDataReader rdr;
-            rdr = cmd.ExecuteReader();
-            if (rdr.Read())
-            {
-                txtId.Text = rdr["@id"].ToString();
-                rdr.Close();
-            }*/
             SqlCommand compra = new SqlCommand("InserirCompraEstoque", con);
             compra.CommandType = CommandType.StoredProcedure;
-            //String query = "select produto.Id, EstoqueFisico.Id_produto from produto, EstoqueFisico where EstoqueFisico.Id_produto =  produto.Id ";
-            //SqlCommand id = new SqlCommand(query, con);
             compra.Parameters.AddWithValue("@id_produto", SqlDbType.Int).Value = Convert.ToInt32(txtId.Text);
-            //compra.Parameters.AddWithValue("@", SqlDbType.NChar).Value = txtUsuario.Text;
+            compra.Parameters.AddWithValue("@usuario", SqlDbType.NChar).Value = txtUsuario.Text;
             compra.Parameters.AddWithValue("@quantidade", SqlDbType.Int).Value = Convert.ToInt32(txtQuantidade.Text);
             compra.Parameters.AddWithValue("@valor", SqlDbType.Int).Value = Convert.ToDecimal(txtValor.Text);
             compra.Parameters.AddWithValue("@valortotal", SqlDbType.Int).Value = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValor.Text);
             compra.Parameters.AddWithValue("@datacompra", SqlDbType.DateTime).Value = DateTime.Now;
             Conecta.abrirConexao();
-            //compra.ExecuteNonQuery();
+            compra.ExecuteNonQuery();
             Conecta.fecharConexao();
             MessageBox.Show("Produto inserido no estoque!", "Atualizar Estoque", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            SqlCommand cmd2 = con.CreateCommand();
-            cmd2.CommandText = "LocalizarCompraDV";
-            cmd2.CommandType = CommandType.StoredProcedure;
-            cmd2.Parameters.AddWithValue("@codigo", cbxCodigo.SelectedItem);
-            SqlDataAdapter da = new SqlDataAdapter(cmd2);
-            DataSet ds = new DataSet();
-            da.Fill(ds);
-            if (ds.Tables[0].Rows.Count > 0)
-            {
-                DgvCaixaCompra.DataSource = ds.Tables[0];
-                ds.Dispose();
-                Conecta.fecharConexao();
-            }
+            txtId.Text = "";
             cbxCodigo.Text = "";
             cbxTipo.Text = "";
             cbxNomeProduto.Text = "";
             cbxMarcaProduto.Text = "";
             txtQuantidade.Text = "";
             txtValor.Text = "";
-            //Realizar a soma usando um contador...
-            decimal soma = 0;
-            foreach (DataGridViewRow dr in DgvCaixaCompra.Rows)
-                soma += Convert.ToDecimal(dr.Cells[4].Value);
-            txtValorTotal.Text = Convert.ToString(soma);
+        }
+
+        private void cbxCodigo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("LocalizarProduto", con);
+            cmd.Parameters.AddWithValue("@codigo", cbxCodigo.SelectedValue);
+            cmd.CommandType = CommandType.StoredProcedure;
+            Conecta.abrirConexao();
+            cmd.ExecuteNonQuery();
+            Conecta.fecharConexao(); 
         }
     }
 }
