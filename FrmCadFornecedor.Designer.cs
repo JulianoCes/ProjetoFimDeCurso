@@ -57,32 +57,35 @@
             this.dgvFornecedor.Location = new System.Drawing.Point(53, 291);
             this.dgvFornecedor.Name = "dgvFornecedor";
             this.dgvFornecedor.Size = new System.Drawing.Size(485, 100);
-            this.dgvFornecedor.TabIndex = 107;
+            this.dgvFornecedor.TabIndex = 13;
             this.dgvFornecedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellClick);
             // 
             // dtpData
             // 
             this.dtpData.CustomFormat = "dd-MM-yyyy";
+            this.dtpData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpData.Location = new System.Drawing.Point(108, 257);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(97, 20);
-            this.dtpData.TabIndex = 106;
+            this.dtpData.TabIndex = 7;
             // 
             // txtCnpj
             // 
+            this.txtCnpj.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtCnpj.Location = new System.Drawing.Point(83, 128);
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(199, 20);
-            this.txtCnpj.TabIndex = 105;
+            this.txtCnpj.TabIndex = 2;
             // 
             // btnSair
             // 
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
             this.btnSair.Location = new System.Drawing.Point(453, 220);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(98, 46);
-            this.btnSair.TabIndex = 104;
+            this.btnSair.TabIndex = 12;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -90,10 +93,11 @@
             // btnExcluir
             // 
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnExcluir.Location = new System.Drawing.Point(453, 163);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(98, 50);
-            this.btnExcluir.TabIndex = 103;
+            this.btnExcluir.TabIndex = 11;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -101,10 +105,11 @@
             // btnEditar
             // 
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnEditar.Location = new System.Drawing.Point(453, 111);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(98, 46);
-            this.btnEditar.TabIndex = 102;
+            this.btnEditar.TabIndex = 10;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -112,10 +117,11 @@
             // btnInseri
             // 
             this.btnInseri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnInseri.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnInseri.Location = new System.Drawing.Point(453, 57);
             this.btnInseri.Name = "btnInseri";
             this.btnInseri.Size = new System.Drawing.Size(98, 47);
-            this.btnInseri.TabIndex = 101;
+            this.btnInseri.TabIndex = 9;
             this.btnInseri.Text = "Cadastrar";
             this.btnInseri.UseVisualStyleBackColor = true;
             this.btnInseri.Click += new System.EventHandler(this.btnInseri_Click);
@@ -123,44 +129,50 @@
             // btnBusca
             // 
             this.btnBusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBusca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.btnBusca.Location = new System.Drawing.Point(303, 57);
             this.btnBusca.Name = "btnBusca";
             this.btnBusca.Size = new System.Drawing.Size(98, 32);
-            this.btnBusca.TabIndex = 100;
+            this.btnBusca.TabIndex = 8;
             this.btnBusca.Text = "Buscar";
             this.btnBusca.UseVisualStyleBackColor = true;
             this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
             // 
             // txtEmail
             // 
+            this.txtEmail.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtEmail.Location = new System.Drawing.Point(83, 220);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(318, 20);
-            this.txtEmail.TabIndex = 99;
+            this.txtEmail.TabIndex = 6;
             // 
             // txtTelefone
             // 
+            this.txtTelefone.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtTelefone.Location = new System.Drawing.Point(83, 194);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(199, 20);
-            this.txtTelefone.TabIndex = 98;
+            this.txtTelefone.TabIndex = 4;
             // 
             // txtEndereco
             // 
+            this.txtEndereco.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtEndereco.Location = new System.Drawing.Point(83, 160);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(318, 20);
-            this.txtEndereco.TabIndex = 97;
+            this.txtEndereco.TabIndex = 3;
             // 
             // txtNome
             // 
+            this.txtNome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtNome.Location = new System.Drawing.Point(83, 95);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(318, 20);
-            this.txtNome.TabIndex = 96;
+            this.txtNome.TabIndex = 1;
             // 
             // txtId
             // 
+            this.txtId.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.txtId.Location = new System.Drawing.Point(83, 59);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(55, 20);

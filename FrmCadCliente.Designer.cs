@@ -57,7 +57,7 @@
             this.btnSair.Location = new System.Drawing.Point(447, 224);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(98, 46);
-            this.btnSair.TabIndex = 82;
+            this.btnSair.TabIndex = 11;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
@@ -68,7 +68,7 @@
             this.btnExcluir.Location = new System.Drawing.Point(447, 167);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(98, 50);
-            this.btnExcluir.TabIndex = 81;
+            this.btnExcluir.TabIndex = 10;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = true;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
@@ -79,7 +79,7 @@
             this.btnEditar.Location = new System.Drawing.Point(447, 115);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(98, 46);
-            this.btnEditar.TabIndex = 80;
+            this.btnEditar.TabIndex = 9;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
@@ -90,7 +90,7 @@
             this.btnInseri.Location = new System.Drawing.Point(447, 61);
             this.btnInseri.Name = "btnInseri";
             this.btnInseri.Size = new System.Drawing.Size(98, 47);
-            this.btnInseri.TabIndex = 79;
+            this.btnInseri.TabIndex = 8;
             this.btnInseri.Text = "Cadastrar";
             this.btnInseri.UseVisualStyleBackColor = true;
             this.btnInseri.Click += new System.EventHandler(this.btnInseri_Click);
@@ -101,7 +101,7 @@
             this.btnBusca.Location = new System.Drawing.Point(297, 61);
             this.btnBusca.Name = "btnBusca";
             this.btnBusca.Size = new System.Drawing.Size(98, 32);
-            this.btnBusca.TabIndex = 78;
+            this.btnBusca.TabIndex = 7;
             this.btnBusca.Text = "Buscar";
             this.btnBusca.UseVisualStyleBackColor = true;
             this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
@@ -111,28 +111,28 @@
             this.txtEmail.Location = new System.Drawing.Point(77, 224);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(318, 20);
-            this.txtEmail.TabIndex = 77;
+            this.txtEmail.TabIndex = 5;
             // 
             // txtTelefone
             // 
             this.txtTelefone.Location = new System.Drawing.Point(77, 198);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(199, 20);
-            this.txtTelefone.TabIndex = 75;
+            this.txtTelefone.TabIndex = 4;
             // 
             // txtEndereco
             // 
             this.txtEndereco.Location = new System.Drawing.Point(77, 164);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(318, 20);
-            this.txtEndereco.TabIndex = 74;
+            this.txtEndereco.TabIndex = 3;
             // 
             // txtNome
             // 
             this.txtNome.Location = new System.Drawing.Point(77, 99);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(318, 20);
-            this.txtNome.TabIndex = 73;
+            this.txtNome.TabIndex = 1;
             // 
             // txtId
             // 
@@ -216,7 +216,7 @@
             this.txtCpf.Location = new System.Drawing.Point(77, 132);
             this.txtCpf.Name = "txtCpf";
             this.txtCpf.Size = new System.Drawing.Size(199, 20);
-            this.txtCpf.TabIndex = 85;
+            this.txtCpf.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
@@ -225,7 +225,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(131, 255);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(97, 20);
-            this.dateTimePicker1.TabIndex = 86;
+            this.dateTimePicker1.TabIndex = 6;
             // 
             // dgvCliente
             // 
@@ -233,7 +233,7 @@
             this.dgvCliente.Location = new System.Drawing.Point(47, 295);
             this.dgvCliente.Name = "dgvCliente";
             this.dgvCliente.Size = new System.Drawing.Size(485, 100);
-            this.dgvCliente.TabIndex = 87;
+            this.dgvCliente.TabIndex = 13;
             this.dgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellClick_1);
             // 
             // FrmCadCliente

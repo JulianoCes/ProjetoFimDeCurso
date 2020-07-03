@@ -51,7 +51,7 @@ namespace MASYEV1
                 cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text);
                 cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text);
                 cmd.Parameters.AddWithValue("@email", txtEmail.Text);
-                cmd.Parameters.Add("@data_nacimento", SqlDbType.Date, 31).Value = dateTimePicker1.Text;
+                cmd.Parameters.Add("@data_nascimento", SqlDbType.Date, 31).Value = dateTimePicker1.Text;
                 Conecta.abrirConexao();
                 cmd.ExecuteNonQuery();
                 CarregaDgvCliente();
@@ -85,7 +85,7 @@ namespace MASYEV1
                 cmd.Parameters.AddWithValue("@endereco", this.txtEndereco.Text);
                 cmd.Parameters.AddWithValue("@telefone", this.txtTelefone.Text);
                 cmd.Parameters.AddWithValue("@email", this.txtEmail.Text);
-                cmd.Parameters.Add("@data_nacimento", SqlDbType.Date, 31).Value = dateTimePicker1.Text;
+                cmd.Parameters.Add("@data_nascimento", SqlDbType.Date, 31).Value = dateTimePicker1.Text;
                 Conecta.abrirConexao();
                 cmd.ExecuteNonQuery();
                 CarregaDgvCliente();
@@ -152,7 +152,7 @@ namespace MASYEV1
                     txtEndereco.Text = rd["endereco"].ToString();
                     txtTelefone.Text = rd["telefone"].ToString();
                     txtEmail.Text = rd["email"].ToString();
-                    dateTimePicker1.Text = rd["data_nacimento"].ToString();
+                    dateTimePicker1.Text = rd["data_nascimento"].ToString();
                     Conecta.fecharConexao();
                 }
                 else

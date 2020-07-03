@@ -49,7 +49,7 @@ namespace MASYEV1
                 cmd.Parameters.AddWithValue("@nome", txtNome.Text);
                 cmd.Parameters.AddWithValue("@cnpj", txtCnpj.Text);
                 cmd.Parameters.AddWithValue("@endereco", txtEndereco.Text);
-                cmd.Parameters.AddWithValue("@telefone", txtTelefone.Text);
+                cmd.Parameters.AddWithValue("@fone", txtTelefone.Text);
                 cmd.Parameters.AddWithValue("@email", txtEmail.Text);
                 cmd.Parameters.Add("@data", SqlDbType.Date, 31).Value = dtpData.Text;
                 Conecta.abrirConexao();
@@ -83,7 +83,7 @@ namespace MASYEV1
                 cmd.Parameters.AddWithValue("@nome", this.txtNome.Text);
                 cmd.Parameters.AddWithValue("@cnpj", this.txtCnpj.Text);
                 cmd.Parameters.AddWithValue("@endereco", this.txtEndereco.Text);
-                cmd.Parameters.AddWithValue("@telefone", this.txtTelefone.Text);
+                cmd.Parameters.AddWithValue("@fone", this.txtTelefone.Text);
                 cmd.Parameters.AddWithValue("@email", this.txtEmail.Text);
                 cmd.Parameters.Add("@data", SqlDbType.Date, 31).Value = dtpData.Text;
                 Conecta.abrirConexao();
