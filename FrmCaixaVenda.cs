@@ -17,6 +17,9 @@ namespace MASYEV1
         public FrmCaixaVenda()
         {
             InitializeComponent();
+            
         }
+
+       
     }
 }

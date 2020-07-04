@@ -63,5 +63,11 @@ namespace MASYEV1
             FrmCaixaCompra ccompra = new FrmCaixaCompra();
             ccompra.Show();
         }
+
+        private void pedidoDeliveryToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmPedidoDelivery pedely = new FrmPedidoDelivery();
+            pedely.Show();
+        }
     }
 }

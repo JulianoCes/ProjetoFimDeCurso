@@ -46,6 +46,10 @@
             this.btnExcluirItem = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
+            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtUsuario = new System.Windows.Forms.TextBox();
+            this.lblLogado = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -114,7 +118,7 @@
             // 
             this.textBox2.Location = new System.Drawing.Point(178, 58);
             this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(283, 21);
+            this.textBox2.Size = new System.Drawing.Size(199, 21);
             this.textBox2.TabIndex = 7;
             // 
             // textBox3
@@ -194,6 +198,38 @@
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = true;
             // 
+            // textBox6
+            // 
+            this.textBox6.Location = new System.Drawing.Point(439, 102);
+            this.textBox6.Name = "textBox6";
+            this.textBox6.Size = new System.Drawing.Size(130, 21);
+            this.textBox6.TabIndex = 18;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(381, 102);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(40, 15);
+            this.label1.TabIndex = 17;
+            this.label1.Text = "Valor";
+            // 
+            // txtUsuario
+            // 
+            this.txtUsuario.Location = new System.Drawing.Point(439, 58);
+            this.txtUsuario.Name = "txtUsuario";
+            this.txtUsuario.Size = new System.Drawing.Size(130, 21);
+            this.txtUsuario.TabIndex = 20;
+            // 
+            // lblLogado
+            // 
+            this.lblLogado.AutoSize = true;
+            this.lblLogado.Location = new System.Drawing.Point(383, 61);
+            this.lblLogado.Name = "lblLogado";
+            this.lblLogado.Size = new System.Drawing.Size(55, 15);
+            this.lblLogado.TabIndex = 19;
+            this.lblLogado.Text = "Logado";
+            // 
             // FrmCaixaVenda
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -201,6 +237,10 @@
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(599, 360);
+            this.Controls.Add(this.txtUsuario);
+            this.Controls.Add(this.lblLogado);
+            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnExcluirItem);
@@ -253,5 +293,9 @@
         private System.Windows.Forms.Button btnExcluirItem;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnSair;
+        private System.Windows.Forms.TextBox textBox6;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtUsuario;
+        private System.Windows.Forms.Label lblLogado;
     }
 }

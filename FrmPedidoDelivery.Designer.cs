@@ -41,7 +41,7 @@
             this.cbxTipo = new System.Windows.Forms.ComboBox();
             this.lblTipo = new System.Windows.Forms.Label();
             this.btnSair = new System.Windows.Forms.Button();
-            this.btnAdicionarItem = new System.Windows.Forms.Button();
+            this.btnFinalizarPedido = new System.Windows.Forms.Button();
             this.dgvPedidoDelivery = new System.Windows.Forms.DataGridView();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.txtQuantidade = new System.Windows.Forms.TextBox();
@@ -51,7 +51,7 @@
             this.lblCodigo = new System.Windows.Forms.Label();
             this.txtNome = new System.Windows.Forms.TextBox();
             this.btnAdicionarPedido = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtValorTotal = new System.Windows.Forms.TextBox();
             this.lblValorTotal = new System.Windows.Forms.Label();
             this.btnAtualizar = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
@@ -65,6 +65,7 @@
             this.cbxCodigo.Name = "cbxCodigo";
             this.cbxCodigo.Size = new System.Drawing.Size(209, 21);
             this.cbxCodigo.TabIndex = 100;
+            this.cbxCodigo.SelectedIndexChanged += new System.EventHandler(this.cbxCodigo_SelectedIndexChanged);
             // 
             // bntLocalizar
             // 
@@ -76,6 +77,7 @@
             this.bntLocalizar.TabIndex = 99;
             this.bntLocalizar.Text = "Buscar";
             this.bntLocalizar.UseVisualStyleBackColor = false;
+            this.bntLocalizar.Click += new System.EventHandler(this.bntLocalizar_Click);
             // 
             // txtUsuario
             // 
@@ -180,16 +182,16 @@
             this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
-            // btnAdicionarItem
+            // btnFinalizarPedido
             // 
-            this.btnAdicionarItem.BackColor = System.Drawing.Color.Green;
-            this.btnAdicionarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionarItem.Location = new System.Drawing.Point(245, 355);
-            this.btnAdicionarItem.Name = "btnAdicionarItem";
-            this.btnAdicionarItem.Size = new System.Drawing.Size(154, 34);
-            this.btnAdicionarItem.TabIndex = 86;
-            this.btnAdicionarItem.Text = "Finalizar Pedido";
-            this.btnAdicionarItem.UseVisualStyleBackColor = false;
+            this.btnFinalizarPedido.BackColor = System.Drawing.Color.Green;
+            this.btnFinalizarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnFinalizarPedido.Location = new System.Drawing.Point(245, 355);
+            this.btnFinalizarPedido.Name = "btnFinalizarPedido";
+            this.btnFinalizarPedido.Size = new System.Drawing.Size(154, 34);
+            this.btnFinalizarPedido.TabIndex = 86;
+            this.btnFinalizarPedido.Text = "Finalizar Pedido";
+            this.btnFinalizarPedido.UseVisualStyleBackColor = false;
             // 
             // dgvPedidoDelivery
             // 
@@ -201,6 +203,7 @@
             this.dgvPedidoDelivery.ReadOnly = true;
             this.dgvPedidoDelivery.Size = new System.Drawing.Size(677, 124);
             this.dgvPedidoDelivery.TabIndex = 85;
+            this.dgvPedidoDelivery.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidoDelivery_CellClick);
             // 
             // txtValor
             // 
@@ -275,12 +278,12 @@
             this.btnAdicionarPedido.UseVisualStyleBackColor = false;
             this.btnAdicionarPedido.Click += new System.EventHandler(this.btnAdicionarPedido_Click);
             // 
-            // textBox1
+            // txtValorTotal
             // 
-            this.textBox1.Location = new System.Drawing.Point(110, 362);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(109, 20);
-            this.textBox1.TabIndex = 104;
+            this.txtValorTotal.Location = new System.Drawing.Point(110, 362);
+            this.txtValorTotal.Name = "txtValorTotal";
+            this.txtValorTotal.Size = new System.Drawing.Size(109, 20);
+            this.txtValorTotal.TabIndex = 104;
             // 
             // lblValorTotal
             // 
@@ -322,7 +325,7 @@
             this.ClientSize = new System.Drawing.Size(735, 397);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAtualizar);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtValorTotal);
             this.Controls.Add(this.lblValorTotal);
             this.Controls.Add(this.btnAdicionarPedido);
             this.Controls.Add(this.txtNome);
@@ -339,7 +342,7 @@
             this.Controls.Add(this.cbxTipo);
             this.Controls.Add(this.lblTipo);
             this.Controls.Add(this.btnSair);
-            this.Controls.Add(this.btnAdicionarItem);
+            this.Controls.Add(this.btnFinalizarPedido);
             this.Controls.Add(this.dgvPedidoDelivery);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.txtQuantidade);
@@ -370,7 +373,7 @@
         private System.Windows.Forms.ComboBox cbxTipo;
         private System.Windows.Forms.Label lblTipo;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.Button btnAdicionarItem;
+        private System.Windows.Forms.Button btnFinalizarPedido;
         private System.Windows.Forms.DataGridView dgvPedidoDelivery;
         private System.Windows.Forms.TextBox txtValor;
         private System.Windows.Forms.TextBox txtQuantidade;
@@ -380,7 +383,7 @@
         private System.Windows.Forms.Label lblCodigo;
         private System.Windows.Forms.TextBox txtNome;
         private System.Windows.Forms.Button btnAdicionarPedido;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtValorTotal;
         private System.Windows.Forms.Label lblValorTotal;
         private System.Windows.Forms.Button btnAtualizar;
         private System.Windows.Forms.Button btnExcluir;

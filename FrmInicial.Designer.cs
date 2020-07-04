@@ -44,6 +44,7 @@
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caixaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pedidoDeliveryToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.MstInicial.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -114,7 +115,8 @@
             // 
             this.caixaToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.caixaVendaToolStripMenuItem,
-            this.caixaCompraToolStripMenuItem});
+            this.caixaCompraToolStripMenuItem,
+            this.pedidoDeliveryToolStripMenuItem});
             this.caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
             this.caixaToolStripMenuItem.Size = new System.Drawing.Size(64, 25);
             this.caixaToolStripMenuItem.Text = "Caixa";
@@ -122,14 +124,14 @@
             // caixaVendaToolStripMenuItem
             // 
             this.caixaVendaToolStripMenuItem.Name = "caixaVendaToolStripMenuItem";
-            this.caixaVendaToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.caixaVendaToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.caixaVendaToolStripMenuItem.Text = "Caixa Venda";
             this.caixaVendaToolStripMenuItem.Click += new System.EventHandler(this.caixaVendaToolStripMenuItem_Click);
             // 
             // caixaCompraToolStripMenuItem
             // 
             this.caixaCompraToolStripMenuItem.Name = "caixaCompraToolStripMenuItem";
-            this.caixaCompraToolStripMenuItem.Size = new System.Drawing.Size(186, 26);
+            this.caixaCompraToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
             this.caixaCompraToolStripMenuItem.Text = "Caixa Compra";
             this.caixaCompraToolStripMenuItem.Click += new System.EventHandler(this.caixaCompraToolStripMenuItem_Click);
             // 
@@ -147,25 +149,25 @@
             // clientesToolStripMenuItem1
             // 
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.clientesToolStripMenuItem1.Text = "Clientes";
             // 
             // produtosToolStripMenuItem1
             // 
             this.produtosToolStripMenuItem1.Name = "produtosToolStripMenuItem1";
-            this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
+            this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.produtosToolStripMenuItem1.Text = "Produtos";
             // 
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
             this.usuárioToolStripMenuItem.Text = "Usuário";
             // 
             // caixaToolStripMenuItem1
             // 
             this.caixaToolStripMenuItem1.Name = "caixaToolStripMenuItem1";
-            this.caixaToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
+            this.caixaToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
             this.caixaToolStripMenuItem1.Text = "Caixa";
             // 
             // sairToolStripMenuItem
@@ -174,6 +176,13 @@
             this.sairToolStripMenuItem.Size = new System.Drawing.Size(51, 25);
             this.sairToolStripMenuItem.Text = "&Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
+            // 
+            // pedidoDeliveryToolStripMenuItem
+            // 
+            this.pedidoDeliveryToolStripMenuItem.Name = "pedidoDeliveryToolStripMenuItem";
+            this.pedidoDeliveryToolStripMenuItem.Size = new System.Drawing.Size(203, 26);
+            this.pedidoDeliveryToolStripMenuItem.Text = "Pedido Delivery";
+            this.pedidoDeliveryToolStripMenuItem.Click += new System.EventHandler(this.pedidoDeliveryToolStripMenuItem_Click);
             // 
             // FrmInicial
             // 
@@ -212,5 +221,6 @@
         private System.Windows.Forms.ToolStripMenuItem caixaVendaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caixaCompraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem pedidoDeliveryToolStripMenuItem;
     }
 }
