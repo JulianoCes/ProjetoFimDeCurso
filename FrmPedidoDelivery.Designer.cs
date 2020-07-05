@@ -158,6 +158,7 @@
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(110, 21);
             this.cbxTipo.TabIndex = 89;
+            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
             // 
             // lblTipo
             // 
@@ -192,6 +193,7 @@
             this.btnFinalizarPedido.TabIndex = 86;
             this.btnFinalizarPedido.Text = "Finalizar Pedido";
             this.btnFinalizarPedido.UseVisualStyleBackColor = false;
+            this.btnFinalizarPedido.Click += new System.EventHandler(this.btnFinalizarPedido_Click);
             // 
             // dgvPedidoDelivery
             // 
@@ -305,6 +307,7 @@
             this.btnAtualizar.TabIndex = 105;
             this.btnAtualizar.Text = "Editar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
+            this.btnAtualizar.Click += new System.EventHandler(this.btnAtualizar_Click);
             // 
             // btnExcluir
             // 
@@ -317,6 +320,7 @@
             this.btnExcluir.TabIndex = 106;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // FrmPedidoDelivery
             // 
