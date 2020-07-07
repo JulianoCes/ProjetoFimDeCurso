@@ -39,7 +39,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 79);
+            this.label1.Location = new System.Drawing.Point(17, 63);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(38, 13);
             this.label1.TabIndex = 0;
@@ -48,7 +48,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 108);
+            this.label2.Location = new System.Drawing.Point(17, 105);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 1;
@@ -56,14 +56,14 @@
             // 
             // txtLogin
             // 
-            this.txtLogin.Location = new System.Drawing.Point(73, 79);
+            this.txtLogin.Location = new System.Drawing.Point(64, 63);
             this.txtLogin.Name = "txtLogin";
             this.txtLogin.Size = new System.Drawing.Size(193, 20);
             this.txtLogin.TabIndex = 1;
             // 
             // txtSenha
             // 
-            this.txtSenha.Location = new System.Drawing.Point(73, 108);
+            this.txtSenha.Location = new System.Drawing.Point(64, 105);
             this.txtSenha.Name = "txtSenha";
             this.txtSenha.Size = new System.Drawing.Size(193, 20);
             this.txtSenha.TabIndex = 2;
@@ -74,7 +74,7 @@
             this.btnLogar.BackColor = System.Drawing.Color.Gray;
             this.btnLogar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.btnLogar.Location = new System.Drawing.Point(26, 147);
+            this.btnLogar.Location = new System.Drawing.Point(163, 142);
             this.btnLogar.Name = "btnLogar";
             this.btnLogar.Size = new System.Drawing.Size(94, 33);
             this.btnLogar.TabIndex = 3;
@@ -87,7 +87,7 @@
             this.btnSair.BackColor = System.Drawing.Color.Gray;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.Red;
-            this.btnSair.Location = new System.Drawing.Point(167, 147);
+            this.btnSair.Location = new System.Drawing.Point(20, 142);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(99, 33);
             this.btnSair.TabIndex = 4;
@@ -99,7 +99,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(299, 208);
+            this.ClientSize = new System.Drawing.Size(284, 208);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.btnLogar);
             this.Controls.Add(this.txtSenha);

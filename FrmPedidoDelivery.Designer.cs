@@ -71,9 +71,9 @@
             // 
             this.bntLocalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.bntLocalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntLocalizar.Location = new System.Drawing.Point(423, 70);
+            this.bntLocalizar.Location = new System.Drawing.Point(418, 72);
             this.bntLocalizar.Name = "bntLocalizar";
-            this.bntLocalizar.Size = new System.Drawing.Size(116, 33);
+            this.bntLocalizar.Size = new System.Drawing.Size(99, 41);
             this.bntLocalizar.TabIndex = 99;
             this.bntLocalizar.Text = "Buscar";
             this.bntLocalizar.UseVisualStyleBackColor = false;
@@ -81,16 +81,17 @@
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(445, 158);
+            this.txtUsuario.Enabled = false;
+            this.txtUsuario.Location = new System.Drawing.Point(287, 184);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(151, 20);
-            this.txtUsuario.TabIndex = 98;
+            this.txtUsuario.Size = new System.Drawing.Size(123, 20);
+            this.txtUsuario.TabIndex = 14;
             // 
             // lblLogado
             // 
             this.lblLogado.AutoSize = true;
             this.lblLogado.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogado.Location = new System.Drawing.Point(390, 162);
+            this.lblLogado.Location = new System.Drawing.Point(232, 191);
             this.lblLogado.Name = "lblLogado";
             this.lblLogado.Size = new System.Drawing.Size(49, 13);
             this.lblLogado.TabIndex = 97;
@@ -99,7 +100,16 @@
             // cbxCorte
             // 
             this.cbxCorte.FormattingEnabled = true;
-            this.cbxCorte.Location = new System.Drawing.Point(445, 109);
+            this.cbxCorte.Items.AddRange(new object[] {
+            "Inteiro",
+            "Borbolete",
+            "Bife",
+            "Panela",
+            "Ispeto",
+            "Ispetinho",
+            "Passarino",
+            "Picado"});
+            this.cbxCorte.Location = new System.Drawing.Point(75, 151);
             this.cbxCorte.Name = "cbxCorte";
             this.cbxCorte.Size = new System.Drawing.Size(151, 21);
             this.cbxCorte.TabIndex = 96;
@@ -108,7 +118,7 @@
             // 
             this.lblCoter.AutoSize = true;
             this.lblCoter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCoter.Location = new System.Drawing.Point(405, 112);
+            this.lblCoter.Location = new System.Drawing.Point(35, 154);
             this.lblCoter.Name = "lblCoter";
             this.lblCoter.Size = new System.Drawing.Size(37, 13);
             this.lblCoter.TabIndex = 94;
@@ -135,17 +145,18 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(187, 113);
+            this.lblNome.Location = new System.Drawing.Point(188, 114);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(39, 13);
             this.lblNome.TabIndex = 91;
             this.lblNome.Text = "Nome";
+            this.lblNome.Click += new System.EventHandler(this.lblNome_Click);
             // 
             // lblKgOuUnit
             // 
             this.lblKgOuUnit.AutoSize = true;
             this.lblKgOuUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKgOuUnit.Location = new System.Drawing.Point(171, 162);
+            this.lblKgOuUnit.Location = new System.Drawing.Point(405, 161);
             this.lblKgOuUnit.Name = "lblKgOuUnit";
             this.lblKgOuUnit.Size = new System.Drawing.Size(67, 13);
             this.lblKgOuUnit.TabIndex = 90;
@@ -154,6 +165,13 @@
             // cbxTipo
             // 
             this.cbxTipo.FormattingEnabled = true;
+            this.cbxTipo.Items.AddRange(new object[] {
+            "Aves",
+            "Bovino",
+            "Suino",
+            "Embitidos",
+            "Frius",
+            "Outros"});
             this.cbxTipo.Location = new System.Drawing.Point(70, 110);
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(110, 21);
@@ -175,9 +193,9 @@
             this.btnSair.BackColor = System.Drawing.Color.Gray;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnSair.Location = new System.Drawing.Point(613, 355);
+            this.btnSair.Location = new System.Drawing.Point(510, 362);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(99, 30);
+            this.btnSair.Size = new System.Drawing.Size(112, 34);
             this.btnSair.TabIndex = 87;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
@@ -203,20 +221,20 @@
             this.dgvPedidoDelivery.Location = new System.Drawing.Point(35, 228);
             this.dgvPedidoDelivery.Name = "dgvPedidoDelivery";
             this.dgvPedidoDelivery.ReadOnly = true;
-            this.dgvPedidoDelivery.Size = new System.Drawing.Size(677, 124);
+            this.dgvPedidoDelivery.Size = new System.Drawing.Size(587, 124);
             this.dgvPedidoDelivery.TabIndex = 85;
             this.dgvPedidoDelivery.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvPedidoDelivery_CellClick);
             // 
             // txtValor
             // 
-            this.txtValor.Location = new System.Drawing.Point(284, 159);
+            this.txtValor.Location = new System.Drawing.Point(70, 184);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(100, 20);
             this.txtValor.TabIndex = 84;
             // 
             // txtQuantidade
             // 
-            this.txtQuantidade.Location = new System.Drawing.Point(110, 155);
+            this.txtQuantidade.Location = new System.Drawing.Point(344, 154);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(55, 20);
             this.txtQuantidade.TabIndex = 83;
@@ -225,7 +243,7 @@
             // 
             this.lblQuantidade.AutoSize = true;
             this.lblQuantidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblQuantidade.Location = new System.Drawing.Point(32, 158);
+            this.lblQuantidade.Location = new System.Drawing.Point(266, 157);
             this.lblQuantidade.Name = "lblQuantidade";
             this.lblQuantidade.Size = new System.Drawing.Size(72, 13);
             this.lblQuantidade.TabIndex = 82;
@@ -235,7 +253,7 @@
             // 
             this.lblValor.AutoSize = true;
             this.lblValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValor.Location = new System.Drawing.Point(242, 162);
+            this.lblValor.Location = new System.Drawing.Point(28, 187);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(36, 13);
             this.lblValor.TabIndex = 81;
@@ -263,18 +281,19 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(224, 110);
+            this.txtNome.Location = new System.Drawing.Point(233, 111);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(175, 20);
+            this.txtNome.Size = new System.Drawing.Size(166, 20);
             this.txtNome.TabIndex = 101;
+            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // btnAdicionarPedido
             // 
             this.btnAdicionarPedido.BackColor = System.Drawing.Color.Gray;
             this.btnAdicionarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionarPedido.Location = new System.Drawing.Point(445, 189);
+            this.btnAdicionarPedido.Location = new System.Drawing.Point(478, 184);
             this.btnAdicionarPedido.Name = "btnAdicionarPedido";
-            this.btnAdicionarPedido.Size = new System.Drawing.Size(151, 33);
+            this.btnAdicionarPedido.Size = new System.Drawing.Size(144, 38);
             this.btnAdicionarPedido.TabIndex = 102;
             this.btnAdicionarPedido.Text = "Adicional Pedido";
             this.btnAdicionarPedido.UseVisualStyleBackColor = false;
@@ -301,9 +320,9 @@
             // 
             this.btnAtualizar.BackColor = System.Drawing.Color.Yellow;
             this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAtualizar.Location = new System.Drawing.Point(613, 72);
+            this.btnAtualizar.Location = new System.Drawing.Point(523, 72);
             this.btnAtualizar.Name = "btnAtualizar";
-            this.btnAtualizar.Size = new System.Drawing.Size(99, 45);
+            this.btnAtualizar.Size = new System.Drawing.Size(99, 41);
             this.btnAtualizar.TabIndex = 105;
             this.btnAtualizar.Text = "Editar";
             this.btnAtualizar.UseVisualStyleBackColor = false;
@@ -314,7 +333,7 @@
             this.btnExcluir.BackColor = System.Drawing.Color.DarkRed;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnExcluir.Location = new System.Drawing.Point(613, 144);
+            this.btnExcluir.Location = new System.Drawing.Point(523, 123);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(99, 44);
             this.btnExcluir.TabIndex = 106;
@@ -326,7 +345,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(735, 397);
+            this.ClientSize = new System.Drawing.Size(651, 397);
             this.Controls.Add(this.btnExcluir);
             this.Controls.Add(this.btnAtualizar);
             this.Controls.Add(this.txtValorTotal);

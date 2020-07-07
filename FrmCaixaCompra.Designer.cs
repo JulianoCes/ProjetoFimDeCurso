@@ -58,7 +58,7 @@
             this.btnSair.BackColor = System.Drawing.Color.Gray;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnSair.Location = new System.Drawing.Point(481, 349);
+            this.btnSair.Location = new System.Drawing.Point(453, 348);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(85, 30);
             this.btnSair.TabIndex = 33;
@@ -70,7 +70,7 @@
             // 
             this.btnAdicionarItem.BackColor = System.Drawing.Color.Green;
             this.btnAdicionarItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdicionarItem.Location = new System.Drawing.Point(17, 339);
+            this.btnAdicionarItem.Location = new System.Drawing.Point(228, 338);
             this.btnAdicionarItem.Name = "btnAdicionarItem";
             this.btnAdicionarItem.Size = new System.Drawing.Size(133, 40);
             this.btnAdicionarItem.TabIndex = 29;
@@ -86,14 +86,14 @@
             this.DgvCaixaCompra.Location = new System.Drawing.Point(20, 208);
             this.DgvCaixaCompra.Name = "DgvCaixaCompra";
             this.DgvCaixaCompra.ReadOnly = true;
-            this.DgvCaixaCompra.Size = new System.Drawing.Size(546, 124);
+            this.DgvCaixaCompra.Size = new System.Drawing.Size(518, 124);
             this.DgvCaixaCompra.TabIndex = 28;
             // 
             // txtValor
             // 
             this.txtValor.Location = new System.Drawing.Point(269, 161);
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(100, 20);
+            this.txtValor.Size = new System.Drawing.Size(92, 20);
             this.txtValor.TabIndex = 26;
             // 
             // txtQuantidade
@@ -221,14 +221,14 @@
             this.cbxMarcaProduto.FormattingEnabled = true;
             this.cbxMarcaProduto.Location = new System.Drawing.Point(415, 112);
             this.cbxMarcaProduto.Name = "cbxMarcaProduto";
-            this.cbxMarcaProduto.Size = new System.Drawing.Size(151, 21);
+            this.cbxMarcaProduto.Size = new System.Drawing.Size(123, 21);
             this.cbxMarcaProduto.TabIndex = 74;
             // 
             // txtUsuario
             // 
             this.txtUsuario.Location = new System.Drawing.Point(430, 160);
             this.txtUsuario.Name = "txtUsuario";
-            this.txtUsuario.Size = new System.Drawing.Size(136, 20);
+            this.txtUsuario.Size = new System.Drawing.Size(108, 20);
             this.txtUsuario.TabIndex = 76;
             // 
             // lblLogado
@@ -245,9 +245,9 @@
             // 
             this.bntLocalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
             this.bntLocalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntLocalizar.Location = new System.Drawing.Point(464, 59);
+            this.bntLocalizar.Location = new System.Drawing.Point(415, 59);
             this.bntLocalizar.Name = "bntLocalizar";
-            this.bntLocalizar.Size = new System.Drawing.Size(102, 33);
+            this.bntLocalizar.Size = new System.Drawing.Size(123, 33);
             this.bntLocalizar.TabIndex = 77;
             this.bntLocalizar.Text = "Buscar";
             this.bntLocalizar.UseVisualStyleBackColor = false;
@@ -258,7 +258,7 @@
             this.cbxCodigo.FormattingEnabled = true;
             this.cbxCodigo.Location = new System.Drawing.Point(175, 63);
             this.cbxCodigo.Name = "cbxCodigo";
-            this.cbxCodigo.Size = new System.Drawing.Size(194, 21);
+            this.cbxCodigo.Size = new System.Drawing.Size(186, 21);
             this.cbxCodigo.TabIndex = 78;
             this.cbxCodigo.SelectedIndexChanged += new System.EventHandler(this.cbxCodigo_SelectedIndexChanged);
             // 
@@ -266,7 +266,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(610, 386);
+            this.ClientSize = new System.Drawing.Size(568, 386);
             this.Controls.Add(this.cbxCodigo);
             this.Controls.Add(this.bntLocalizar);
             this.Controls.Add(this.txtUsuario);

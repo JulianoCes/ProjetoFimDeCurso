@@ -24,7 +24,7 @@ namespace MASYEV1
         public void CarregaDgvlogin()
         {
             SqlConnection con = Conecta.abrirConexao();
-            String query = "select Id, cpf, nome from Login";
+            String query = "select Id, cpf, usuario from Login";
             SqlCommand cmd = new SqlCommand(query, con);
             Conecta.abrirConexao();
             cmd.CommandType = CommandType.Text;

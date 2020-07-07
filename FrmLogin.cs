@@ -13,12 +13,12 @@ namespace MASYEV1
 {
     public partial class FrmLogin : MetroFramework.Forms.MetroForm
     {
-        private CriptografarSenha b;
+        private CriptografarSenha s;
         SqlConnection con = Conecta.abrirConexao();
         public FrmLogin()
         {
             InitializeComponent();
-            b = new CriptografarSenha();
+            s = new CriptografarSenha();
         }
 
         private void btnSair_Click(object sender, EventArgs e)
@@ -29,21 +29,21 @@ namespace MASYEV1
         private void btnLogar_Click(object sender, EventArgs e)
         {
             SqlConnection con = Conecta.abrirConexao();
-            string usu = "select nome,senha from login where nome=@login and senha=@senha";
+            string usu = "select usuario,senha from login where usuario=@login and senha=@senha";
             SqlCommand cmd = new SqlCommand(usu, con);
             cmd.Parameters.AddWithValue("@login", SqlDbType.NChar).Value = txtLogin.Text.Trim();
-            txtSenha.Text = b.Base64Encode(txtSenha.Text);
+            txtSenha.Text = s.Base64Encode(txtSenha.Text);
             string criptografada = txtSenha.Text;
             cmd.Parameters.AddWithValue("@senha", SqlDbType.NChar).Value = criptografada;
             Conecta.abrirConexao();
             cmd.CommandType = CommandType.Text;
-            SqlDataReader login = cmd.ExecuteReader();
-            if (login.HasRows)
+            SqlDataReader usuario = cmd.ExecuteReader();
+            if (usuario.HasRows)
             {
                 this.Hide();
                 FrmInicial ini = new FrmInicial();
                 ini.Show();
-                login.Close();
+                usuario.Close();
                 Conecta.fecharConexao();
             }
             else
@@ -51,7 +51,7 @@ namespace MASYEV1
                 MessageBox.Show("Login ou senha incorretos! Tente novamente!", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 txtLogin.Text = "";
                 txtSenha.Text = "";
-                login.Close();
+                usuario.Close();
                 Conecta.fecharConexao();
             }
         }
