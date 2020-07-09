@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadCliente));
             this.btnSair = new System.Windows.Forms.Button();
             this.btnExcluir = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
@@ -53,99 +54,109 @@
             // 
             // btnSair
             // 
+            this.btnSair.BackColor = System.Drawing.Color.Gray;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(447, 224);
+            this.btnSair.ForeColor = System.Drawing.Color.Maroon;
+            this.btnSair.Location = new System.Drawing.Point(521, 224);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(98, 46);
+            this.btnSair.Size = new System.Drawing.Size(114, 46);
             this.btnSair.TabIndex = 11;
             this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // btnExcluir
             // 
+            this.btnExcluir.BackColor = System.Drawing.Color.Gray;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.Location = new System.Drawing.Point(447, 167);
+            this.btnExcluir.ForeColor = System.Drawing.Color.Blue;
+            this.btnExcluir.Location = new System.Drawing.Point(521, 167);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(98, 50);
+            this.btnExcluir.Size = new System.Drawing.Size(114, 50);
             this.btnExcluir.TabIndex = 10;
             this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnEditar
             // 
+            this.btnEditar.BackColor = System.Drawing.Color.Gray;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.Location = new System.Drawing.Point(447, 115);
+            this.btnEditar.ForeColor = System.Drawing.Color.Blue;
+            this.btnEditar.Location = new System.Drawing.Point(521, 115);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(98, 46);
+            this.btnEditar.Size = new System.Drawing.Size(114, 46);
             this.btnEditar.TabIndex = 9;
             this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnInseri
             // 
+            this.btnInseri.BackColor = System.Drawing.Color.Gray;
             this.btnInseri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInseri.Location = new System.Drawing.Point(447, 61);
+            this.btnInseri.ForeColor = System.Drawing.Color.Blue;
+            this.btnInseri.Location = new System.Drawing.Point(521, 61);
             this.btnInseri.Name = "btnInseri";
-            this.btnInseri.Size = new System.Drawing.Size(98, 47);
+            this.btnInseri.Size = new System.Drawing.Size(114, 47);
             this.btnInseri.TabIndex = 8;
             this.btnInseri.Text = "Cadastrar";
-            this.btnInseri.UseVisualStyleBackColor = true;
+            this.btnInseri.UseVisualStyleBackColor = false;
             this.btnInseri.Click += new System.EventHandler(this.btnInseri_Click);
             // 
             // btnBusca
             // 
+            this.btnBusca.BackColor = System.Drawing.Color.Gray;
             this.btnBusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBusca.Location = new System.Drawing.Point(297, 61);
+            this.btnBusca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
+            this.btnBusca.Location = new System.Drawing.Point(346, 61);
             this.btnBusca.Name = "btnBusca";
-            this.btnBusca.Size = new System.Drawing.Size(98, 32);
+            this.btnBusca.Size = new System.Drawing.Size(114, 32);
             this.btnBusca.TabIndex = 7;
             this.btnBusca.Text = "Buscar";
-            this.btnBusca.UseVisualStyleBackColor = true;
+            this.btnBusca.UseVisualStyleBackColor = false;
             this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(77, 224);
+            this.txtEmail.Location = new System.Drawing.Point(90, 224);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(318, 20);
+            this.txtEmail.Size = new System.Drawing.Size(370, 20);
             this.txtEmail.TabIndex = 5;
             // 
             // txtTelefone
             // 
-            this.txtTelefone.Location = new System.Drawing.Point(77, 198);
+            this.txtTelefone.Location = new System.Drawing.Point(90, 198);
             this.txtTelefone.Name = "txtTelefone";
-            this.txtTelefone.Size = new System.Drawing.Size(199, 20);
+            this.txtTelefone.Size = new System.Drawing.Size(231, 20);
             this.txtTelefone.TabIndex = 4;
             // 
             // txtEndereco
             // 
-            this.txtEndereco.Location = new System.Drawing.Point(77, 164);
+            this.txtEndereco.Location = new System.Drawing.Point(90, 164);
             this.txtEndereco.Name = "txtEndereco";
-            this.txtEndereco.Size = new System.Drawing.Size(318, 20);
+            this.txtEndereco.Size = new System.Drawing.Size(370, 20);
             this.txtEndereco.TabIndex = 3;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(77, 99);
+            this.txtNome.Location = new System.Drawing.Point(90, 99);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(318, 20);
+            this.txtNome.Size = new System.Drawing.Size(370, 20);
             this.txtNome.TabIndex = 1;
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(77, 63);
+            this.txtId.Location = new System.Drawing.Point(90, 63);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(55, 20);
+            this.txtId.Size = new System.Drawing.Size(63, 20);
             this.txtId.TabIndex = 72;
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(25, 227);
+            this.lblEmail.Location = new System.Drawing.Point(29, 227);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(41, 13);
             this.lblEmail.TabIndex = 71;
@@ -155,7 +166,7 @@
             // 
             this.lblDataNacimento.AutoSize = true;
             this.lblDataNacimento.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDataNacimento.Location = new System.Drawing.Point(5, 261);
+            this.lblDataNacimento.Location = new System.Drawing.Point(6, 261);
             this.lblDataNacimento.Name = "lblDataNacimento";
             this.lblDataNacimento.Size = new System.Drawing.Size(116, 13);
             this.lblDataNacimento.TabIndex = 70;
@@ -165,7 +176,7 @@
             // 
             this.lblTelefone.AutoSize = true;
             this.lblTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefone.Location = new System.Drawing.Point(9, 198);
+            this.lblTelefone.Location = new System.Drawing.Point(10, 198);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(57, 13);
             this.lblTelefone.TabIndex = 69;
@@ -175,7 +186,7 @@
             // 
             this.lblCpf.AutoSize = true;
             this.lblCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCpf.Location = new System.Drawing.Point(36, 135);
+            this.lblCpf.Location = new System.Drawing.Point(42, 135);
             this.lblCpf.Name = "lblCpf";
             this.lblCpf.Size = new System.Drawing.Size(30, 13);
             this.lblCpf.TabIndex = 68;
@@ -185,7 +196,7 @@
             // 
             this.lblEndereco.AutoSize = true;
             this.lblEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndereco.Location = new System.Drawing.Point(5, 167);
+            this.lblEndereco.Location = new System.Drawing.Point(6, 167);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(61, 13);
             this.lblEndereco.TabIndex = 67;
@@ -195,7 +206,7 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(27, 99);
+            this.lblNome.Location = new System.Drawing.Point(31, 99);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(39, 13);
             this.lblNome.TabIndex = 66;
@@ -205,7 +216,7 @@
             // 
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.Location = new System.Drawing.Point(44, 66);
+            this.lblId.Location = new System.Drawing.Point(51, 66);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(20, 13);
             this.lblId.TabIndex = 65;
@@ -213,34 +224,34 @@
             // 
             // txtCpf
             // 
-            this.txtCpf.Location = new System.Drawing.Point(77, 132);
+            this.txtCpf.Location = new System.Drawing.Point(90, 132);
             this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(199, 20);
+            this.txtCpf.Size = new System.Drawing.Size(231, 20);
             this.txtCpf.TabIndex = 2;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.CustomFormat = "dd-MM-yyyy";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(131, 255);
+            this.dateTimePicker1.Location = new System.Drawing.Point(153, 255);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(97, 20);
+            this.dateTimePicker1.Size = new System.Drawing.Size(112, 20);
             this.dateTimePicker1.TabIndex = 6;
             // 
             // dgvCliente
             // 
             this.dgvCliente.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCliente.Location = new System.Drawing.Point(47, 295);
+            this.dgvCliente.Location = new System.Drawing.Point(55, 295);
             this.dgvCliente.Name = "dgvCliente";
-            this.dgvCliente.Size = new System.Drawing.Size(485, 100);
+            this.dgvCliente.Size = new System.Drawing.Size(566, 100);
             this.dgvCliente.TabIndex = 13;
             this.dgvCliente.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCliente_CellClick_1);
             // 
             // FrmCadCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(574, 418);
+            this.ClientSize = new System.Drawing.Size(670, 418);
             this.Controls.Add(this.dgvCliente);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.txtCpf);
@@ -261,7 +272,10 @@
             this.Controls.Add(this.lblEndereco);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblId);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadCliente";
+            this.Padding = new System.Windows.Forms.Padding(23, 60, 23, 20);
             this.Text = "Cadastro de Cliente";
             this.Load += new System.EventHandler(this.FrmCadCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCliente)).EndInit();

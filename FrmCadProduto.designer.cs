@@ -110,58 +110,63 @@
             // 
             // btnBusca
             // 
+            this.btnBusca.BackColor = System.Drawing.Color.Gray;
             this.btnBusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBusca.Location = new System.Drawing.Point(190, 53);
             this.btnBusca.Name = "btnBusca";
             this.btnBusca.Size = new System.Drawing.Size(98, 32);
             this.btnBusca.TabIndex = 5;
             this.btnBusca.Text = "Buscar";
-            this.btnBusca.UseVisualStyleBackColor = true;
+            this.btnBusca.UseVisualStyleBackColor = false;
             this.btnBusca.Click += new System.EventHandler(this.btnBusca_Click);
             // 
             // btnInseri
             // 
+            this.btnInseri.BackColor = System.Drawing.Color.Gray;
             this.btnInseri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnInseri.Location = new System.Drawing.Point(361, 38);
             this.btnInseri.Name = "btnInseri";
             this.btnInseri.Size = new System.Drawing.Size(98, 47);
             this.btnInseri.TabIndex = 6;
             this.btnInseri.Text = "Cadastrar";
-            this.btnInseri.UseVisualStyleBackColor = true;
+            this.btnInseri.UseVisualStyleBackColor = false;
             this.btnInseri.Click += new System.EventHandler(this.btnInseri_Click);
             // 
             // btnEditar
             // 
+            this.btnEditar.BackColor = System.Drawing.Color.Gray;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.Location = new System.Drawing.Point(361, 94);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(98, 37);
             this.btnEditar.TabIndex = 7;
             this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
+            this.btnExcluir.BackColor = System.Drawing.Color.Gray;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnExcluir.Location = new System.Drawing.Point(361, 146);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(98, 35);
             this.btnExcluir.TabIndex = 8;
             this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // btnSair
             // 
+            this.btnSair.BackColor = System.Drawing.Color.Gray;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.ForeColor = System.Drawing.Color.Crimson;
+            this.btnSair.ForeColor = System.Drawing.Color.Maroon;
             this.btnSair.Location = new System.Drawing.Point(334, 322);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(125, 31);
             this.btnSair.TabIndex = 9;
             this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // cbxTipo

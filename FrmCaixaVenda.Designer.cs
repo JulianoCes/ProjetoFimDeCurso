@@ -56,7 +56,7 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(30, 61);
+            this.lblId.Location = new System.Drawing.Point(20, 61);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(21, 15);
             this.lblId.TabIndex = 0;
@@ -101,7 +101,7 @@
             // lblQuantidade
             // 
             this.lblQuantidade.AutoSize = true;
-            this.lblQuantidade.Location = new System.Drawing.Point(30, 102);
+            this.lblQuantidade.Location = new System.Drawing.Point(20, 102);
             this.lblQuantidade.Name = "lblQuantidade";
             this.lblQuantidade.Size = new System.Drawing.Size(81, 15);
             this.lblQuantidade.TabIndex = 5;
@@ -119,21 +119,21 @@
             this.textBox2.Location = new System.Drawing.Point(178, 58);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(199, 21);
-            this.textBox2.TabIndex = 7;
+            this.textBox2.TabIndex = 1;
             // 
             // textBox3
             // 
-            this.textBox3.Location = new System.Drawing.Point(121, 102);
+            this.textBox3.Location = new System.Drawing.Point(107, 102);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(55, 21);
-            this.textBox3.TabIndex = 8;
+            this.textBox3.TabIndex = 2;
             // 
             // textBox4
             // 
             this.textBox4.Location = new System.Drawing.Point(262, 102);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(100, 21);
-            this.textBox4.TabIndex = 9;
+            this.textBox4.TabIndex = 3;
             // 
             // textBox5
             // 
@@ -153,57 +153,66 @@
             // 
             // btnAdicionarItem
             // 
+            this.btnAdicionarItem.BackColor = System.Drawing.Color.Gray;
+            this.btnAdicionarItem.ForeColor = System.Drawing.Color.Navy;
             this.btnAdicionarItem.Location = new System.Drawing.Point(178, 129);
             this.btnAdicionarItem.Name = "btnAdicionarItem";
             this.btnAdicionarItem.Size = new System.Drawing.Size(113, 26);
-            this.btnAdicionarItem.TabIndex = 12;
+            this.btnAdicionarItem.TabIndex = 5;
             this.btnAdicionarItem.Text = "Adicionar Item";
-            this.btnAdicionarItem.UseVisualStyleBackColor = true;
+            this.btnAdicionarItem.UseVisualStyleBackColor = false;
             // 
             // button2
             // 
+            this.button2.BackColor = System.Drawing.Color.Gray;
+            this.button2.ForeColor = System.Drawing.Color.Navy;
             this.button2.Location = new System.Drawing.Point(323, 129);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(131, 26);
-            this.button2.TabIndex = 13;
+            this.button2.TabIndex = 6;
             this.button2.Text = "Editar Item";
-            this.button2.UseVisualStyleBackColor = true;
+            this.button2.UseVisualStyleBackColor = false;
             // 
             // btnExcluirItem
             // 
+            this.btnExcluirItem.BackColor = System.Drawing.Color.Gray;
+            this.btnExcluirItem.ForeColor = System.Drawing.Color.Navy;
             this.btnExcluirItem.Location = new System.Drawing.Point(467, 129);
             this.btnExcluirItem.Name = "btnExcluirItem";
             this.btnExcluirItem.Size = new System.Drawing.Size(102, 26);
-            this.btnExcluirItem.TabIndex = 14;
+            this.btnExcluirItem.TabIndex = 7;
             this.btnExcluirItem.Text = "Excluir Item";
-            this.btnExcluirItem.UseVisualStyleBackColor = true;
+            this.btnExcluirItem.UseVisualStyleBackColor = false;
             // 
             // button4
             // 
+            this.button4.BackColor = System.Drawing.Color.Gray;
+            this.button4.ForeColor = System.Drawing.Color.Navy;
             this.button4.Location = new System.Drawing.Point(326, 291);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(128, 21);
-            this.button4.TabIndex = 15;
+            this.button4.Size = new System.Drawing.Size(128, 30);
+            this.button4.TabIndex = 8;
             this.button4.Text = "Finalizar Compra";
-            this.button4.UseVisualStyleBackColor = true;
+            this.button4.UseVisualStyleBackColor = false;
             // 
             // btnSair
             // 
+            this.btnSair.BackColor = System.Drawing.Color.Gray;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.ForeColor = System.Drawing.Color.DarkRed;
-            this.btnSair.Location = new System.Drawing.Point(484, 291);
+            this.btnSair.ForeColor = System.Drawing.Color.Maroon;
+            this.btnSair.Location = new System.Drawing.Point(467, 291);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(85, 30);
-            this.btnSair.TabIndex = 16;
+            this.btnSair.Size = new System.Drawing.Size(102, 30);
+            this.btnSair.TabIndex = 9;
             this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.UseVisualStyleBackColor = false;
             // 
             // textBox6
             // 
             this.textBox6.Location = new System.Drawing.Point(439, 102);
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(130, 21);
-            this.textBox6.TabIndex = 18;
+            this.textBox6.TabIndex = 4;
             // 
             // label1
             // 
@@ -236,7 +245,7 @@
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(599, 360);
+            this.ClientSize = new System.Drawing.Size(599, 337);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblLogado);
             this.Controls.Add(this.textBox6);

@@ -69,8 +69,9 @@
             // 
             // bntLocalizar
             // 
-            this.bntLocalizar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
+            this.bntLocalizar.BackColor = System.Drawing.Color.Gray;
             this.bntLocalizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntLocalizar.ForeColor = System.Drawing.Color.Navy;
             this.bntLocalizar.Location = new System.Drawing.Point(418, 72);
             this.bntLocalizar.Name = "bntLocalizar";
             this.bntLocalizar.Size = new System.Drawing.Size(99, 41);
@@ -291,6 +292,7 @@
             // 
             this.btnAdicionarPedido.BackColor = System.Drawing.Color.Gray;
             this.btnAdicionarPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdicionarPedido.ForeColor = System.Drawing.Color.Navy;
             this.btnAdicionarPedido.Location = new System.Drawing.Point(478, 184);
             this.btnAdicionarPedido.Name = "btnAdicionarPedido";
             this.btnAdicionarPedido.Size = new System.Drawing.Size(144, 38);
@@ -318,8 +320,9 @@
             // 
             // btnAtualizar
             // 
-            this.btnAtualizar.BackColor = System.Drawing.Color.Yellow;
+            this.btnAtualizar.BackColor = System.Drawing.Color.Gray;
             this.btnAtualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAtualizar.ForeColor = System.Drawing.Color.Navy;
             this.btnAtualizar.Location = new System.Drawing.Point(523, 72);
             this.btnAtualizar.Name = "btnAtualizar";
             this.btnAtualizar.Size = new System.Drawing.Size(99, 41);
@@ -330,9 +333,9 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.BackColor = System.Drawing.Color.DarkRed;
+            this.btnExcluir.BackColor = System.Drawing.Color.Gray;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnExcluir.ForeColor = System.Drawing.Color.Navy;
             this.btnExcluir.Location = new System.Drawing.Point(523, 123);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(99, 44);

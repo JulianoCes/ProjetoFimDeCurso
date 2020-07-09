@@ -54,167 +54,177 @@
             this.DgvUsuario.AllowUserToAddRows = false;
             this.DgvUsuario.AllowUserToDeleteRows = false;
             this.DgvUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.DgvUsuario.Location = new System.Drawing.Point(7, 278);
+            this.DgvUsuario.Location = new System.Drawing.Point(16, 269);
             this.DgvUsuario.Name = "DgvUsuario";
             this.DgvUsuario.ReadOnly = true;
-            this.DgvUsuario.Size = new System.Drawing.Size(423, 97);
+            this.DgvUsuario.Size = new System.Drawing.Size(458, 87);
             this.DgvUsuario.TabIndex = 61;
             this.DgvUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvUsuario_CellContentClick);
             // 
             // btnPesquisar
             // 
+            this.btnPesquisar.BackColor = System.Drawing.Color.Gray;
             this.btnPesquisar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkSeaGreen;
             this.btnPesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPesquisar.Location = new System.Drawing.Point(235, 69);
+            this.btnPesquisar.ForeColor = System.Drawing.Color.Navy;
+            this.btnPesquisar.Location = new System.Drawing.Point(255, 69);
             this.btnPesquisar.Name = "btnPesquisar";
-            this.btnPesquisar.Size = new System.Drawing.Size(75, 23);
+            this.btnPesquisar.Size = new System.Drawing.Size(106, 23);
             this.btnPesquisar.TabIndex = 60;
             this.btnPesquisar.Text = "Pesquisar";
-            this.btnPesquisar.UseVisualStyleBackColor = true;
+            this.btnPesquisar.UseVisualStyleBackColor = false;
             this.btnPesquisar.Click += new System.EventHandler(this.btnPesquisar_Click_1);
             // 
             // btnSair
             // 
-            this.btnSair.Location = new System.Drawing.Point(342, 181);
+            this.btnSair.BackColor = System.Drawing.Color.Gray;
+            this.btnSair.ForeColor = System.Drawing.Color.Maroon;
+            this.btnSair.Location = new System.Drawing.Point(371, 362);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(88, 27);
+            this.btnSair.Size = new System.Drawing.Size(103, 27);
             this.btnSair.TabIndex = 59;
             this.btnSair.Text = "Sair";
-            this.btnSair.UseVisualStyleBackColor = true;
+            this.btnSair.UseVisualStyleBackColor = false;
             this.btnSair.Click += new System.EventHandler(this.btnSair_Click_1);
             // 
             // btnExcluir
             // 
-            this.btnExcluir.Location = new System.Drawing.Point(342, 146);
+            this.btnExcluir.BackColor = System.Drawing.Color.Gray;
+            this.btnExcluir.ForeColor = System.Drawing.Color.Navy;
+            this.btnExcluir.Location = new System.Drawing.Point(371, 214);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(88, 27);
+            this.btnExcluir.Size = new System.Drawing.Size(103, 37);
             this.btnExcluir.TabIndex = 58;
             this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.UseVisualStyleBackColor = false;
             this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click_1);
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(342, 108);
+            this.btnEditar.BackColor = System.Drawing.Color.Gray;
+            this.btnEditar.ForeColor = System.Drawing.Color.Navy;
+            this.btnEditar.Location = new System.Drawing.Point(371, 161);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(88, 27);
+            this.btnEditar.Size = new System.Drawing.Size(103, 37);
             this.btnEditar.TabIndex = 57;
             this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.UseVisualStyleBackColor = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click_1);
             // 
             // txtFone
             // 
-            this.txtFone.Location = new System.Drawing.Point(55, 178);
+            this.txtFone.Location = new System.Drawing.Point(64, 178);
             this.txtFone.Name = "txtFone";
-            this.txtFone.Size = new System.Drawing.Size(174, 20);
+            this.txtFone.Size = new System.Drawing.Size(202, 20);
             this.txtFone.TabIndex = 56;
             // 
             // txtCpf
             // 
-            this.txtCpf.Location = new System.Drawing.Point(56, 139);
+            this.txtCpf.Location = new System.Drawing.Point(65, 139);
             this.txtCpf.Name = "txtCpf";
-            this.txtCpf.Size = new System.Drawing.Size(177, 20);
+            this.txtCpf.Size = new System.Drawing.Size(206, 20);
             this.txtCpf.TabIndex = 55;
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(56, 108);
+            this.txtNome.Location = new System.Drawing.Point(65, 108);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(258, 20);
+            this.txtNome.Size = new System.Drawing.Size(300, 20);
             this.txtNome.TabIndex = 54;
             // 
             // lblFone
             // 
             this.lblFone.AutoSize = true;
-            this.lblFone.Location = new System.Drawing.Point(11, 181);
+            this.lblFone.Location = new System.Drawing.Point(13, 181);
             this.lblFone.Name = "lblFone";
-            this.lblFone.Size = new System.Drawing.Size(31, 13);
+            this.lblFone.Size = new System.Drawing.Size(35, 13);
             this.lblFone.TabIndex = 53;
             this.lblFone.Text = "Fone";
             // 
             // lblCpf
             // 
             this.lblCpf.AutoSize = true;
-            this.lblCpf.Location = new System.Drawing.Point(11, 146);
+            this.lblCpf.Location = new System.Drawing.Point(13, 146);
             this.lblCpf.Name = "lblCpf";
-            this.lblCpf.Size = new System.Drawing.Size(27, 13);
+            this.lblCpf.Size = new System.Drawing.Size(30, 13);
             this.lblCpf.TabIndex = 52;
             this.lblCpf.Text = "CPF";
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(11, 108);
+            this.lblNome.Location = new System.Drawing.Point(13, 108);
             this.lblNome.Name = "lblNome";
-            this.lblNome.Size = new System.Drawing.Size(35, 13);
+            this.lblNome.Size = new System.Drawing.Size(39, 13);
             this.lblNome.TabIndex = 51;
             this.lblNome.Text = "Nome";
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(56, 74);
+            this.txtId.Location = new System.Drawing.Point(65, 74);
             this.txtId.Name = "txtId";
-            this.txtId.Size = new System.Drawing.Size(66, 20);
+            this.txtId.Size = new System.Drawing.Size(76, 20);
             this.txtId.TabIndex = 50;
             // 
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(14, 74);
+            this.lblId.Location = new System.Drawing.Point(16, 74);
             this.lblId.Name = "lblId";
-            this.lblId.Size = new System.Drawing.Size(18, 13);
+            this.lblId.Size = new System.Drawing.Size(20, 13);
             this.lblId.TabIndex = 49;
             this.lblId.Text = "ID";
             // 
             // btnInserir
             // 
-            this.btnInserir.Location = new System.Drawing.Point(342, 69);
+            this.btnInserir.BackColor = System.Drawing.Color.Gray;
+            this.btnInserir.ForeColor = System.Drawing.Color.Navy;
+            this.btnInserir.Location = new System.Drawing.Point(371, 108);
             this.btnInserir.Name = "btnInserir";
-            this.btnInserir.Size = new System.Drawing.Size(88, 27);
+            this.btnInserir.Size = new System.Drawing.Size(103, 39);
             this.btnInserir.TabIndex = 48;
             this.btnInserir.Text = "Inserir";
-            this.btnInserir.UseVisualStyleBackColor = true;
+            this.btnInserir.UseVisualStyleBackColor = false;
             this.btnInserir.Click += new System.EventHandler(this.btnInserir_Click_1);
             // 
             // txtFuncao
             // 
-            this.txtFuncao.Location = new System.Drawing.Point(56, 246);
+            this.txtFuncao.Location = new System.Drawing.Point(65, 246);
             this.txtFuncao.Name = "txtFuncao";
-            this.txtFuncao.Size = new System.Drawing.Size(125, 20);
+            this.txtFuncao.Size = new System.Drawing.Size(145, 20);
             this.txtFuncao.TabIndex = 65;
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(55, 214);
+            this.txtEmail.Location = new System.Drawing.Point(64, 214);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(255, 20);
+            this.txtEmail.Size = new System.Drawing.Size(297, 20);
             this.txtEmail.TabIndex = 64;
             // 
             // lblFuncao
             // 
             this.lblFuncao.AutoSize = true;
-            this.lblFuncao.Location = new System.Drawing.Point(11, 253);
+            this.lblFuncao.Location = new System.Drawing.Point(13, 253);
             this.lblFuncao.Name = "lblFuncao";
-            this.lblFuncao.Size = new System.Drawing.Size(43, 13);
+            this.lblFuncao.Size = new System.Drawing.Size(49, 13);
             this.lblFuncao.TabIndex = 63;
             this.lblFuncao.Text = "Funcão";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(11, 221);
+            this.lblEmail.Location = new System.Drawing.Point(13, 221);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(35, 13);
+            this.lblEmail.Size = new System.Drawing.Size(41, 13);
             this.lblEmail.TabIndex = 62;
             this.lblEmail.Text = "E-mail";
             // 
             // FrmCadUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(453, 394);
+            this.ClientSize = new System.Drawing.Size(498, 394);
             this.Controls.Add(this.txtFuncao);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.lblFuncao);
@@ -233,7 +243,9 @@
             this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblId);
             this.Controls.Add(this.btnInserir);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Name = "FrmCadUsuario";
+            this.Padding = new System.Windows.Forms.Padding(23, 60, 23, 20);
             this.Text = "Cadastro de Usuário";
             this.Load += new System.EventHandler(this.FrmCadUsuario_Load);
             ((System.ComponentModel.ISupportInitialize)(this.DgvUsuario)).EndInit();
