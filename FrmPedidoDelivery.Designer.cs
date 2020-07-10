@@ -151,7 +151,6 @@
             this.lblNome.Size = new System.Drawing.Size(39, 13);
             this.lblNome.TabIndex = 91;
             this.lblNome.Text = "Nome";
-            this.lblNome.Click += new System.EventHandler(this.lblNome_Click);
             // 
             // lblKgOuUnit
             // 
@@ -286,7 +285,6 @@
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(166, 20);
             this.txtNome.TabIndex = 101;
-            this.txtNome.TextChanged += new System.EventHandler(this.txtNome_TextChanged);
             // 
             // btnAdicionarPedido
             // 
@@ -378,6 +376,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Name = "FrmPedidoDelivery";
             this.Text = "Pedido Para Delivery";
+            this.Load += new System.EventHandler(this.FrmPedidoDelivery_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidoDelivery)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

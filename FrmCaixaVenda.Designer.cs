@@ -35,22 +35,25 @@
             this.lblValor = new System.Windows.Forms.Label();
             this.lblValorTotal = new System.Windows.Forms.Label();
             this.lblQuantidade = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.txtQuantidade = new System.Windows.Forms.TextBox();
+            this.txtValor = new System.Windows.Forms.TextBox();
+            this.txtValorTotal = new System.Windows.Forms.TextBox();
+            this.dgvCaixaVenda = new System.Windows.Forms.DataGridView();
             this.btnAdicionarItem = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btnExcluirItem = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblLogado = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.txtNome = new System.Windows.Forms.TextBox();
+            this.lblNome = new System.Windows.Forms.Label();
+            this.txtTipo = new System.Windows.Forms.TextBox();
+            this.lblTipo = new System.Windows.Forms.Label();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCaixaVenda)).BeginInit();
             this.SuspendLayout();
             // 
             // lblId
@@ -65,7 +68,7 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(118, 61);
+            this.lblCodigo.Location = new System.Drawing.Point(108, 61);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(52, 15);
             this.lblCodigo.TabIndex = 1;
@@ -74,7 +77,7 @@
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(20, 143);
+            this.lblDescricao.Location = new System.Drawing.Point(20, 209);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(71, 15);
             this.lblDescricao.TabIndex = 2;
@@ -83,7 +86,7 @@
             // lblValor
             // 
             this.lblValor.AutoSize = true;
-            this.lblValor.Location = new System.Drawing.Point(204, 102);
+            this.lblValor.Location = new System.Drawing.Point(195, 161);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(40, 15);
             this.lblValor.TabIndex = 3;
@@ -92,7 +95,7 @@
             // lblValorTotal
             // 
             this.lblValorTotal.AutoSize = true;
-            this.lblValorTotal.Location = new System.Drawing.Point(145, 294);
+            this.lblValorTotal.Location = new System.Drawing.Point(20, 359);
             this.lblValorTotal.Name = "lblValorTotal";
             this.lblValorTotal.Size = new System.Drawing.Size(76, 15);
             this.lblValorTotal.TabIndex = 4;
@@ -101,61 +104,61 @@
             // lblQuantidade
             // 
             this.lblQuantidade.AutoSize = true;
-            this.lblQuantidade.Location = new System.Drawing.Point(20, 102);
+            this.lblQuantidade.Location = new System.Drawing.Point(28, 161);
             this.lblQuantidade.Name = "lblQuantidade";
             this.lblQuantidade.Size = new System.Drawing.Size(81, 15);
             this.lblQuantidade.TabIndex = 5;
             this.lblQuantidade.Text = "Quantidade";
             // 
-            // textBox1
+            // txtId
             // 
-            this.textBox1.Location = new System.Drawing.Point(57, 58);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(55, 21);
-            this.textBox1.TabIndex = 6;
+            this.txtId.Location = new System.Drawing.Point(47, 58);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(55, 21);
+            this.txtId.TabIndex = 6;
             // 
-            // textBox2
+            // txtCodigo
             // 
-            this.textBox2.Location = new System.Drawing.Point(178, 58);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(199, 21);
-            this.textBox2.TabIndex = 1;
+            this.txtCodigo.Location = new System.Drawing.Point(166, 58);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(288, 21);
+            this.txtCodigo.TabIndex = 1;
             // 
-            // textBox3
+            // txtQuantidade
             // 
-            this.textBox3.Location = new System.Drawing.Point(107, 102);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(55, 21);
-            this.textBox3.TabIndex = 2;
+            this.txtQuantidade.Location = new System.Drawing.Point(115, 161);
+            this.txtQuantidade.Name = "txtQuantidade";
+            this.txtQuantidade.Size = new System.Drawing.Size(55, 21);
+            this.txtQuantidade.TabIndex = 2;
             // 
-            // textBox4
+            // txtValor
             // 
-            this.textBox4.Location = new System.Drawing.Point(262, 102);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 21);
-            this.textBox4.TabIndex = 3;
+            this.txtValor.Location = new System.Drawing.Point(253, 161);
+            this.txtValor.Name = "txtValor";
+            this.txtValor.Size = new System.Drawing.Size(100, 21);
+            this.txtValor.TabIndex = 3;
             // 
-            // textBox5
+            // txtValorTotal
             // 
-            this.textBox5.Location = new System.Drawing.Point(227, 291);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(86, 21);
-            this.textBox5.TabIndex = 10;
+            this.txtValorTotal.Location = new System.Drawing.Point(102, 359);
+            this.txtValorTotal.Name = "txtValorTotal";
+            this.txtValorTotal.Size = new System.Drawing.Size(86, 21);
+            this.txtValorTotal.TabIndex = 10;
             // 
-            // dataGridView1
+            // dgvCaixaVenda
             // 
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(23, 161);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(546, 124);
-            this.dataGridView1.TabIndex = 11;
+            this.dgvCaixaVenda.AllowUserToOrderColumns = true;
+            this.dgvCaixaVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCaixaVenda.Location = new System.Drawing.Point(23, 227);
+            this.dgvCaixaVenda.Name = "dgvCaixaVenda";
+            this.dgvCaixaVenda.Size = new System.Drawing.Size(546, 124);
+            this.dgvCaixaVenda.TabIndex = 11;
             // 
             // btnAdicionarItem
             // 
             this.btnAdicionarItem.BackColor = System.Drawing.Color.Gray;
             this.btnAdicionarItem.ForeColor = System.Drawing.Color.Navy;
-            this.btnAdicionarItem.Location = new System.Drawing.Point(178, 129);
+            this.btnAdicionarItem.Location = new System.Drawing.Point(178, 195);
             this.btnAdicionarItem.Name = "btnAdicionarItem";
             this.btnAdicionarItem.Size = new System.Drawing.Size(113, 26);
             this.btnAdicionarItem.TabIndex = 5;
@@ -166,7 +169,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.Gray;
             this.button2.ForeColor = System.Drawing.Color.Navy;
-            this.button2.Location = new System.Drawing.Point(323, 129);
+            this.button2.Location = new System.Drawing.Point(323, 195);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(131, 26);
             this.button2.TabIndex = 6;
@@ -177,7 +180,7 @@
             // 
             this.btnExcluirItem.BackColor = System.Drawing.Color.Gray;
             this.btnExcluirItem.ForeColor = System.Drawing.Color.Navy;
-            this.btnExcluirItem.Location = new System.Drawing.Point(467, 129);
+            this.btnExcluirItem.Location = new System.Drawing.Point(467, 195);
             this.btnExcluirItem.Name = "btnExcluirItem";
             this.btnExcluirItem.Size = new System.Drawing.Size(102, 26);
             this.btnExcluirItem.TabIndex = 7;
@@ -188,7 +191,7 @@
             // 
             this.button4.BackColor = System.Drawing.Color.Gray;
             this.button4.ForeColor = System.Drawing.Color.Navy;
-            this.button4.Location = new System.Drawing.Point(326, 291);
+            this.button4.Location = new System.Drawing.Point(212, 357);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(128, 30);
             this.button4.TabIndex = 8;
@@ -200,44 +203,72 @@
             this.btnSair.BackColor = System.Drawing.Color.Gray;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSair.ForeColor = System.Drawing.Color.Maroon;
-            this.btnSair.Location = new System.Drawing.Point(467, 291);
+            this.btnSair.Location = new System.Drawing.Point(467, 357);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(102, 30);
             this.btnSair.TabIndex = 9;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
-            // 
-            // textBox6
-            // 
-            this.textBox6.Location = new System.Drawing.Point(439, 102);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(130, 21);
-            this.textBox6.TabIndex = 4;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(381, 102);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(40, 15);
-            this.label1.TabIndex = 17;
-            this.label1.Text = "Valor";
+            this.btnSair.Click += new System.EventHandler(this.btnSair_Click);
             // 
             // txtUsuario
             // 
-            this.txtUsuario.Location = new System.Drawing.Point(439, 58);
+            this.txtUsuario.Location = new System.Drawing.Point(439, 161);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(130, 21);
-            this.txtUsuario.TabIndex = 20;
+            this.txtUsuario.TabIndex = 4;
             // 
             // lblLogado
             // 
             this.lblLogado.AutoSize = true;
-            this.lblLogado.Location = new System.Drawing.Point(383, 61);
+            this.lblLogado.Location = new System.Drawing.Point(378, 164);
             this.lblLogado.Name = "lblLogado";
             this.lblLogado.Size = new System.Drawing.Size(55, 15);
-            this.lblLogado.TabIndex = 19;
+            this.lblLogado.TabIndex = 17;
             this.lblLogado.Text = "Logado";
+            // 
+            // txtNome
+            // 
+            this.txtNome.Location = new System.Drawing.Point(76, 114);
+            this.txtNome.Name = "txtNome";
+            this.txtNome.Size = new System.Drawing.Size(215, 21);
+            this.txtNome.TabIndex = 20;
+            // 
+            // lblNome
+            // 
+            this.lblNome.AutoSize = true;
+            this.lblNome.Location = new System.Drawing.Point(20, 117);
+            this.lblNome.Name = "lblNome";
+            this.lblNome.Size = new System.Drawing.Size(45, 15);
+            this.lblNome.TabIndex = 19;
+            this.lblNome.Text = "Nome";
+            // 
+            // txtTipo
+            // 
+            this.txtTipo.Location = new System.Drawing.Point(381, 111);
+            this.txtTipo.Name = "txtTipo";
+            this.txtTipo.Size = new System.Drawing.Size(172, 21);
+            this.txtTipo.TabIndex = 21;
+            // 
+            // lblTipo
+            // 
+            this.lblTipo.AutoSize = true;
+            this.lblTipo.Location = new System.Drawing.Point(331, 114);
+            this.lblTipo.Name = "lblTipo";
+            this.lblTipo.Size = new System.Drawing.Size(35, 15);
+            this.lblTipo.TabIndex = 22;
+            this.lblTipo.Text = "Tipo";
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.Gray;
+            this.btnBuscar.ForeColor = System.Drawing.Color.Navy;
+            this.btnBuscar.Location = new System.Drawing.Point(467, 55);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(102, 26);
+            this.btnBuscar.TabIndex = 23;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // FrmCaixaVenda
             // 
@@ -245,29 +276,32 @@
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(599, 337);
+            this.ClientSize = new System.Drawing.Size(610, 397);
+            this.Controls.Add(this.btnBuscar);
+            this.Controls.Add(this.txtTipo);
+            this.Controls.Add(this.lblTipo);
+            this.Controls.Add(this.txtNome);
+            this.Controls.Add(this.lblNome);
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblLogado);
-            this.Controls.Add(this.textBox6);
-            this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btnExcluirItem);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.btnAdicionarItem);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.dgvCaixaVenda);
+            this.Controls.Add(this.txtValorTotal);
+            this.Controls.Add(this.txtValor);
+            this.Controls.Add(this.txtQuantidade);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.txtId);
             this.Controls.Add(this.lblQuantidade);
             this.Controls.Add(this.lblValorTotal);
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.lblId);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.MenuText;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
@@ -277,7 +311,8 @@
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Light;
             this.TransparencyKey = System.Drawing.SystemColors.ControlDarkDark;
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Load += new System.EventHandler(this.FrmCaixaVenda_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCaixaVenda)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -291,20 +326,23 @@
         private System.Windows.Forms.Label lblValor;
         private System.Windows.Forms.Label lblValorTotal;
         private System.Windows.Forms.Label lblQuantidade;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.TextBox txtQuantidade;
+        private System.Windows.Forms.TextBox txtValor;
+        private System.Windows.Forms.TextBox txtValorTotal;
+        private System.Windows.Forms.DataGridView dgvCaixaVenda;
         private System.Windows.Forms.Button btnAdicionarItem;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btnExcluirItem;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnSair;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblLogado;
+        private System.Windows.Forms.TextBox txtNome;
+        private System.Windows.Forms.Label lblNome;
+        private System.Windows.Forms.TextBox txtTipo;
+        private System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

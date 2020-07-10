@@ -69,5 +69,11 @@ namespace MASYEV1
             FrmPedidoDelivery pedely = new FrmPedidoDelivery();
             pedely.Show();
         }
+
+        private void clientesToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmRelCliente relcli = new FrmRelCliente();
+            relcli.Show();
+        }
     }
 }
