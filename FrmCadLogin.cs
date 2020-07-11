@@ -24,7 +24,7 @@ namespace MASYEV1
         public void CarregaDgvlogin()
         {
             SqlConnection con = Conecta.abrirConexao();
-            String query = "select Id, cpf, usuario from Login";
+            String query = "select * from Login";
             SqlCommand cmd = new SqlCommand(query, con);
             Conecta.abrirConexao();
             cmd.CommandType = CommandType.Text;
@@ -50,7 +50,7 @@ namespace MASYEV1
                 cmd.CommandText = "InserirLogin";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@cpf", txtCpf.Text);
-                cmd.Parameters.AddWithValue("@nome", txtNome.Text);
+                cmd.Parameters.AddWithValue("@usuario", txtNome.Text);
                 //codificando txtsenha.
                 txtSenha.Text = b.Base64Encode(txtSenha.Text);
                 //nova variavel para atribuo o txtSenha nela.
@@ -84,8 +84,8 @@ namespace MASYEV1
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Id", this.txtId.Text);
                 cmd.Parameters.AddWithValue("@cpf", this.txtCpf.Text);
-                cmd.Parameters.AddWithValue("@nome", this.txtNome.Text);
-                //cmd.Parameters.AddWithValue("@senha", this.txtSenha.Text);
+                cmd.Parameters.AddWithValue("@usuario", this.txtNome.Text);
+                cmd.Parameters.AddWithValue("@senha", this.txtSenha.Text);
                 Conecta.abrirConexao();
                 cmd.ExecuteNonQuery();
                 CarregaDgvlogin();
@@ -142,7 +142,8 @@ namespace MASYEV1
                 {
                     txtId.Text = rd["Id"].ToString();
                     txtCpf.Text = rd["cpf"].ToString();
-                    txtNome.Text = rd["nome"].ToString();
+                    txtNome.Text = rd["usuario"].ToString();
+                    //txtSenha.Text = rd["senha"].ToString();
                     Conecta.fecharConexao();
                     rd.Close();
                 }
@@ -165,6 +166,7 @@ namespace MASYEV1
                 txtId.Text = row.Cells[0].Value.ToString();
                 txtCpf.Text = row.Cells[1].Value.ToString();
                 txtNome.Text = row.Cells[2].Value.ToString();
+                //txtSenha.Text = row.Cells[3].Value.ToString();
             }
         }
 

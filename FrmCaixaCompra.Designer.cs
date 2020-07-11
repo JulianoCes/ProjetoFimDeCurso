@@ -88,6 +88,7 @@
             this.DgvCaixaCompra.ReadOnly = true;
             this.DgvCaixaCompra.Size = new System.Drawing.Size(518, 124);
             this.DgvCaixaCompra.TabIndex = 28;
+            this.DgvCaixaCompra.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvCaixaCompra_CellClick);
             // 
             // txtValor
             // 

@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmInicial));
             this.MstInicial = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.clientesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -45,7 +46,9 @@
             this.usuárioToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.caixaToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.sairToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.pbImagemInicial = new System.Windows.Forms.PictureBox();
             this.MstInicial.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagemInicial)).BeginInit();
             this.SuspendLayout();
             // 
             // MstInicial
@@ -57,9 +60,10 @@
             this.caixaToolStripMenuItem,
             this.relatóriosToolStripMenuItem,
             this.sairToolStripMenuItem});
-            this.MstInicial.Location = new System.Drawing.Point(24, 60);
+            this.MstInicial.Location = new System.Drawing.Point(27, 69);
             this.MstInicial.Name = "MstInicial";
-            this.MstInicial.Size = new System.Drawing.Size(760, 29);
+            this.MstInicial.Padding = new System.Windows.Forms.Padding(7, 2, 0, 2);
+            this.MstInicial.Size = new System.Drawing.Size(869, 29);
             this.MstInicial.TabIndex = 5;
             this.MstInicial.Text = "MstInicial";
             // 
@@ -156,26 +160,26 @@
             // clientesToolStripMenuItem1
             // 
             this.clientesToolStripMenuItem1.Name = "clientesToolStripMenuItem1";
-            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
+            this.clientesToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
             this.clientesToolStripMenuItem1.Text = "Clientes";
             this.clientesToolStripMenuItem1.Click += new System.EventHandler(this.clientesToolStripMenuItem1_Click);
             // 
             // produtosToolStripMenuItem1
             // 
             this.produtosToolStripMenuItem1.Name = "produtosToolStripMenuItem1";
-            this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
+            this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
             this.produtosToolStripMenuItem1.Text = "Produtos";
             // 
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
-            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(180, 26);
+            this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(149, 26);
             this.usuárioToolStripMenuItem.Text = "Usuário";
             // 
             // caixaToolStripMenuItem1
             // 
             this.caixaToolStripMenuItem1.Name = "caixaToolStripMenuItem1";
-            this.caixaToolStripMenuItem1.Size = new System.Drawing.Size(180, 26);
+            this.caixaToolStripMenuItem1.Size = new System.Drawing.Size(149, 26);
             this.caixaToolStripMenuItem1.Text = "Caixa";
             // 
             // sairToolStripMenuItem
@@ -185,20 +189,37 @@
             this.sairToolStripMenuItem.Text = "&Sair";
             this.sairToolStripMenuItem.Click += new System.EventHandler(this.sairToolStripMenuItem_Click);
             // 
+            // pbImagemInicial
+            // 
+            this.pbImagemInicial.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pbImagemInicial.Image = global::MASYEV1.Properties.Resources.pagina_incial;
+            this.pbImagemInicial.Location = new System.Drawing.Point(30, 113);
+            this.pbImagemInicial.Name = "pbImagemInicial";
+            this.pbImagemInicial.Size = new System.Drawing.Size(863, 217);
+            this.pbImagemInicial.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbImagemInicial.TabIndex = 6;
+            this.pbImagemInicial.TabStop = false;
+            // 
             // FrmInicial
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 426);
+            this.ClientSize = new System.Drawing.Size(923, 356);
+            this.Controls.Add(this.pbImagemInicial);
             this.Controls.Add(this.MstInicial);
-            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "FrmInicial";
-            this.Padding = new System.Windows.Forms.Padding(24, 60, 24, 20);
+            this.Padding = new System.Windows.Forms.Padding(27, 69, 27, 23);
             this.Text = "Menu Inicial";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.MstInicial.ResumeLayout(false);
             this.MstInicial.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbImagemInicial)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -223,5 +244,6 @@
         private System.Windows.Forms.ToolStripMenuItem caixaCompraToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem pedidoDeliveryToolStripMenuItem;
+        private System.Windows.Forms.PictureBox pbImagemInicial;
     }
 }

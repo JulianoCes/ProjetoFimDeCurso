@@ -42,9 +42,9 @@
             this.txtValorTotal = new System.Windows.Forms.TextBox();
             this.dgvCaixaVenda = new System.Windows.Forms.DataGridView();
             this.btnAdicionarItem = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnEditarItem = new System.Windows.Forms.Button();
             this.btnExcluirItem = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnFinalizarVenda = new System.Windows.Forms.Button();
             this.btnSair = new System.Windows.Forms.Button();
             this.txtUsuario = new System.Windows.Forms.TextBox();
             this.lblLogado = new System.Windows.Forms.Label();
@@ -153,6 +153,7 @@
             this.dgvCaixaVenda.Name = "dgvCaixaVenda";
             this.dgvCaixaVenda.Size = new System.Drawing.Size(546, 124);
             this.dgvCaixaVenda.TabIndex = 11;
+            this.dgvCaixaVenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCaixaVenda_CellClick);
             // 
             // btnAdicionarItem
             // 
@@ -164,17 +165,19 @@
             this.btnAdicionarItem.TabIndex = 5;
             this.btnAdicionarItem.Text = "Adicionar Item";
             this.btnAdicionarItem.UseVisualStyleBackColor = false;
+            this.btnAdicionarItem.Click += new System.EventHandler(this.btnAdicionarItem_Click);
             // 
-            // button2
+            // btnEditarItem
             // 
-            this.button2.BackColor = System.Drawing.Color.Gray;
-            this.button2.ForeColor = System.Drawing.Color.Navy;
-            this.button2.Location = new System.Drawing.Point(323, 195);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(131, 26);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Editar Item";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnEditarItem.BackColor = System.Drawing.Color.Gray;
+            this.btnEditarItem.ForeColor = System.Drawing.Color.Navy;
+            this.btnEditarItem.Location = new System.Drawing.Point(323, 195);
+            this.btnEditarItem.Name = "btnEditarItem";
+            this.btnEditarItem.Size = new System.Drawing.Size(131, 26);
+            this.btnEditarItem.TabIndex = 6;
+            this.btnEditarItem.Text = "Editar Item";
+            this.btnEditarItem.UseVisualStyleBackColor = false;
+            this.btnEditarItem.Click += new System.EventHandler(this.btnEditarItem_Click);
             // 
             // btnExcluirItem
             // 
@@ -186,17 +189,19 @@
             this.btnExcluirItem.TabIndex = 7;
             this.btnExcluirItem.Text = "Excluir Item";
             this.btnExcluirItem.UseVisualStyleBackColor = false;
+            this.btnExcluirItem.Click += new System.EventHandler(this.btnExcluirItem_Click);
             // 
-            // button4
+            // btnFinalizarVenda
             // 
-            this.button4.BackColor = System.Drawing.Color.Gray;
-            this.button4.ForeColor = System.Drawing.Color.Navy;
-            this.button4.Location = new System.Drawing.Point(212, 357);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(128, 30);
-            this.button4.TabIndex = 8;
-            this.button4.Text = "Finalizar Compra";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnFinalizarVenda.BackColor = System.Drawing.Color.Gray;
+            this.btnFinalizarVenda.ForeColor = System.Drawing.Color.Navy;
+            this.btnFinalizarVenda.Location = new System.Drawing.Point(212, 357);
+            this.btnFinalizarVenda.Name = "btnFinalizarVenda";
+            this.btnFinalizarVenda.Size = new System.Drawing.Size(128, 30);
+            this.btnFinalizarVenda.TabIndex = 8;
+            this.btnFinalizarVenda.Text = "Finalizar Venda";
+            this.btnFinalizarVenda.UseVisualStyleBackColor = false;
+            this.btnFinalizarVenda.Click += new System.EventHandler(this.btnFinalizarVenda_Click);
             // 
             // btnSair
             // 
@@ -229,7 +234,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(76, 114);
+            this.txtNome.Location = new System.Drawing.Point(302, 105);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(215, 21);
             this.txtNome.TabIndex = 20;
@@ -237,7 +242,7 @@
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(20, 117);
+            this.lblNome.Location = new System.Drawing.Point(246, 108);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(45, 15);
             this.lblNome.TabIndex = 19;
@@ -245,7 +250,7 @@
             // 
             // txtTipo
             // 
-            this.txtTipo.Location = new System.Drawing.Point(381, 111);
+            this.txtTipo.Location = new System.Drawing.Point(63, 105);
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(172, 21);
             this.txtTipo.TabIndex = 21;
@@ -253,7 +258,7 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(331, 114);
+            this.lblTipo.Location = new System.Drawing.Point(6, 108);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(35, 15);
             this.lblTipo.TabIndex = 22;
@@ -269,6 +274,7 @@
             this.btnBuscar.TabIndex = 23;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
             // 
             // FrmCaixaVenda
             // 
@@ -285,9 +291,9 @@
             this.Controls.Add(this.txtUsuario);
             this.Controls.Add(this.lblLogado);
             this.Controls.Add(this.btnSair);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnFinalizarVenda);
             this.Controls.Add(this.btnExcluirItem);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.btnEditarItem);
             this.Controls.Add(this.btnAdicionarItem);
             this.Controls.Add(this.dgvCaixaVenda);
             this.Controls.Add(this.txtValorTotal);
@@ -333,9 +339,9 @@
         private System.Windows.Forms.TextBox txtValorTotal;
         private System.Windows.Forms.DataGridView dgvCaixaVenda;
         private System.Windows.Forms.Button btnAdicionarItem;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnEditarItem;
         private System.Windows.Forms.Button btnExcluirItem;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnFinalizarVenda;
         private System.Windows.Forms.Button btnSair;
         private System.Windows.Forms.TextBox txtUsuario;
         private System.Windows.Forms.Label lblLogado;

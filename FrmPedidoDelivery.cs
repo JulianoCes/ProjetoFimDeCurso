@@ -19,38 +19,7 @@ namespace MASYEV1
             InitializeComponent();
         }
         static int botaoclicado = 0;
-       
-
-
-
-        public void CarregaCbxCodigo()
-        {
-            String pro = "SELECT Id, codigo FROM PedidoDelivery";
-            SqlCommand cmd = new SqlCommand(pro, con);
-            Conecta.abrirConexao();
-            cmd.CommandType = CommandType.Text;
-            SqlDataAdapter da = new SqlDataAdapter(pro, con);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "codigo");
-            cbxCodigo.ValueMember = "Id";
-            cbxCodigo.DisplayMember = "codigo";
-            cbxCodigo.DataSource = ds.Tables["codigo"];
-            Conecta.fecharConexao();
-        }
-        public void CarregaCbxTipo()
-        {
-            String pro = "SELECT Id, codigo FROM PedidoDelivery ";
-            SqlCommand cmd = new SqlCommand(pro, con);
-            Conecta.abrirConexao();
-            cmd.CommandType = CommandType.Text;
-            SqlDataAdapter da = new SqlDataAdapter(pro, con);
-            DataSet ds = new DataSet();
-            da.Fill(ds, "tipo");
-            cbxTipo.ValueMember = "Id";
-            cbxTipo.DisplayMember = "tipo";
-            cbxTipo.DataSource = ds.Tables["tipo"];
-            Conecta.fecharConexao();
-        }
+  
 
         private void btnSair_Click(object sender, EventArgs e)
         {

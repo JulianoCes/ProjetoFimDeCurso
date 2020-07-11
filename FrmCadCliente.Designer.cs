@@ -237,6 +237,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(112, 20);
             this.dateTimePicker1.TabIndex = 6;
+            this.dateTimePicker1.Value = new System.DateTime(2020, 7, 10, 0, 0, 0, 0);
             // 
             // dgvCliente
             // 
