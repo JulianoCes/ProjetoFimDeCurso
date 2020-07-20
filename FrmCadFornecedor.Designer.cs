@@ -48,15 +48,16 @@
             this.lblEndereco = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
             this.lblId = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvFornecedor
             // 
             this.dgvFornecedor.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvFornecedor.Location = new System.Drawing.Point(53, 291);
+            this.dgvFornecedor.Location = new System.Drawing.Point(23, 315);
             this.dgvFornecedor.Name = "dgvFornecedor";
-            this.dgvFornecedor.Size = new System.Drawing.Size(485, 100);
+            this.dgvFornecedor.Size = new System.Drawing.Size(679, 87);
             this.dgvFornecedor.TabIndex = 13;
             this.dgvFornecedor.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvFornecedor_CellClick);
             // 
@@ -65,27 +66,28 @@
             this.dtpData.CustomFormat = "dd-MM-yyyy";
             this.dtpData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpData.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpData.Location = new System.Drawing.Point(108, 257);
+            this.dtpData.Location = new System.Drawing.Point(125, 277);
             this.dtpData.Name = "dtpData";
             this.dtpData.Size = new System.Drawing.Size(97, 20);
             this.dtpData.TabIndex = 7;
             // 
             // txtCnpj
             // 
-            this.txtCnpj.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtCnpj.Location = new System.Drawing.Point(83, 128);
+            this.txtCnpj.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtCnpj.ForeColor = System.Drawing.Color.White;
+            this.txtCnpj.Location = new System.Drawing.Point(96, 153);
             this.txtCnpj.Name = "txtCnpj";
             this.txtCnpj.Size = new System.Drawing.Size(199, 20);
             this.txtCnpj.TabIndex = 2;
             // 
             // btnSair
             // 
-            this.btnSair.BackColor = System.Drawing.Color.Gray;
-            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
-            this.btnSair.Location = new System.Drawing.Point(453, 220);
+            this.btnSair.BackColor = System.Drawing.Color.DarkRed;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnSair.Location = new System.Drawing.Point(572, 263);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(98, 46);
+            this.btnSair.Size = new System.Drawing.Size(130, 46);
             this.btnSair.TabIndex = 12;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
@@ -93,12 +95,12 @@
             // 
             // btnExcluir
             // 
-            this.btnExcluir.BackColor = System.Drawing.Color.Gray;
+            this.btnExcluir.BackColor = System.Drawing.Color.DarkRed;
             this.btnExcluir.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnExcluir.Location = new System.Drawing.Point(453, 163);
+            this.btnExcluir.ForeColor = System.Drawing.Color.White;
+            this.btnExcluir.Location = new System.Drawing.Point(572, 191);
             this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(98, 50);
+            this.btnExcluir.Size = new System.Drawing.Size(130, 50);
             this.btnExcluir.TabIndex = 11;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.UseVisualStyleBackColor = false;
@@ -106,12 +108,12 @@
             // 
             // btnEditar
             // 
-            this.btnEditar.BackColor = System.Drawing.Color.Gray;
+            this.btnEditar.BackColor = System.Drawing.Color.DarkRed;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnEditar.Location = new System.Drawing.Point(453, 111);
+            this.btnEditar.ForeColor = System.Drawing.Color.White;
+            this.btnEditar.Location = new System.Drawing.Point(572, 139);
             this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(98, 46);
+            this.btnEditar.Size = new System.Drawing.Size(130, 46);
             this.btnEditar.TabIndex = 10;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
@@ -119,12 +121,12 @@
             // 
             // btnInseri
             // 
-            this.btnInseri.BackColor = System.Drawing.Color.Gray;
+            this.btnInseri.BackColor = System.Drawing.Color.DarkRed;
             this.btnInseri.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnInseri.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnInseri.Location = new System.Drawing.Point(453, 57);
+            this.btnInseri.ForeColor = System.Drawing.Color.White;
+            this.btnInseri.Location = new System.Drawing.Point(572, 85);
             this.btnInseri.Name = "btnInseri";
-            this.btnInseri.Size = new System.Drawing.Size(98, 47);
+            this.btnInseri.Size = new System.Drawing.Size(130, 47);
             this.btnInseri.TabIndex = 9;
             this.btnInseri.Text = "Cadastrar";
             this.btnInseri.UseVisualStyleBackColor = false;
@@ -132,12 +134,12 @@
             // 
             // btnBusca
             // 
-            this.btnBusca.BackColor = System.Drawing.Color.Gray;
+            this.btnBusca.BackColor = System.Drawing.Color.DarkRed;
             this.btnBusca.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBusca.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.btnBusca.Location = new System.Drawing.Point(303, 57);
+            this.btnBusca.ForeColor = System.Drawing.Color.White;
+            this.btnBusca.Location = new System.Drawing.Point(396, 80);
             this.btnBusca.Name = "btnBusca";
-            this.btnBusca.Size = new System.Drawing.Size(98, 32);
+            this.btnBusca.Size = new System.Drawing.Size(132, 34);
             this.btnBusca.TabIndex = 8;
             this.btnBusca.Text = "Buscar";
             this.btnBusca.UseVisualStyleBackColor = false;
@@ -145,40 +147,45 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtEmail.Location = new System.Drawing.Point(83, 220);
+            this.txtEmail.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtEmail.ForeColor = System.Drawing.Color.White;
+            this.txtEmail.Location = new System.Drawing.Point(96, 245);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(318, 20);
             this.txtEmail.TabIndex = 6;
             // 
             // txtTelefone
             // 
-            this.txtTelefone.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtTelefone.Location = new System.Drawing.Point(83, 194);
+            this.txtTelefone.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtTelefone.ForeColor = System.Drawing.Color.White;
+            this.txtTelefone.Location = new System.Drawing.Point(96, 219);
             this.txtTelefone.Name = "txtTelefone";
             this.txtTelefone.Size = new System.Drawing.Size(199, 20);
             this.txtTelefone.TabIndex = 4;
             // 
             // txtEndereco
             // 
-            this.txtEndereco.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtEndereco.Location = new System.Drawing.Point(83, 160);
+            this.txtEndereco.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtEndereco.ForeColor = System.Drawing.Color.White;
+            this.txtEndereco.Location = new System.Drawing.Point(96, 185);
             this.txtEndereco.Name = "txtEndereco";
             this.txtEndereco.Size = new System.Drawing.Size(318, 20);
             this.txtEndereco.TabIndex = 3;
             // 
             // txtNome
             // 
-            this.txtNome.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtNome.Location = new System.Drawing.Point(83, 95);
+            this.txtNome.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtNome.ForeColor = System.Drawing.Color.White;
+            this.txtNome.Location = new System.Drawing.Point(96, 120);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(318, 20);
+            this.txtNome.Size = new System.Drawing.Size(432, 20);
             this.txtNome.TabIndex = 1;
             // 
             // txtId
             // 
-            this.txtId.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txtId.Location = new System.Drawing.Point(83, 59);
+            this.txtId.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtId.ForeColor = System.Drawing.Color.White;
+            this.txtId.Location = new System.Drawing.Point(96, 84);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(55, 20);
             this.txtId.TabIndex = 95;
@@ -187,7 +194,8 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(31, 223);
+            this.lblEmail.ForeColor = System.Drawing.Color.White;
+            this.lblEmail.Location = new System.Drawing.Point(44, 248);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(41, 13);
             this.lblEmail.TabIndex = 94;
@@ -197,7 +205,8 @@
             // 
             this.lblData.AutoSize = true;
             this.lblData.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblData.Location = new System.Drawing.Point(11, 257);
+            this.lblData.ForeColor = System.Drawing.Color.White;
+            this.lblData.Location = new System.Drawing.Point(28, 277);
             this.lblData.Name = "lblData";
             this.lblData.Size = new System.Drawing.Size(91, 13);
             this.lblData.TabIndex = 93;
@@ -207,7 +216,8 @@
             // 
             this.lblTelefone.AutoSize = true;
             this.lblTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefone.Location = new System.Drawing.Point(15, 194);
+            this.lblTelefone.ForeColor = System.Drawing.Color.White;
+            this.lblTelefone.Location = new System.Drawing.Point(28, 219);
             this.lblTelefone.Name = "lblTelefone";
             this.lblTelefone.Size = new System.Drawing.Size(57, 13);
             this.lblTelefone.TabIndex = 92;
@@ -217,7 +227,8 @@
             // 
             this.lblCpf.AutoSize = true;
             this.lblCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCpf.Location = new System.Drawing.Point(42, 131);
+            this.lblCpf.ForeColor = System.Drawing.Color.White;
+            this.lblCpf.Location = new System.Drawing.Point(55, 156);
             this.lblCpf.Name = "lblCpf";
             this.lblCpf.Size = new System.Drawing.Size(38, 13);
             this.lblCpf.TabIndex = 91;
@@ -227,7 +238,8 @@
             // 
             this.lblEndereco.AutoSize = true;
             this.lblEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEndereco.Location = new System.Drawing.Point(11, 163);
+            this.lblEndereco.ForeColor = System.Drawing.Color.White;
+            this.lblEndereco.Location = new System.Drawing.Point(24, 188);
             this.lblEndereco.Name = "lblEndereco";
             this.lblEndereco.Size = new System.Drawing.Size(61, 13);
             this.lblEndereco.TabIndex = 90;
@@ -237,7 +249,8 @@
             // 
             this.lblNome.AutoSize = true;
             this.lblNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNome.Location = new System.Drawing.Point(33, 95);
+            this.lblNome.ForeColor = System.Drawing.Color.White;
+            this.lblNome.Location = new System.Drawing.Point(46, 120);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(39, 13);
             this.lblNome.TabIndex = 89;
@@ -247,17 +260,30 @@
             // 
             this.lblId.AutoSize = true;
             this.lblId.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblId.Location = new System.Drawing.Point(50, 62);
+            this.lblId.ForeColor = System.Drawing.Color.White;
+            this.lblId.Location = new System.Drawing.Point(63, 87);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(20, 13);
             this.lblId.TabIndex = 88;
             this.lblId.Text = "ID";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(28, 299);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(71, 15);
+            this.label1.TabIndex = 96;
+            this.label1.Text = "Descrição";
+            // 
             // FrmCadFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(578, 406);
+            this.ClientSize = new System.Drawing.Size(722, 406);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.dgvFornecedor);
             this.Controls.Add(this.dtpData);
             this.Controls.Add(this.txtCnpj);
@@ -279,7 +305,10 @@
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblId);
             this.Name = "FrmCadFornecedor";
+            this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "FrmCadFornecedor";
+            this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.FrmCadFornecedor_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvFornecedor)).EndInit();
             this.ResumeLayout(false);
@@ -309,5 +338,6 @@
         private System.Windows.Forms.Label lblEndereco;
         private System.Windows.Forms.Label lblNome;
         private System.Windows.Forms.Label lblId;
+        private System.Windows.Forms.Label label1;
     }
 }

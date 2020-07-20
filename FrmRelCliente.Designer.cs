@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.ClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DBcasa_carneDataSet1 = new MASYEV1.DBcasa_carneDataSet1();
             this.RelCliente = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -55,14 +55,14 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.RelCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            reportDataSource2.Name = "DataSet1";
-            reportDataSource2.Value = this.ClienteBindingSource;
-            this.RelCliente.LocalReport.DataSources.Add(reportDataSource2);
-            this.RelCliente.LocalReport.ReportEmbeddedResource = "MASYEV1.Report1.rdlc";
+            reportDataSource1.Name = "DataSet1";
+            reportDataSource1.Value = this.ClienteBindingSource;
+            this.RelCliente.LocalReport.DataSources.Add(reportDataSource1);
+            this.RelCliente.LocalReport.ReportEmbeddedResource = "MASYEV1.RelCliente.rdlc";
             this.RelCliente.Location = new System.Drawing.Point(12, 63);
             this.RelCliente.Name = "RelCliente";
             this.RelCliente.ServerReport.BearerToken = null;
-            this.RelCliente.Size = new System.Drawing.Size(760, 242);
+            this.RelCliente.Size = new System.Drawing.Size(764, 252);
             this.RelCliente.TabIndex = 0;
             // 
             // ClienteTableAdapter
@@ -71,11 +71,12 @@
             // 
             // btnSair
             // 
-            this.btnSair.BackColor = System.Drawing.Color.Gray;
-            this.btnSair.ForeColor = System.Drawing.Color.Maroon;
-            this.btnSair.Location = new System.Drawing.Point(650, 311);
+            this.btnSair.BackColor = System.Drawing.Color.DarkRed;
+            this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSair.ForeColor = System.Drawing.Color.Black;
+            this.btnSair.Location = new System.Drawing.Point(665, 321);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(111, 23);
+            this.btnSair.Size = new System.Drawing.Size(111, 29);
             this.btnSair.TabIndex = 1;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
@@ -85,11 +86,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 342);
+            this.ClientSize = new System.Drawing.Size(788, 352);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.RelCliente);
             this.Name = "FrmRelCliente";
+            this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "FrmRelCliente";
+            this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.FrmRelCliente_Load);
             ((System.ComponentModel.ISupportInitialize)(this.ClienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.DBcasa_carneDataSet1)).EndInit();

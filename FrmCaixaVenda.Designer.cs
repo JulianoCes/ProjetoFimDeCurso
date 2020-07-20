@@ -59,7 +59,9 @@
             // lblId
             // 
             this.lblId.AutoSize = true;
-            this.lblId.Location = new System.Drawing.Point(20, 61);
+            this.lblId.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lblId.ForeColor = System.Drawing.Color.White;
+            this.lblId.Location = new System.Drawing.Point(36, 99);
             this.lblId.Name = "lblId";
             this.lblId.Size = new System.Drawing.Size(21, 15);
             this.lblId.TabIndex = 0;
@@ -68,7 +70,9 @@
             // lblCodigo
             // 
             this.lblCodigo.AutoSize = true;
-            this.lblCodigo.Location = new System.Drawing.Point(108, 61);
+            this.lblCodigo.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lblCodigo.ForeColor = System.Drawing.Color.White;
+            this.lblCodigo.Location = new System.Drawing.Point(124, 99);
             this.lblCodigo.Name = "lblCodigo";
             this.lblCodigo.Size = new System.Drawing.Size(52, 15);
             this.lblCodigo.TabIndex = 1;
@@ -77,7 +81,9 @@
             // lblDescricao
             // 
             this.lblDescricao.AutoSize = true;
-            this.lblDescricao.Location = new System.Drawing.Point(20, 209);
+            this.lblDescricao.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lblDescricao.ForeColor = System.Drawing.Color.White;
+            this.lblDescricao.Location = new System.Drawing.Point(27, 190);
             this.lblDescricao.Name = "lblDescricao";
             this.lblDescricao.Size = new System.Drawing.Size(71, 15);
             this.lblDescricao.TabIndex = 2;
@@ -86,6 +92,8 @@
             // lblValor
             // 
             this.lblValor.AutoSize = true;
+            this.lblValor.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lblValor.ForeColor = System.Drawing.Color.White;
             this.lblValor.Location = new System.Drawing.Point(195, 161);
             this.lblValor.Name = "lblValor";
             this.lblValor.Size = new System.Drawing.Size(40, 15);
@@ -95,7 +103,9 @@
             // lblValorTotal
             // 
             this.lblValorTotal.AutoSize = true;
-            this.lblValorTotal.Location = new System.Drawing.Point(20, 359);
+            this.lblValorTotal.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lblValorTotal.ForeColor = System.Drawing.Color.White;
+            this.lblValorTotal.Location = new System.Drawing.Point(27, 345);
             this.lblValorTotal.Name = "lblValorTotal";
             this.lblValorTotal.Size = new System.Drawing.Size(76, 15);
             this.lblValorTotal.TabIndex = 4;
@@ -104,6 +114,8 @@
             // lblQuantidade
             // 
             this.lblQuantidade.AutoSize = true;
+            this.lblQuantidade.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lblQuantidade.ForeColor = System.Drawing.Color.White;
             this.lblQuantidade.Location = new System.Drawing.Point(28, 161);
             this.lblQuantidade.Name = "lblQuantidade";
             this.lblQuantidade.Size = new System.Drawing.Size(81, 15);
@@ -112,20 +124,26 @@
             // 
             // txtId
             // 
-            this.txtId.Location = new System.Drawing.Point(47, 58);
+            this.txtId.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtId.ForeColor = System.Drawing.Color.White;
+            this.txtId.Location = new System.Drawing.Point(63, 96);
             this.txtId.Name = "txtId";
             this.txtId.Size = new System.Drawing.Size(55, 21);
             this.txtId.TabIndex = 6;
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(166, 58);
+            this.txtCodigo.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtCodigo.ForeColor = System.Drawing.Color.White;
+            this.txtCodigo.Location = new System.Drawing.Point(182, 98);
             this.txtCodigo.Name = "txtCodigo";
             this.txtCodigo.Size = new System.Drawing.Size(288, 21);
             this.txtCodigo.TabIndex = 1;
             // 
             // txtQuantidade
             // 
+            this.txtQuantidade.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtQuantidade.ForeColor = System.Drawing.Color.White;
             this.txtQuantidade.Location = new System.Drawing.Point(115, 161);
             this.txtQuantidade.Name = "txtQuantidade";
             this.txtQuantidade.Size = new System.Drawing.Size(55, 21);
@@ -133,6 +151,8 @@
             // 
             // txtValor
             // 
+            this.txtValor.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtValor.ForeColor = System.Drawing.Color.White;
             this.txtValor.Location = new System.Drawing.Point(253, 161);
             this.txtValor.Name = "txtValor";
             this.txtValor.Size = new System.Drawing.Size(100, 21);
@@ -140,7 +160,9 @@
             // 
             // txtValorTotal
             // 
-            this.txtValorTotal.Location = new System.Drawing.Point(102, 359);
+            this.txtValorTotal.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtValorTotal.ForeColor = System.Drawing.Color.White;
+            this.txtValorTotal.Location = new System.Drawing.Point(109, 345);
             this.txtValorTotal.Name = "txtValorTotal";
             this.txtValorTotal.Size = new System.Drawing.Size(86, 21);
             this.txtValorTotal.TabIndex = 10;
@@ -149,19 +171,19 @@
             // 
             this.dgvCaixaVenda.AllowUserToOrderColumns = true;
             this.dgvCaixaVenda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvCaixaVenda.Location = new System.Drawing.Point(23, 227);
+            this.dgvCaixaVenda.Location = new System.Drawing.Point(30, 208);
             this.dgvCaixaVenda.Name = "dgvCaixaVenda";
-            this.dgvCaixaVenda.Size = new System.Drawing.Size(546, 124);
+            this.dgvCaixaVenda.Size = new System.Drawing.Size(741, 124);
             this.dgvCaixaVenda.TabIndex = 11;
             this.dgvCaixaVenda.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvCaixaVenda_CellClick);
             // 
             // btnAdicionarItem
             // 
-            this.btnAdicionarItem.BackColor = System.Drawing.Color.Gray;
-            this.btnAdicionarItem.ForeColor = System.Drawing.Color.Navy;
-            this.btnAdicionarItem.Location = new System.Drawing.Point(178, 195);
+            this.btnAdicionarItem.BackColor = System.Drawing.Color.DarkRed;
+            this.btnAdicionarItem.ForeColor = System.Drawing.Color.White;
+            this.btnAdicionarItem.Location = new System.Drawing.Point(640, 83);
             this.btnAdicionarItem.Name = "btnAdicionarItem";
-            this.btnAdicionarItem.Size = new System.Drawing.Size(113, 26);
+            this.btnAdicionarItem.Size = new System.Drawing.Size(131, 36);
             this.btnAdicionarItem.TabIndex = 5;
             this.btnAdicionarItem.Text = "Adicionar Item";
             this.btnAdicionarItem.UseVisualStyleBackColor = false;
@@ -169,11 +191,11 @@
             // 
             // btnEditarItem
             // 
-            this.btnEditarItem.BackColor = System.Drawing.Color.Gray;
-            this.btnEditarItem.ForeColor = System.Drawing.Color.Navy;
-            this.btnEditarItem.Location = new System.Drawing.Point(323, 195);
+            this.btnEditarItem.BackColor = System.Drawing.Color.DarkRed;
+            this.btnEditarItem.ForeColor = System.Drawing.Color.White;
+            this.btnEditarItem.Location = new System.Drawing.Point(640, 125);
             this.btnEditarItem.Name = "btnEditarItem";
-            this.btnEditarItem.Size = new System.Drawing.Size(131, 26);
+            this.btnEditarItem.Size = new System.Drawing.Size(131, 36);
             this.btnEditarItem.TabIndex = 6;
             this.btnEditarItem.Text = "Editar Item";
             this.btnEditarItem.UseVisualStyleBackColor = false;
@@ -181,11 +203,11 @@
             // 
             // btnExcluirItem
             // 
-            this.btnExcluirItem.BackColor = System.Drawing.Color.Gray;
-            this.btnExcluirItem.ForeColor = System.Drawing.Color.Navy;
-            this.btnExcluirItem.Location = new System.Drawing.Point(467, 195);
+            this.btnExcluirItem.BackColor = System.Drawing.Color.DarkRed;
+            this.btnExcluirItem.ForeColor = System.Drawing.Color.White;
+            this.btnExcluirItem.Location = new System.Drawing.Point(640, 167);
             this.btnExcluirItem.Name = "btnExcluirItem";
-            this.btnExcluirItem.Size = new System.Drawing.Size(102, 26);
+            this.btnExcluirItem.Size = new System.Drawing.Size(131, 35);
             this.btnExcluirItem.TabIndex = 7;
             this.btnExcluirItem.Text = "Excluir Item";
             this.btnExcluirItem.UseVisualStyleBackColor = false;
@@ -193,9 +215,9 @@
             // 
             // btnFinalizarVenda
             // 
-            this.btnFinalizarVenda.BackColor = System.Drawing.Color.Gray;
-            this.btnFinalizarVenda.ForeColor = System.Drawing.Color.Navy;
-            this.btnFinalizarVenda.Location = new System.Drawing.Point(212, 357);
+            this.btnFinalizarVenda.BackColor = System.Drawing.Color.DarkRed;
+            this.btnFinalizarVenda.ForeColor = System.Drawing.Color.White;
+            this.btnFinalizarVenda.Location = new System.Drawing.Point(201, 338);
             this.btnFinalizarVenda.Name = "btnFinalizarVenda";
             this.btnFinalizarVenda.Size = new System.Drawing.Size(128, 30);
             this.btnFinalizarVenda.TabIndex = 8;
@@ -205,12 +227,12 @@
             // 
             // btnSair
             // 
-            this.btnSair.BackColor = System.Drawing.Color.Gray;
+            this.btnSair.BackColor = System.Drawing.Color.DarkRed;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.ForeColor = System.Drawing.Color.Maroon;
-            this.btnSair.Location = new System.Drawing.Point(467, 357);
+            this.btnSair.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.btnSair.Location = new System.Drawing.Point(640, 339);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(102, 30);
+            this.btnSair.Size = new System.Drawing.Size(131, 32);
             this.btnSair.TabIndex = 9;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
@@ -218,6 +240,8 @@
             // 
             // txtUsuario
             // 
+            this.txtUsuario.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtUsuario.ForeColor = System.Drawing.Color.White;
             this.txtUsuario.Location = new System.Drawing.Point(439, 161);
             this.txtUsuario.Name = "txtUsuario";
             this.txtUsuario.Size = new System.Drawing.Size(130, 21);
@@ -226,6 +250,8 @@
             // lblLogado
             // 
             this.lblLogado.AutoSize = true;
+            this.lblLogado.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lblLogado.ForeColor = System.Drawing.Color.White;
             this.lblLogado.Location = new System.Drawing.Point(378, 164);
             this.lblLogado.Name = "lblLogado";
             this.lblLogado.Size = new System.Drawing.Size(55, 15);
@@ -234,15 +260,19 @@
             // 
             // txtNome
             // 
-            this.txtNome.Location = new System.Drawing.Point(302, 105);
+            this.txtNome.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtNome.ForeColor = System.Drawing.Color.White;
+            this.txtNome.Location = new System.Drawing.Point(320, 131);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(215, 21);
+            this.txtNome.Size = new System.Drawing.Size(273, 21);
             this.txtNome.TabIndex = 20;
             // 
             // lblNome
             // 
             this.lblNome.AutoSize = true;
-            this.lblNome.Location = new System.Drawing.Point(246, 108);
+            this.lblNome.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lblNome.ForeColor = System.Drawing.Color.White;
+            this.lblNome.Location = new System.Drawing.Point(264, 134);
             this.lblNome.Name = "lblNome";
             this.lblNome.Size = new System.Drawing.Size(45, 15);
             this.lblNome.TabIndex = 19;
@@ -250,7 +280,9 @@
             // 
             // txtTipo
             // 
-            this.txtTipo.Location = new System.Drawing.Point(63, 105);
+            this.txtTipo.BackColor = System.Drawing.SystemColors.WindowText;
+            this.txtTipo.ForeColor = System.Drawing.Color.White;
+            this.txtTipo.Location = new System.Drawing.Point(81, 131);
             this.txtTipo.Name = "txtTipo";
             this.txtTipo.Size = new System.Drawing.Size(172, 21);
             this.txtTipo.TabIndex = 21;
@@ -258,7 +290,9 @@
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
-            this.lblTipo.Location = new System.Drawing.Point(6, 108);
+            this.lblTipo.BackColor = System.Drawing.SystemColors.WindowText;
+            this.lblTipo.ForeColor = System.Drawing.Color.White;
+            this.lblTipo.Location = new System.Drawing.Point(27, 134);
             this.lblTipo.Name = "lblTipo";
             this.lblTipo.Size = new System.Drawing.Size(35, 15);
             this.lblTipo.TabIndex = 22;
@@ -266,11 +300,11 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Gray;
-            this.btnBuscar.ForeColor = System.Drawing.Color.Navy;
-            this.btnBuscar.Location = new System.Drawing.Point(467, 55);
+            this.btnBuscar.BackColor = System.Drawing.Color.DarkRed;
+            this.btnBuscar.ForeColor = System.Drawing.Color.White;
+            this.btnBuscar.Location = new System.Drawing.Point(476, 89);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(102, 26);
+            this.btnBuscar.Size = new System.Drawing.Size(117, 35);
             this.btnBuscar.TabIndex = 23;
             this.btnBuscar.Text = "Buscar";
             this.btnBuscar.UseVisualStyleBackColor = false;
@@ -282,7 +316,7 @@
             this.AutoSize = true;
             this.AutoValidate = System.Windows.Forms.AutoValidate.Disable;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.ClientSize = new System.Drawing.Size(610, 397);
+            this.ClientSize = new System.Drawing.Size(793, 382);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.txtTipo);
             this.Controls.Add(this.lblTipo);
@@ -313,9 +347,10 @@
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FrmCaixaVenda";
             this.Padding = new System.Windows.Forms.Padding(27, 69, 27, 23);
+            this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Caixa";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
-            this.Theme = MetroFramework.MetroThemeStyle.Light;
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.TransparencyKey = System.Drawing.SystemColors.ControlDarkDark;
             this.Load += new System.EventHandler(this.FrmCaixaVenda_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvCaixaVenda)).EndInit();

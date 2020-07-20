@@ -53,7 +53,9 @@
             // 
             // MstInicial
             // 
+            this.MstInicial.AccessibleRole = System.Windows.Forms.AccessibleRole.Border;
             this.MstInicial.BackColor = System.Drawing.Color.Brown;
+            this.MstInicial.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.MstInicial.Font = new System.Drawing.Font("Arial Black", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MstInicial.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.cadastrosToolStripMenuItem,
@@ -169,18 +171,21 @@
             this.produtosToolStripMenuItem1.Name = "produtosToolStripMenuItem1";
             this.produtosToolStripMenuItem1.Size = new System.Drawing.Size(188, 34);
             this.produtosToolStripMenuItem1.Text = "Produtos";
+            this.produtosToolStripMenuItem1.Click += new System.EventHandler(this.produtosToolStripMenuItem1_Click);
             // 
             // usuárioToolStripMenuItem
             // 
             this.usuárioToolStripMenuItem.Name = "usuárioToolStripMenuItem";
             this.usuárioToolStripMenuItem.Size = new System.Drawing.Size(188, 34);
             this.usuárioToolStripMenuItem.Text = "Usuário";
+            this.usuárioToolStripMenuItem.Click += new System.EventHandler(this.usuárioToolStripMenuItem_Click);
             // 
             // caixaToolStripMenuItem1
             // 
             this.caixaToolStripMenuItem1.Name = "caixaToolStripMenuItem1";
             this.caixaToolStripMenuItem1.Size = new System.Drawing.Size(188, 34);
             this.caixaToolStripMenuItem1.Text = "Caixa";
+            this.caixaToolStripMenuItem1.Click += new System.EventHandler(this.caixaToolStripMenuItem1_Click);
             // 
             // sairToolStripMenuItem
             // 
@@ -196,9 +201,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pbImagemInicial.ErrorImage = null;
             this.pbImagemInicial.Image = global::MASYEV1.Properties.Resources.pagina_incial;
-            this.pbImagemInicial.Location = new System.Drawing.Point(33, 110);
+            this.pbImagemInicial.Location = new System.Drawing.Point(27, 110);
             this.pbImagemInicial.Name = "pbImagemInicial";
-            this.pbImagemInicial.Size = new System.Drawing.Size(863, 217);
+            this.pbImagemInicial.Size = new System.Drawing.Size(869, 217);
             this.pbImagemInicial.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbImagemInicial.TabIndex = 6;
             this.pbImagemInicial.TabStop = false;
@@ -207,17 +212,22 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::MASYEV1.Properties.Resources.pagina_incial;
             this.ClientSize = new System.Drawing.Size(923, 356);
             this.Controls.Add(this.pbImagemInicial);
             this.Controls.Add(this.MstInicial);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ForeColor = System.Drawing.Color.DarkRed;
             this.HelpButton = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5, 3, 5, 3);
             this.Name = "FrmInicial";
             this.Padding = new System.Windows.Forms.Padding(27, 69, 27, 23);
+            this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Menu Inicial";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
+            this.Theme = MetroFramework.MetroThemeStyle.Dark;
+            this.TransparencyKey = System.Drawing.Color.Black;
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.MstInicial.ResumeLayout(false);
             this.MstInicial.PerformLayout();

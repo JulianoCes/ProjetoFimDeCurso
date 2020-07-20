@@ -75,5 +75,23 @@ namespace MASYEV1
             FrmRelCliente relcli = new FrmRelCliente();
             relcli.Show();
         }
+
+        private void produtosToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmRelProduto relpro = new FrmRelProduto();
+            relpro.Show();
+        }
+
+        private void usuárioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmRelusuario relusu = new FrmRelusuario();
+            relusu.Show();
+        }
+
+        private void caixaToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FrmRelCaixa relca = new FrmRelCaixa();
+            relca.Show();
+        }
     }
 }

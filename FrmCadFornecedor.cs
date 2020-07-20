@@ -141,6 +141,8 @@ namespace MASYEV1
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = "LocalizarFornecedor";
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", this.txtId.Text);
+                cmd.Parameters.AddWithValue("@nome", this.txtNome.Text);
                 cmd.Parameters.AddWithValue("@cnpj", this.txtCnpj.Text);
                 Conecta.abrirConexao();
                 SqlDataReader rd = cmd.ExecuteReader();
@@ -152,7 +154,7 @@ namespace MASYEV1
                     txtEndereco.Text = rd["endereco"].ToString();
                     txtTelefone.Text = rd["telefone"].ToString();
                     txtEmail.Text = rd["email"].ToString();
-                    dtpData.Text = rd["data"].ToString();
+                    dtpData.Text = rd["data_cadastro"].ToString();
                     Conecta.fecharConexao();
                 }
                 else

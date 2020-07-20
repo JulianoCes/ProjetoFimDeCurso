@@ -145,12 +145,14 @@ namespace MASYEV1
                 cmd.CommandText = "LocalizarUsuario";
                 cmd.CommandType = CommandType.StoredProcedure;
                 cmd.Parameters.AddWithValue("@Id", this.txtId.Text);
+                cmd.Parameters.AddWithValue("@nome", this.txtNome.Text);
+                cmd.Parameters.AddWithValue("@cpf", this.txtCpf.Text);
                 Conecta.abrirConexao();
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
                     txtId.Text = rd["Id"].ToString();
-                    txtNome.Text = rd["nome"].ToString();
+                    txtNome.Text = rd["usuario"].ToString();
                     txtCpf.Text = rd["cpf"].ToString();
                     txtFone.Text = rd["fone"].ToString();
                     txtEmail.Text = rd["email"].ToString();

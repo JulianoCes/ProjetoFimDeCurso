@@ -141,6 +141,8 @@ namespace MASYEV1
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = "LocalizarCliente";
                 cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", this.txtId.Text);
+                cmd.Parameters.AddWithValue("@nome", this.txtNome.Text);
                 cmd.Parameters.AddWithValue("@cpf", this.txtCpf.Text);
                 Conecta.abrirConexao();
                 SqlDataReader rd = cmd.ExecuteReader();

@@ -12,6 +12,7 @@
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -24,7 +25,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -108,6 +108,16 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBcasa_carneDataSet1.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DBcasa_carneDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBcasa_carneDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DBcasa_carneDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBcasa_carneDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmCadCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,11 +178,29 @@
     <Compile Include="FrmPedidoDelivery.Designer.cs">
       <DependentUpon>FrmPedidoDelivery.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmRelCaixa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRelCaixa.Designer.cs">
+      <DependentUpon>FrmRelCaixa.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmRelCliente.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmRelCliente.Designer.cs">
       <DependentUpon>FrmRelCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRelProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRelProduto.Designer.cs">
+      <DependentUpon>FrmRelProduto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmRelusuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmRelusuario.Designer.cs">
+      <DependentUpon>FrmRelusuario.cs</DependentUpon>
     </Compile>
     <Compile Include="Produto.cs" />
     <Compile Include="Program.cs" />
@@ -208,8 +236,17 @@
     <EmbeddedResource Include="FrmPedidoDelivery.resx">
       <DependentUpon>FrmPedidoDelivery.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmRelCaixa.resx">
+      <DependentUpon>FrmRelCaixa.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmRelCliente.resx">
       <DependentUpon>FrmRelCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRelProduto.resx">
+      <DependentUpon>FrmRelProduto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmRelusuario.resx">
+      <DependentUpon>FrmRelusuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -221,7 +258,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Report1.rdlc" />
+    <EmbeddedResource Include="RelCaixa.rdlc" />
+    <EmbeddedResource Include="RelCliente.rdlc" />
+    <EmbeddedResource Include="RelProduto.rdlc" />
+    <EmbeddedResource Include="RelUsuario.rdlc" />
     <None Include="DBcasa_carneDataSet.xsc">
       <DependentUpon>DBcasa_carneDataSet.xsd</DependentUpon>
     </None>
@@ -243,6 +283,28 @@
     </None>
     <None Include="DBcasa_carneDataSet1.xss">
       <DependentUpon>DBcasa_carneDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="DBcasa_carneDataSet2.xsc">
+      <DependentUpon>DBcasa_carneDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DBcasa_carneDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBcasa_carneDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBcasa_carneDataSet2.xss">
+      <DependentUpon>DBcasa_carneDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="DBcasa_carneDataSet3.xsc">
+      <DependentUpon>DBcasa_carneDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DBcasa_carneDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBcasa_carneDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBcasa_carneDataSet3.xss">
+      <DependentUpon>DBcasa_carneDataSet3.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

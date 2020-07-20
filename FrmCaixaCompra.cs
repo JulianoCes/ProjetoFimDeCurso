@@ -104,9 +104,11 @@ namespace MASYEV1
         {
             SqlConnection con = Conecta.abrirConexao();
             SqlCommand cmd = con.CreateCommand();
-            cmd.CommandText = "LocalizarProduto";
+            cmd.CommandText = "LocalizarEstoqueFisico";
             cmd.CommandType = CommandType.StoredProcedure;
+            cmd.Parameters.AddWithValue("@id", txtId.Text);
             cmd.Parameters.AddWithValue("@codigo", cbxCodigo.Text);
+            cmd.Parameters.AddWithValue("@nome", cbxNomeProduto.Text);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
              DataSet ds = new DataSet();
              da.Fill(ds);
@@ -124,6 +126,9 @@ namespace MASYEV1
                 cbxTipo.Text = rd["tipo"].ToString();
                 cbxNomeProduto.Text = rd["nome"].ToString();
                 cbxMarcaProduto.Text = rd["marca"].ToString();
+                txtQuantidade.Text = rd["quantidade"].ToString();
+                txtUsuario.Text = rd["usuario"].ToString();
+                txtValor.Text = rd["valor"].ToString();
                 Conecta.fecharConexao();
                 rd.Close();
             }
@@ -161,7 +166,9 @@ namespace MASYEV1
                 SqlConnection con = Conecta.abrirConexao();
                 SqlCommand compra = new SqlCommand("InserirCompraEstoque", con);
                 compra.CommandType = CommandType.StoredProcedure;
-                compra.Parameters.AddWithValue("@id_produto", SqlDbType.Int).Value = Convert.ToInt32(txtId.Text);
+                compra.Parameters.AddWithValue("@codigo", SqlDbType.Int).Value = cbxCodigo;
+                compra.Parameters.AddWithValue("@tipo", SqlDbType.Int).Value = cbxTipo;
+                compra.Parameters.AddWithValue("@nome", SqlDbType.Int).Value = cbxNomeProduto;
                 compra.Parameters.AddWithValue("@quantidade", SqlDbType.Int).Value = Convert.ToInt32(txtQuantidade.Text);
                 compra.Parameters.AddWithValue("@valor", SqlDbType.Int).Value = Convert.ToDecimal(txtValor.Text);
                 compra.Parameters.AddWithValue("@usuario", SqlDbType.NChar).Value = txtUsuario.Text;
@@ -207,9 +214,44 @@ namespace MASYEV1
                     cbxTipo.Text = row.Cells[2].Value.ToString();
                     cbxNomeProduto.Text = row.Cells[3].Value.ToString();
                     cbxMarcaProduto.Text = row.Cells[4].Value.ToString();
-                   // txtUsuario.Text = row.Cells[5].Value.ToString();
-                   // txtValor.Text = row.Cells[6].Value.ToString();
+                    txtUsuario.Text = row.Cells[5].Value.ToString();
+                    txtValor.Text = row.Cells[6].Value.ToString();
                 }
+            }
+            catch (Exception er)
+            {
+                MessageBox.Show(er.Message);
+            }
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                SqlConnection con = Conecta.abrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "AtualizarCompraEstoque";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", this.txtId.Text);
+                cmd.Parameters.AddWithValue("@codigo", this.cbxCodigo.Text);
+                cmd.Parameters.AddWithValue("@tipo", this.cbxTipo.Text);
+                cmd.Parameters.AddWithValue("@Nome", this.cbxNomeProduto.Text);
+                cmd.Parameters.AddWithValue("@valor", SqlDbType.Int).Value = Convert.ToDecimal(txtValor.Text);
+                cmd.Parameters.AddWithValue("@usuario", SqlDbType.NChar).Value = txtUsuario.Text;
+                cmd.Parameters.AddWithValue("@valortotal", SqlDbType.Int).Value = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValor.Text);
+                cmd.Parameters.AddWithValue("@datacompra", SqlDbType.DateTime).Value = DateTime.Now;
+                Conecta.abrirConexao();
+                cmd.ExecuteNonQuery();
+                CarregaDgvCaixaCompra();
+                MessageBox.Show("Produto atualizado com sucesso!", "Atualiza", MessageBoxButtons.OK);
+                Conecta.fecharConexao();
+                txtId.Text = "";
+                cbxCodigo.Text = "";
+                cbxTipo.Text = "";
+                cbxNomeProduto.Text = "";
+                txtQuantidade.Text = "";
+                txtUsuario.Text = "";
+                txtValor.Text = "";
             }
             catch (Exception er)
             {
