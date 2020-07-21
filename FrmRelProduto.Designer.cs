@@ -69,7 +69,7 @@
             this.btnSair.ForeColor = System.Drawing.SystemColors.WindowText;
             this.btnSair.Location = new System.Drawing.Point(660, 353);
             this.btnSair.Name = "btnSair";
-            this.btnSair.Size = new System.Drawing.Size(117, 35);
+            this.btnSair.Size = new System.Drawing.Size(117, 28);
             this.btnSair.TabIndex = 1;
             this.btnSair.Text = "Sair";
             this.btnSair.UseVisualStyleBackColor = false;
@@ -83,7 +83,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(801, 400);
+            this.ClientSize = new System.Drawing.Size(822, 385);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.reportViewer1);
             this.Name = "FrmRelProduto";

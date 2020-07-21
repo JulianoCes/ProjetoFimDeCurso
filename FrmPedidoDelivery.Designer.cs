@@ -67,7 +67,7 @@
             this.cbxCodigo.Name = "cbxCodigo";
             this.cbxCodigo.Size = new System.Drawing.Size(298, 21);
             this.cbxCodigo.TabIndex = 100;
-            this.cbxCodigo.SelectedIndexChanged += new System.EventHandler(this.cbxCodigo_SelectedIndexChanged);
+       
             // 
             // bntLocalizar
             // 
@@ -196,7 +196,7 @@
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(181, 21);
             this.cbxTipo.TabIndex = 89;
-            this.cbxTipo.SelectedIndexChanged += new System.EventHandler(this.cbxTipo_SelectedIndexChanged);
+          
             // 
             // lblTipo
             // 

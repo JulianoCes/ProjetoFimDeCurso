@@ -118,6 +118,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DBcasa_carneDataSet3.xsd</DependentUpon>
     </Compile>
+    <Compile Include="DBcasa_carneDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DBcasa_carneDataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="FrmCadCliente.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -159,6 +164,12 @@
     </Compile>
     <Compile Include="FrmCaixaVenda.Designer.cs">
       <DependentUpon>FrmCaixaVenda.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmComandoPedido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmComandoPedido.Designer.cs">
+      <DependentUpon>FrmComandoPedido.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmInicial.cs">
       <SubType>Form</SubType>
@@ -227,6 +238,9 @@
     <EmbeddedResource Include="FrmCaixaVenda.resx">
       <DependentUpon>FrmCaixaVenda.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmComandoPedido.resx">
+      <DependentUpon>FrmComandoPedido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FrmInicial.resx">
       <DependentUpon>FrmInicial.cs</DependentUpon>
     </EmbeddedResource>
@@ -258,10 +272,11 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="RelCaixa.rdlc" />
     <EmbeddedResource Include="RelCliente.rdlc" />
+    <EmbeddedResource Include="RelComandoPedido.rdlc" />
     <EmbeddedResource Include="RelProduto.rdlc" />
     <EmbeddedResource Include="RelUsuario.rdlc" />
+    <EmbeddedResource Include="RelVenda.rdlc" />
     <None Include="DBcasa_carneDataSet.xsc">
       <DependentUpon>DBcasa_carneDataSet.xsd</DependentUpon>
     </None>
@@ -305,6 +320,17 @@
     </None>
     <None Include="DBcasa_carneDataSet3.xss">
       <DependentUpon>DBcasa_carneDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="DBcasa_carneDataSet4.xsc">
+      <DependentUpon>DBcasa_carneDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="DBcasa_carneDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DBcasa_carneDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DBcasa_carneDataSet4.xss">
+      <DependentUpon>DBcasa_carneDataSet4.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

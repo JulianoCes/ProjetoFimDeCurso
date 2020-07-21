@@ -14,20 +14,18 @@ namespace MASYEV1
     public partial class FrmCaixaVenda : MetroFramework.Forms.MetroForm
     {
         SqlConnection con = Conecta.abrirConexao();
-        List<Produto> plista = null;
+        
         public FrmCaixaVenda()
         {
             InitializeComponent();
-            
+
         }
-        static int botaoclicado = 0;
         public void CarregaDgvCaixaVenda()
         {
             try
             {
-                plista = new List<Produto>();
                 SqlConnection con = Conecta.abrirConexao();
-                string pedi = "select  Id as ID, codigo as Codigo, tipo as Tipo, nome as Nome, quantidade_Kg as Pesso_Kg, valor as Valor, usuario as Usuario, valortotal as Valor_total from ItemVendaBalanca";
+                string pedi = "select * from ItemVendaBalanca";
                 SqlCommand cmd = new SqlCommand(pedi, con);
                 Conecta.abrirConexao();
                 cmd.CommandType = CommandType.Text;
@@ -62,15 +60,9 @@ namespace MASYEV1
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = "LocalizarItemVenda";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@codigo", txtCodigo.Text);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    dgvCaixaVenda.DataSource = ds.Tables[0];
-                    ds.Dispose();
-                }
+                cmd.Parameters.AddWithValue("@id", this.txtId.Text);
+                cmd.Parameters.AddWithValue("@codigo", this.txtCodigo.Text);
+                cmd.Parameters.AddWithValue("@nome", this.txtNome.Text);
                 Conecta.abrirConexao();
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.Read())
@@ -79,51 +71,42 @@ namespace MASYEV1
                     txtCodigo.Text = rd["codigo"].ToString();
                     txtTipo.Text = rd["tipo"].ToString();
                     txtNome.Text = rd["nome"].ToString();
+                    txtCorte.Text = rd["corte"].ToString();
                     txtQuantidade.Text = rd["quantidade_Kg"].ToString();
                     txtValor.Text = rd["valor"].ToString();
                     txtUsuario.Text = rd["usuario"].ToString();
                     txtValorTotal.Text = rd["valortotal"].ToString();
-                    rd.Close();
                     Conecta.fecharConexao();
-                    rd.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Nenhum registro encontrado!", "Sem registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    dgvCaixaVenda.DataSource = null;
+                    MessageBox.Show("Este registro não foi encontrado!", "Sem registro!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     Conecta.fecharConexao();
-                    txtId.Text = "";
-                    txtCodigo.Text = "";
-                    txtTipo.Text = "";
-                    txtNome.Text = "";
-                    txtQuantidade.Text = "";
-                    txtValor.Text = "";
-                    txtValorTotal.Text = "";
-                    rd.Close();
-
                 }
-                Conecta.fecharConexao();
             }
-            catch (Exception er)
+            finally
             {
-                MessageBox.Show(er.Message);
             }
+            
         }
 
         private void dgvCaixaVenda_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                DataGridViewRow row = this.dgvCaixaVenda.Rows[e.RowIndex];
-                txtId.Text = row.Cells[0].Value.ToString();
-                txtCodigo.Text = row.Cells[1].Value.ToString();
-                txtTipo.Text = row.Cells[2].Value.ToString();
-                txtNome.Text = row.Cells[3].Value.ToString();
-                txtQuantidade.Text = row.Cells[4].Value.ToString();
-                txtValor.Text = row.Cells[5].Value.ToString();
-                txtUsuario.Text = row.Cells[6].Value.ToString();
-                txtValorTotal.Text = row.Cells[7].Value.ToString();
-                int linha = dgvCaixaVenda.CurrentRow.Index;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dgvCaixaVenda.Rows[e.RowIndex];
+                    txtId.Text = row.Cells[0].Value.ToString();
+                    txtCodigo.Text = row.Cells[1].Value.ToString();
+                    txtTipo.Text = row.Cells[2].Value.ToString();
+                    txtNome.Text = row.Cells[3].Value.ToString();
+                    txtCorte.Text = row.Cells[4].Value.ToString();
+                    txtQuantidade.Text = row.Cells[5].Value.ToString();
+                    txtValor.Text = row.Cells[6].Value.ToString();
+                    txtUsuario.Text = row.Cells[7].Value.ToString();
+                    txtValorTotal.Text = row.Cells[8].Value.ToString();
+                }
             }
             catch (Exception er)
             {
@@ -135,53 +118,36 @@ namespace MASYEV1
         {
             try
             {
-                if (botaoclicado == 1)
-                {
-                    SqlCommand novavenda = new SqlCommand("InserirItemVendaBalanca1", con);
-                    novavenda.CommandType = CommandType.StoredProcedure;
-                    novavenda.Parameters.AddWithValue("@codigo", SqlDbType.NChar).Value = txtCodigo.Text;
-                    novavenda.Parameters.AddWithValue("@tipo", SqlDbType.NChar).Value = txtTipo.Text;
-                    novavenda.Parameters.AddWithValue("@nome", SqlDbType.NChar).Value = txtNome.Text;
-                    novavenda.Parameters.AddWithValue("@quantidade", SqlDbType.Float).Value = Convert.ToInt32(txtQuantidade.Text);
-                    novavenda.Parameters.AddWithValue("@valor", SqlDbType.Int).Value = Convert.ToDecimal(txtValor.Text);
-                    novavenda.Parameters.AddWithValue("@usuario", SqlDbType.NChar).Value = txtUsuario.Text;
-                    novavenda.Parameters.AddWithValue("@valortotal", SqlDbType.Int).Value = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValor.Text);
-                    novavenda.Parameters.AddWithValue("@datavenda", SqlDbType.DateTime).Value = DateTime.Now;
-                    Conecta.abrirConexao();
-                    novavenda.ExecuteNonQuery();
-                    Conecta.fecharConexao();
-                    MessageBox.Show("Pedido atualizado!", "Atualizar Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    botaoclicado = 0;
-                }
-                else
-                {
-                    DataGridViewRow novavenda1 = new DataGridViewRow();
-                    novavenda1.CreateCells(dgvCaixaVenda);
-                    novavenda1.Cells[0].Value = txtId.Text;
-                    novavenda1.Cells[1].Value = txtCodigo.Text;
-                    novavenda1.Cells[2].Value = txtTipo.Text;
-                    novavenda1.Cells[3].Value = txtNome.Text;
-                    novavenda1.Cells[4].Value = txtQuantidade.Text;
-                    novavenda1.Cells[5].Value = txtValor.Text;
-                    novavenda1.Cells[6].Value = txtUsuario.Text;
-                    novavenda1.Cells[7].Value = Convert.ToDecimal(txtValor.Text) * Convert.ToDecimal(txtQuantidade.Text);
-                    dgvCaixaVenda.Rows.Add(novavenda1);
-                    txtCodigo.Text = "";
-                    txtTipo.Text = "";
-                    txtNome.Text = "";
-                    txtQuantidade.Text = "";
-                    txtValor.Text = "";
-                    decimal soma = 0;
-                    foreach (DataGridViewRow dr in dgvCaixaVenda.Rows)
-                        soma += Convert.ToDecimal(dr.Cells[7].Value);
-                    txtValorTotal.Text = Convert.ToString(soma);
-                    Conecta.fecharConexao();
-                }
+                SqlConnection con = Conecta.abrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "InserirItemVendaBalanca";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codigo", txtCodigo.Text);
+                cmd.Parameters.AddWithValue("@tipo", txtTipo.Text);
+                cmd.Parameters.AddWithValue("@Nome", txtNome.Text);
+                cmd.Parameters.AddWithValue("@corte", txtCorte.Text);
+                cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text);
+                cmd.Parameters.AddWithValue("@valor", txtValor.Text);
+                cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+                cmd.Parameters.AddWithValue("@valortotal", SqlDbType.Int).Value = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValor.Text);
+                cmd.Parameters.AddWithValue("@datavenda", SqlDbType.DateTime).Value = DateTime.Now;
+                Conecta.abrirConexao();
+                cmd.ExecuteNonQuery();
+                CarregaDgvCaixaVenda();
+                MessageBox.Show("Produto adicionado com sucesso!", "Cadastro", MessageBoxButtons.OK);
+                Conecta.fecharConexao();
+                txtId.Text = "";
+                txtCodigo.Text = "";
+                txtTipo.Text = "";
+                txtNome.Text = "";
+                txtCorte.Text = "";
+                txtQuantidade.Text = "";
+                txtValor.Text = "";
+                txtValorTotal.Text = "";
             }
             catch (Exception er)
             {
                 MessageBox.Show(er.Message);
-
             }
         }
 
@@ -189,56 +155,65 @@ namespace MASYEV1
         {
             try
             {
-                int linha = dgvCaixaVenda.CurrentRow.Index;
-                dgvCaixaVenda.Rows[linha].Cells[0].Value = txtId.Text;
-                dgvCaixaVenda.Rows[linha].Cells[1].Value = txtCodigo.Text;
-                dgvCaixaVenda.Rows[linha].Cells[2].Value = txtTipo.Text;
-                dgvCaixaVenda.Rows[linha].Cells[3].Value = txtNome.Text;
-                dgvCaixaVenda.Rows[linha].Cells[4].Value = txtQuantidade.Text;
-                dgvCaixaVenda.Rows[linha].Cells[5].Value = txtValor.Text;
-                dgvCaixaVenda.Rows[linha].Cells[6].Value = txtUsuario.Text;
-                dgvCaixaVenda.Rows[linha].Cells[7].Value = Convert.ToDecimal(txtValor.Text) * Convert.ToDecimal(txtQuantidade.Text);
-                decimal soma = 0;
-                foreach (DataGridViewRow dr in dgvCaixaVenda.Rows)
-                    soma += Convert.ToDecimal(dr.Cells[7].Value);
-                txtValorTotal.Text = Convert.ToString(soma);
+                SqlConnection con = Conecta.abrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "AtualizarItemBalanca";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", this.txtId.Text);
+                cmd.Parameters.AddWithValue("@codigo", this.txtCodigo.Text);
+                cmd.Parameters.AddWithValue("@tipo", this.txtTipo.Text);
+                cmd.Parameters.AddWithValue("@Nome", this.txtNome.Text);
+                cmd.Parameters.AddWithValue("@corte", this.txtCorte.Text);
+                cmd.Parameters.AddWithValue("@quantidade", this.txtQuantidade.Text);
+                cmd.Parameters.AddWithValue("@valor", SqlDbType.Int).Value = Convert.ToDecimal(this.txtValor.Text);
+                cmd.Parameters.AddWithValue("@usuario", SqlDbType.NChar).Value = this.txtUsuario.Text;
+                cmd.Parameters.AddWithValue("@valortotal", SqlDbType.Int).Value = Convert.ToDecimal(this.txtQuantidade.Text) * Convert.ToDecimal(this.txtValor.Text);
+                cmd.Parameters.AddWithValue("@datavenda", SqlDbType.DateTime).Value = DateTime.Now;
+                Conecta.abrirConexao();
+                cmd.ExecuteNonQuery();
+                CarregaDgvCaixaVenda();
+                MessageBox.Show("Produto atualizado com sucesso!", "Atualiza", MessageBoxButtons.OK);
+                Conecta.fecharConexao();
                 txtId.Text = "";
                 txtCodigo.Text = "";
                 txtTipo.Text = "";
                 txtNome.Text = "";
+                txtCorte.Text = "";
                 txtQuantidade.Text = "";
+                txtUsuario.Text = "";
                 txtValor.Text = "";
+                txtValorTotal.Text = "";
             }
             catch (Exception er)
             {
                 MessageBox.Show(er.Message);
             }
+
         }
 
         private void btnExcluirItem_Click(object sender, EventArgs e)
         {
             try
             {
-                int linha = dgvCaixaVenda.CurrentRow.Index;
-                string query = "DELETE FROM ItemVendaBalanca WHERE (id = @id)";
-                SqlCommand cmd = new SqlCommand(query, con);
-                DataGridViewRow row = dgvCaixaVenda.Rows[linha];
-                cmd.Parameters.AddWithValue("@id", row.Cells[0].Value);
+                SqlConnection con = Conecta.abrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "ExcluirItemBalanca";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Id", this.txtId.Text);
                 Conecta.abrirConexao();
                 cmd.ExecuteNonQuery();
+                CarregaDgvCaixaVenda();
+                MessageBox.Show("Produto apagado com sucesso!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Conecta.fecharConexao();
-                dgvCaixaVenda.Rows.RemoveAt(linha);
-                dgvCaixaVenda.Refresh();
-                decimal soma = 0;
-                foreach (DataGridViewRow dr in dgvCaixaVenda.Rows)
-                    soma += Convert.ToDecimal(dr.Cells[7].Value);
-                txtValorTotal.Text = Convert.ToString(soma);
                 txtId.Text = "";
                 txtCodigo.Text = "";
                 txtTipo.Text = "";
                 txtNome.Text = "";
+                txtCorte.Text = "";
                 txtQuantidade.Text = "";
+                txtUsuario.Text = "";
                 txtValor.Text = "";
+                txtValorTotal.Text = "";
             }
             catch (Exception er)
             {
@@ -250,47 +225,39 @@ namespace MASYEV1
         {
             try
             {
-                foreach (DataGridViewRow dr in dgvCaixaVenda.Rows)
-                {
-                    SqlCommand venda = new SqlCommand("InserirVenda", con);
-                    venda.CommandType = CommandType.StoredProcedure;
-                    venda.Parameters.AddWithValue("@codigo", SqlDbType.NChar).Value = dr.Cells[1].Value;
-                    venda.Parameters.AddWithValue("@tipo", SqlDbType.NChar).Value = dr.Cells[2].Value;
-                    venda.Parameters.AddWithValue("@nome", SqlDbType.NChar).Value = dr.Cells[3].Value;
-                    venda.Parameters.AddWithValue("@quantidade", SqlDbType.Int).Value = Convert.ToInt32(dr.Cells[4].Value);
-                    venda.Parameters.AddWithValue("@valor", SqlDbType.Int).Value = Convert.ToDecimal(dr.Cells[5].Value);
-                    venda.Parameters.AddWithValue("@usuario", SqlDbType.NChar).Value = dr.Cells[6].Value;
-                    venda.Parameters.AddWithValue("@valortotal", SqlDbType.Int).Value = Convert.ToDecimal(dr.Cells[7].Value);
-                    venda.Parameters.AddWithValue("@datavenda", SqlDbType.DateTime).Value = DateTime.Now;
-                    Conecta.abrirConexao();
-                    venda.ExecuteNonQuery();
-                    Conecta.fecharConexao();
-                }
-                MessageBox.Show("Venda finalizada com sucesso!", "venda", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                //Limpar o datagrid pedido
-                 dgvCaixaVenda.Rows.Clear();
-                 dgvCaixaVenda.Refresh();
-                int linha = dgvCaixaVenda.CurrentRow.Index;
-                string query = "DELETE FROM ItemVendaBalanca WHERE id = @id";
-                SqlCommand cmd = new SqlCommand(query, con);
-                DataGridViewRow row = dgvCaixaVenda.Rows[linha];
-                cmd.Parameters.AddWithValue("@id", row.Cells[0].Value);
+                SqlConnection con = Conecta.abrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "VendaFinalizada";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codigo", txtCodigo.Text);
+                cmd.Parameters.AddWithValue("@tipo", txtTipo.Text);
+                cmd.Parameters.AddWithValue("@Nome", txtNome.Text);
+                cmd.Parameters.AddWithValue("@corte", txtCorte.Text);
+                cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text);
+                cmd.Parameters.Add("@valor", SqlDbType.Int).Value = Convert.ToDecimal(txtValor.Text);
+                cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+                cmd.Parameters.Add("@valortotal", SqlDbType.Int).Value = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValor.Text);
+                cmd.Parameters.Add("@datavendido", SqlDbType.DateTime).Value = DateTime.Now;
                 Conecta.abrirConexao();
                 cmd.ExecuteNonQuery();
                 Conecta.fecharConexao();
-                dgvCaixaVenda.Rows.RemoveAt(linha);
-                dgvCaixaVenda.Refresh();
-                decimal soma = 0;
-                foreach (DataGridViewRow dr in dgvCaixaVenda.Rows)
-                    soma += Convert.ToDecimal(dr.Cells[7].Value);
-                txtValorTotal.Text = Convert.ToString(soma);
+                SqlCommand cmdo = con.CreateCommand();
+                cmdo.CommandText = "ExcluirItemBalanca";
+                cmdo.CommandType = CommandType.StoredProcedure;
+                cmdo.Parameters.AddWithValue("@Id", this.txtId.Text);
+                Conecta.abrirConexao();
+                cmdo.ExecuteNonQuery();
+                CarregaDgvCaixaVenda();
+                MessageBox.Show("Venda finalizada com sucesso!", "Cadastro", MessageBoxButtons.OK);
+                Conecta.fecharConexao();
                 txtId.Text = "";
                 txtCodigo.Text = "";
                 txtTipo.Text = "";
                 txtNome.Text = "";
+                txtCorte.Text = "";
                 txtQuantidade.Text = "";
                 txtValor.Text = "";
+                txtValorTotal.Text = "";
             }
             catch (Exception er)
             {

@@ -20,15 +20,18 @@ namespace MASYEV1
 
         private void FrmRelCaixa_Load(object sender, EventArgs e)
         {
-            // TODO: esta linha de código carrega dados na tabela 'DBcasa_carneDataSet2.CaixaVenda'. Você pode movê-la ou removê-la conforme necessário.
-            this.CaixaVendaTableAdapter.Fill(this.DBcasa_carneDataSet2.CaixaVenda);
-
-            this.reportViewer1.RefreshReport();
+            // TODO: esta linha de código carrega dados na tabela 'DBcasa_carneDataSet2.ProdutosVendidos'. Você pode movê-la ou removê-la conforme necessário.
+            this.ProdutosVendidosTableAdapter.Fill(this.DBcasa_carneDataSet4.ProdutosVendidos);
+           
+            this.relVenda.RefreshReport();
+            this.relVenda.RefreshReport();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
         }
+
+        
     }
 }

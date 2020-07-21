@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DBcasa_carneDataSet3 = new MASYEV1.DBcasa_carneDataSet3();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -52,9 +52,9 @@
             // reportViewer1
             // 
             this.reportViewer1.BackColor = System.Drawing.SystemColors.WindowText;
-            reportDataSource1.Name = "RelUsuario";
-            reportDataSource1.Value = this.usuarioBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            reportDataSource2.Name = "RelUsuario";
+            reportDataSource2.Value = this.usuarioBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "MASYEV1.RelUsuario.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(23, 63);
             this.reportViewer1.Name = "reportViewer1";
@@ -70,7 +70,7 @@
             // 
             this.btnSair.BackColor = System.Drawing.Color.DarkRed;
             this.btnSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSair.Location = new System.Drawing.Point(623, 324);
+            this.btnSair.Location = new System.Drawing.Point(623, 315);
             this.btnSair.Name = "btnSair";
             this.btnSair.Size = new System.Drawing.Size(112, 30);
             this.btnSair.TabIndex = 1;

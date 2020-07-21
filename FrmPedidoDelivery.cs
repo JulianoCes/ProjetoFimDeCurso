@@ -18,96 +18,68 @@ namespace MASYEV1
         {
             InitializeComponent();
         }
-        static int botaoclicado = 0;
+        
   
 
         private void btnSair_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        private void cbxCodigo_SelectedIndexChanged(object sender, EventArgs e)
+        public void CarregaDgvPedidoDelivery()
         {
-            SqlCommand cmd = new SqlCommand("LocalizarEstoqueFisico", con);
-            cmd.Parameters.AddWithValue("@Id", cbxCodigo.SelectedValue);
-            cmd.CommandType = CommandType.StoredProcedure;
-            Conecta.abrirConexao();
-            SqlDataReader rd = cmd.ExecuteReader();
-            if (rd.Read())
+            try
             {
-                txtUsuario.Text = rd["usuario"].ToString();
-                rd.Close();
+                SqlConnection con = Conecta.abrirConexao();
+                string pedi = "select * from PedidoDelivery";
+                SqlCommand cmd = new SqlCommand(pedi, con);
+                Conecta.abrirConexao();
+                cmd.CommandType = CommandType.Text;
+                SqlDataAdapter da = new SqlDataAdapter(cmd);
+                DataTable pedido = new DataTable();
+                da.Fill(pedido);
+                dgvPedidoDelivery.DataSource = pedido;
                 Conecta.fecharConexao();
             }
-            else
+            catch (Exception er)
             {
-                MessageBox.Show("Nenhum registro encontrado!", "Falha na Pesquisa", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                rd.Close();
-                Conecta.fecharConexao();
+                MessageBox.Show(er.Message);
             }
         }
-
-        private void cbxTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            SqlCommand cmd = new SqlCommand("LocalizarEstoqueFisico", con);
-            cmd.Parameters.AddWithValue("@tipo", cbxTipo.SelectedValue);
-            cmd.CommandType = CommandType.StoredProcedure;
-            Conecta.abrirConexao();
-           
-        }
-
         private void btnAdicionarPedido_Click(object sender, EventArgs e)
         {
             try
             {
-                if (botaoclicado == 0)
-                {
-                    SqlCommand pedidos = new SqlCommand("Inserirpedido", con);
-                    pedidos.CommandType = CommandType.StoredProcedure;
-                    pedidos.Parameters.AddWithValue("@codigo", SqlDbType.NChar).Value = cbxCodigo.Text;
-                    pedidos.Parameters.AddWithValue("@tipo", SqlDbType.NChar).Value = cbxTipo.Text;
-                    pedidos.Parameters.AddWithValue("@nome", SqlDbType.NChar).Value = txtNome.Text;
-                    pedidos.Parameters.AddWithValue("@corte", SqlDbType.NChar).Value = cbxCorte.Text;
-                    pedidos.Parameters.AddWithValue("@quantidade", SqlDbType.Float).Value = Convert.ToInt32(txtQuantidade.Text);
-                    pedidos.Parameters.AddWithValue("@valor", SqlDbType.Int).Value = Convert.ToDecimal(txtValor.Text);
-                    pedidos.Parameters.AddWithValue("@usuario", SqlDbType.NChar).Value = txtUsuario.Text;
-                    pedidos.Parameters.AddWithValue("@valortotal", SqlDbType.Int).Value = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValor.Text);
-                    pedidos.Parameters.AddWithValue("@datapedido", SqlDbType.DateTime).Value = DateTime.Now;
-                    Conecta.abrirConexao();
-                    pedidos.ExecuteNonQuery();
-                    Conecta.fecharConexao();
-                    MessageBox.Show("Pedido Adicionado!", "Adicionar Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                }
-                DataGridViewRow item = new DataGridViewRow();
-                item.CreateCells(dgvPedidoDelivery);
-                item.Cells[0].Value = txtId.Text;
-                item.Cells[1].Value = cbxCodigo.Text;
-                item.Cells[2].Value = cbxTipo.Text;
-                item.Cells[3].Value = txtNome.Text;
-                item.Cells[4].Value = cbxCorte.Text;
-                item.Cells[5].Value = txtQuantidade.Text;
-                item.Cells[6].Value = txtValor.Text;
-                item.Cells[7].Value = txtUsuario.Text;
-                item.Cells[8].Value = Convert.ToDecimal(txtValor.Text) * Convert.ToDecimal(txtQuantidade.Text);
-                dgvPedidoDelivery.Rows.Add(item);
+                SqlConnection con = Conecta.abrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "Inserirpedido";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codigo", cbxCodigo.Text);
+                cmd.Parameters.AddWithValue("@tipo", cbxTipo.Text);
+                cmd.Parameters.AddWithValue("@Nome", txtNome.Text);
+                cmd.Parameters.AddWithValue("@corte", cbxCorte.Text);
+                cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text);
+                cmd.Parameters.AddWithValue("@valor", txtValor.Text);
+                cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+                cmd.Parameters.AddWithValue("@valortotal", SqlDbType.Int).Value = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValor.Text);
+                cmd.Parameters.AddWithValue("@datapedido", SqlDbType.DateTime).Value = DateTime.Now;
+                Conecta.abrirConexao();
+                cmd.ExecuteNonQuery();
+                CarregaDgvPedidoDelivery();
+                MessageBox.Show("Pedido adicionado com sucesso!", "Pedido", MessageBoxButtons.OK);
+                Conecta.fecharConexao();
+                txtId.Text = "";
                 cbxCodigo.Text = "";
                 cbxTipo.Text = "";
                 txtNome.Text = "";
                 cbxCorte.Text = "";
                 txtQuantidade.Text = "";
                 txtValor.Text = "";
-                decimal soma = 0;
-                foreach (DataGridViewRow dr in dgvPedidoDelivery.Rows)
-                    soma += Convert.ToDecimal(dr.Cells[8].Value);
-                txtValorTotal.Text = Convert.ToString(soma);
-                Conecta.fecharConexao();
-
+                txtValorTotal.Text = "";
             }
             catch (Exception er)
             {
                 MessageBox.Show(er.Message);
             }
-                
-
         }
 
         private void bntLocalizar_Click(object sender, EventArgs e)
@@ -118,20 +90,13 @@ namespace MASYEV1
                 SqlCommand cmd = con.CreateCommand();
                 cmd.CommandText = "Localizarpedido";
                 cmd.CommandType = CommandType.StoredProcedure;
-                cmd.Parameters.AddWithValue("@codigo", cbxCodigo.Text);
-                SqlDataAdapter da = new SqlDataAdapter(cmd);
-                DataSet ds = new DataSet();
-                da.Fill(ds);
-                if (ds.Tables[0].Rows.Count > 0)
-                {
-                    dgvPedidoDelivery.DataSource = ds.Tables[0];
-                    ds.Dispose();
-                }
+                cmd.Parameters.AddWithValue("@id", this.txtId.Text);
+                cmd.Parameters.AddWithValue("@codigo", this.cbxCodigo.Text);
                 Conecta.abrirConexao();
                 SqlDataReader rd = cmd.ExecuteReader();
                 if (rd.Read())
                 {
-                    //txtId.Text = rd["Id"].ToString();
+                    txtId.Text = rd["Id"].ToString();
                     cbxCodigo.Text = rd["codigo"].ToString();
                     cbxTipo.Text = rd["tipo"].ToString();
                     txtNome.Text = rd["nome"].ToString();
@@ -140,147 +105,150 @@ namespace MASYEV1
                     txtValor.Text = rd["valor"].ToString();
                     txtUsuario.Text = rd["usuario"].ToString();
                     txtValorTotal.Text = rd["valortotal"].ToString();
-                    rd.Close();
                     Conecta.fecharConexao();
-                    rd.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Nenhum registro encontrado!", "Sem registro", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    dgvPedidoDelivery.DataSource = null;
+                    MessageBox.Show("Este registro não foi encontrado!", "Sem registro!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     Conecta.fecharConexao();
-                    txtId.Text = "";
-                    cbxCodigo.Text = "";
-                    cbxTipo.Text = "";
-                    txtNome.Text = "";
-                    cbxCorte.Text = "";
-                    txtQuantidade.Text = "";
-                    txtValor.Text = "";
-                    rd.Close();
-
                 }
-                Conecta.fecharConexao();
             }
-            catch (Exception er)
+            finally
             {
-                MessageBox.Show(er.Message);
             }
-           
+
         }
 
         private void dgvPedidoDelivery_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
-                DataGridViewRow row = this.dgvPedidoDelivery.Rows[e.RowIndex];
-                txtId.Text = row.Cells[0].Value.ToString();
-                cbxCodigo.Text = row.Cells[1].Value.ToString();
-                cbxTipo.Text = row.Cells[2].Value.ToString();
-                txtNome.Text = row.Cells[3].Value.ToString();
-                cbxCorte.Text = row.Cells[4].Value.ToString();
-                txtQuantidade.Text = row.Cells[5].Value.ToString();
-                txtValor.Text = row.Cells[6].Value.ToString();
-                txtUsuario.Text = row.Cells[7].Value.ToString();
-                txtValorTotal.Text = row.Cells[8].Value.ToString();
-                int linha = dgvPedidoDelivery.CurrentRow.Index;
+                if (e.RowIndex >= 0)
+                {
+                    DataGridViewRow row = this.dgvPedidoDelivery.Rows[e.RowIndex];
+                    txtId.Text = row.Cells[0].Value.ToString();
+                    cbxCodigo.Text = row.Cells[1].Value.ToString();
+                    cbxTipo.Text = row.Cells[2].Value.ToString();
+                    txtNome.Text = row.Cells[3].Value.ToString();
+                    cbxCorte.Text = row.Cells[4].Value.ToString();
+                    txtQuantidade.Text = row.Cells[5].Value.ToString();
+                    txtValor.Text = row.Cells[6].Value.ToString();
+                    txtUsuario.Text = row.Cells[7].Value.ToString();
+                    txtValorTotal.Text = row.Cells[8].Value.ToString();
+                }
             }
             catch (Exception er)
             {
                 MessageBox.Show(er.Message);
             }
-           
         }
 
         private void btnAtualizar_Click(object sender, EventArgs e)
         {
             try
             {
-                int linha = dgvPedidoDelivery.CurrentRow.Index;
-                dgvPedidoDelivery.Rows[linha].Cells[0].Value = txtId.Text;
-                dgvPedidoDelivery.Rows[linha].Cells[1].Value = cbxCodigo.Text;
-                dgvPedidoDelivery.Rows[linha].Cells[2].Value = cbxTipo.Text;
-                dgvPedidoDelivery.Rows[linha].Cells[3].Value = txtNome.Text;
-                dgvPedidoDelivery.Rows[linha].Cells[4].Value = cbxCorte.Text;
-                dgvPedidoDelivery.Rows[linha].Cells[5].Value = txtQuantidade.Text;
-                dgvPedidoDelivery.Rows[linha].Cells[6].Value = txtValor.Text;
-                dgvPedidoDelivery.Rows[linha].Cells[7].Value = txtUsuario.Text;
-                dgvPedidoDelivery.Rows[linha].Cells[8].Value = Convert.ToDecimal(txtValor.Text) * Convert.ToDecimal(txtQuantidade.Text);
-                decimal soma = 0;
-                foreach (DataGridViewRow dr in dgvPedidoDelivery.Rows)
-                    soma += Convert.ToDecimal(dr.Cells[8].Value);
-                txtValorTotal.Text = Convert.ToString(soma);
+                SqlConnection con = Conecta.abrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "Atualizarpedido";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@id", this.txtId.Text);
+                cmd.Parameters.AddWithValue("@codigo", this.cbxCodigo.Text);
+                cmd.Parameters.AddWithValue("@tipo", this.cbxTipo.Text);
+                cmd.Parameters.AddWithValue("@Nome", this.txtNome.Text);
+                cmd.Parameters.AddWithValue("@corte", this.cbxCorte.Text);
+                cmd.Parameters.AddWithValue("@quantidade", this.txtQuantidade.Text);
+                cmd.Parameters.AddWithValue("@valor", SqlDbType.Int).Value = Convert.ToDecimal(this.txtValor.Text);
+                cmd.Parameters.AddWithValue("@usuario", SqlDbType.NChar).Value = this.txtUsuario.Text;
+                cmd.Parameters.AddWithValue("@valortotal", SqlDbType.Int).Value = Convert.ToDecimal(this.txtQuantidade.Text) * Convert.ToDecimal(this.txtValor.Text);
+                cmd.Parameters.AddWithValue("@datapedido", SqlDbType.DateTime).Value = DateTime.Now;
+                Conecta.abrirConexao();
+                cmd.ExecuteNonQuery();
+                CarregaDgvPedidoDelivery();
+                MessageBox.Show("Produto atualizado com sucesso!", "Atualiza", MessageBoxButtons.OK);
+                Conecta.fecharConexao();
                 txtId.Text = "";
                 cbxCodigo.Text = "";
                 cbxTipo.Text = "";
                 txtNome.Text = "";
                 cbxCorte.Text = "";
                 txtQuantidade.Text = "";
+                txtUsuario.Text = "";
                 txtValor.Text = "";
+                txtValorTotal.Text = "";
             }
             catch (Exception er)
             {
                 MessageBox.Show(er.Message);
             }
-         
+
         }
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
             try
             {
-                int linha = dgvPedidoDelivery.CurrentRow.Index;
-                string query = "DELETE FROM PedidoDelivery WHERE (id = @id)";
-                SqlCommand cmd = new SqlCommand(query, con);
-                DataGridViewRow row = dgvPedidoDelivery.Rows[linha];
-                //cmd.Parameters.AddWithValue("@codigo", cbxCodigo.SelectedValue);
-                cmd.Parameters.AddWithValue("@id", row.Cells[0].Value);
+                SqlConnection con = Conecta.abrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "Excluirpedido";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Id", this.txtId.Text);
                 Conecta.abrirConexao();
                 cmd.ExecuteNonQuery();
+                CarregaDgvPedidoDelivery();
+                MessageBox.Show("Produto apagado com sucesso!", "Excluir", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 Conecta.fecharConexao();
-                dgvPedidoDelivery.Rows.RemoveAt(linha);
-                dgvPedidoDelivery.Refresh();
-                decimal soma = 0;
-                foreach (DataGridViewRow dr in dgvPedidoDelivery.Rows)
-                    soma += Convert.ToDecimal(dr.Cells[8].Value);
-                txtValorTotal.Text = Convert.ToString(soma);
                 txtId.Text = "";
                 cbxCodigo.Text = "";
                 cbxTipo.Text = "";
                 txtNome.Text = "";
                 cbxCorte.Text = "";
                 txtQuantidade.Text = "";
+                txtUsuario.Text = "";
                 txtValor.Text = "";
+                txtValorTotal.Text = "";
             }
             catch (Exception er)
             {
                 MessageBox.Show(er.Message);
             }
-           
         }
 
         private void btnFinalizarPedido_Click(object sender, EventArgs e)
         {
             try
             {
-                foreach (DataGridViewRow dr in dgvPedidoDelivery.Rows)
+                SqlConnection con = Conecta.abrirConexao();
+                SqlCommand cmd = con.CreateCommand();
+                cmd.CommandText = "InserirItemVendaBalanca1";
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@codigo", cbxCodigo.Text);
+                cmd.Parameters.AddWithValue("@tipo", cbxTipo.Text);
+                cmd.Parameters.AddWithValue("@Nome", txtNome.Text);
+                cmd.Parameters.AddWithValue("@corte", cbxCorte.Text);
+                cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text);
+                cmd.Parameters.Add("@valor", SqlDbType.Int).Value = Convert.ToDecimal(txtValor.Text);
+                cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
+                cmd.Parameters.Add("@valortotal", SqlDbType.Int).Value = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValor.Text);
+                cmd.Parameters.Add("@datapedido", SqlDbType.DateTime).Value = DateTime.Now;
+                Conecta.abrirConexao();
+                cmd.ExecuteNonQuery();
+                Conecta.fecharConexao();
+                SqlCommand cmdo = con.CreateCommand();
+                cmdo.CommandText = "Excluirpedido";
+                cmdo.CommandType = CommandType.StoredProcedure;
+                cmdo.Parameters.AddWithValue("@Id", this.txtId.Text);
+                Conecta.abrirConexao();
+                cmdo.ExecuteNonQuery();
+                CarregaDgvPedidoDelivery();
+                DialogResult comand = MessageBox.Show("Pedido finalizada com sucesso. Impromir o Pedido?", "Pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+                if (comand == DialogResult.Yes)
                 {
-                    SqlCommand pedidos = new SqlCommand("InserirItemVendaBalanca", con);
-                    pedidos.CommandType = CommandType.StoredProcedure;
-                    //pedidos.Parameters.AddWithValue("@codigo", SqlDbType.Int).Value = cbxCodigo.SelectedValue;
-                    pedidos.Parameters.AddWithValue("@codigo", SqlDbType.NChar).Value = (dr.Cells[1].Value);
-                    pedidos.Parameters.AddWithValue("@tipo", SqlDbType.NChar).Value = dr.Cells[2].Value;
-                    pedidos.Parameters.AddWithValue("@nome", SqlDbType.NChar).Value = dr.Cells[3].Value;
-                    pedidos.Parameters.AddWithValue("@corte", SqlDbType.NChar).Value = dr.Cells[4].Value;
-                    pedidos.Parameters.AddWithValue("@quantidade", SqlDbType.Int).Value = Convert.ToInt32(dr.Cells[5].Value);
-                    pedidos.Parameters.AddWithValue("@valor", SqlDbType.Int).Value = Convert.ToDecimal(dr.Cells[6].Value);
-                    pedidos.Parameters.AddWithValue("@usuario", SqlDbType.NChar).Value = dr.Cells[7].Value;
-                    pedidos.Parameters.AddWithValue("@valortotal", SqlDbType.Int).Value = Convert.ToDecimal(dr.Cells[8].Value);
-                    pedidos.Parameters.AddWithValue("@datavenda", SqlDbType.DateTime).Value = DateTime.Now;
-                    Conecta.abrirConexao();
-                    pedidos.ExecuteNonQuery();
-                    Conecta.fecharConexao();
+                    FrmComandoPedido compe = new FrmComandoPedido();
+                    compe.codigo = cbxCodigo.Text;
+                    compe.Show();
+                    this.Close();
                 }
-                MessageBox.Show("Pedidos realizado com sucesso!", "Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Conecta.fecharConexao();
                 txtId.Text = "";
                 cbxCodigo.Text = "";
                 cbxTipo.Text = "";
@@ -289,43 +257,15 @@ namespace MASYEV1
                 txtQuantidade.Text = "";
                 txtValor.Text = "";
                 txtValorTotal.Text = "";
-
-                //Limpar o datagrid pedido
-               // dgvPedidoDelivery.Rows.Clear();
-               // dgvPedidoDelivery.Refresh();
-                int linha = dgvPedidoDelivery.CurrentRow.Index;
-                string query = "DELETE FROM PedidoDelivery WHERE (id = @id)";
-                SqlCommand cmd = new SqlCommand(query, con);
-                DataGridViewRow row = dgvPedidoDelivery.Rows[linha];
-                //cmd.Parameters.AddWithValue("@codigo", cbxCodigo.SelectedValue);
-                cmd.Parameters.AddWithValue("@id", row.Cells[0].Value);
-                Conecta.abrirConexao();
-                cmd.ExecuteNonQuery();
-                Conecta.fecharConexao();
-                dgvPedidoDelivery.Rows.RemoveAt(linha);
-                dgvPedidoDelivery.Refresh();
-                decimal soma = 0;
-                foreach (DataGridViewRow dr in dgvPedidoDelivery.Rows)
-                    soma += Convert.ToDecimal(dr.Cells[8].Value);
-                txtValorTotal.Text = Convert.ToString(soma);
-                txtId.Text = "";
-                cbxCodigo.Text = "";
-                cbxTipo.Text = "";
-                txtNome.Text = "";
-                cbxCorte.Text = "";
-                txtQuantidade.Text = "";
-                txtValor.Text = "";
             }
             catch (Exception er)
             {
                 MessageBox.Show(er.Message);
             }
-           
         }
-
         private void FrmPedidoDelivery_Load(object sender, EventArgs e)
         {
-            //CarregaDgvPedidiDeliveri();
+            CarregaDgvPedidoDelivery();
         }
     }
 }
