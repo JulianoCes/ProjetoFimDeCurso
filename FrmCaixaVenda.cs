@@ -233,7 +233,7 @@ namespace MASYEV1
                 cmd.Parameters.AddWithValue("@tipo", txtTipo.Text);
                 cmd.Parameters.AddWithValue("@Nome", txtNome.Text);
                 cmd.Parameters.AddWithValue("@corte", txtCorte.Text);
-                cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text);
+                cmd.Parameters.Add("@quantidade", SqlDbType.Float).Value = ( txtQuantidade.Text);
                 cmd.Parameters.Add("@valor", SqlDbType.Int).Value = Convert.ToDecimal(txtValor.Text);
                 cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
                 cmd.Parameters.Add("@valortotal", SqlDbType.Int).Value = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValor.Text);

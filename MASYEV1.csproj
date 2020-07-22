@@ -165,12 +165,6 @@
     <Compile Include="FrmCaixaVenda.Designer.cs">
       <DependentUpon>FrmCaixaVenda.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmComandoPedido.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmComandoPedido.Designer.cs">
-      <DependentUpon>FrmComandoPedido.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmInicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -238,9 +232,6 @@
     <EmbeddedResource Include="FrmCaixaVenda.resx">
       <DependentUpon>FrmCaixaVenda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmComandoPedido.resx">
-      <DependentUpon>FrmComandoPedido.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="FrmInicial.resx">
       <DependentUpon>FrmInicial.cs</DependentUpon>
     </EmbeddedResource>
@@ -273,7 +264,6 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="RelCliente.rdlc" />
-    <EmbeddedResource Include="RelComandoPedido.rdlc" />
     <EmbeddedResource Include="RelProduto.rdlc" />
     <EmbeddedResource Include="RelUsuario.rdlc" />
     <EmbeddedResource Include="RelVenda.rdlc" />

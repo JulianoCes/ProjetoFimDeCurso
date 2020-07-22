@@ -225,7 +225,7 @@ namespace MASYEV1
                 cmd.Parameters.AddWithValue("@tipo", cbxTipo.Text);
                 cmd.Parameters.AddWithValue("@Nome", txtNome.Text);
                 cmd.Parameters.AddWithValue("@corte", cbxCorte.Text);
-                cmd.Parameters.AddWithValue("@quantidade", txtQuantidade.Text);
+                cmd.Parameters.Add("@quantidade", SqlDbType.Int).Value = ( txtQuantidade.Text);
                 cmd.Parameters.Add("@valor", SqlDbType.Int).Value = Convert.ToDecimal(txtValor.Text);
                 cmd.Parameters.AddWithValue("@usuario", txtUsuario.Text);
                 cmd.Parameters.Add("@valortotal", SqlDbType.Int).Value = Convert.ToDecimal(txtQuantidade.Text) * Convert.ToDecimal(txtValor.Text);
@@ -240,14 +240,14 @@ namespace MASYEV1
                 Conecta.abrirConexao();
                 cmdo.ExecuteNonQuery();
                 CarregaDgvPedidoDelivery();
-                DialogResult comand = MessageBox.Show("Pedido finalizada com sucesso. Impromir o Pedido?", "Pedido", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
-                if (comand == DialogResult.Yes)
+                MessageBox.Show("Pedido finalizada com sucesso. Vai para finalizar venda", "Pedido", MessageBoxButtons.OK, MessageBoxIcon.Information);
+               /* if (comand == DialogResult.Yes)
                 {
                     FrmComandoPedido compe = new FrmComandoPedido();
                     compe.codigo = cbxCodigo.Text;
                     compe.Show();
                     this.Close();
-                }
+                }*/
                 Conecta.fecharConexao();
                 txtId.Text = "";
                 cbxCodigo.Text = "";
