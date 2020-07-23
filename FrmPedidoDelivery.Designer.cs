@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmPedidoDelivery));
             this.cbxCodigo = new System.Windows.Forms.ComboBox();
             this.bntLocalizar = new System.Windows.Forms.Button();
             this.txtUsuario = new System.Windows.Forms.TextBox();
@@ -67,7 +68,6 @@
             this.cbxCodigo.Name = "cbxCodigo";
             this.cbxCodigo.Size = new System.Drawing.Size(298, 21);
             this.cbxCodigo.TabIndex = 100;
-       
             // 
             // bntLocalizar
             // 
@@ -196,7 +196,6 @@
             this.cbxTipo.Name = "cbxTipo";
             this.cbxTipo.Size = new System.Drawing.Size(181, 21);
             this.cbxTipo.TabIndex = 89;
-          
             // 
             // lblTipo
             // 
@@ -415,6 +414,7 @@
             this.Controls.Add(this.lblValor);
             this.Controls.Add(this.lblDescricao);
             this.Controls.Add(this.lblCodigo);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmPedidoDelivery";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Pedido Para Delivery";

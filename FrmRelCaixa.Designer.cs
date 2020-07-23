@@ -30,14 +30,25 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRelCaixa));
+            this.ProdutosVendidosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.DBcasa_carneDataSet4 = new MASYEV1.DBcasa_carneDataSet4();
             this.button1 = new System.Windows.Forms.Button();
             this.relVenda = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.DBcasa_carneDataSet4 = new MASYEV1.DBcasa_carneDataSet4();
-            this.ProdutosVendidosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ProdutosVendidosTableAdapter = new MASYEV1.DBcasa_carneDataSet4TableAdapters.ProdutosVendidosTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.DBcasa_carneDataSet4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProdutosVendidosBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DBcasa_carneDataSet4)).BeginInit();
             this.SuspendLayout();
+            // 
+            // ProdutosVendidosBindingSource
+            // 
+            this.ProdutosVendidosBindingSource.DataMember = "ProdutosVendidos";
+            this.ProdutosVendidosBindingSource.DataSource = this.DBcasa_carneDataSet4;
+            // 
+            // DBcasa_carneDataSet4
+            // 
+            this.DBcasa_carneDataSet4.DataSetName = "DBcasa_carneDataSet4";
+            this.DBcasa_carneDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // button1
             // 
@@ -65,16 +76,6 @@
             this.relVenda.Size = new System.Drawing.Size(641, 244);
             this.relVenda.TabIndex = 2;
             // 
-            // DBcasa_carneDataSet4
-            // 
-            this.DBcasa_carneDataSet4.DataSetName = "DBcasa_carneDataSet4";
-            this.DBcasa_carneDataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // ProdutosVendidosBindingSource
-            // 
-            this.ProdutosVendidosBindingSource.DataMember = "ProdutosVendidos";
-            this.ProdutosVendidosBindingSource.DataSource = this.DBcasa_carneDataSet4;
-            // 
             // ProdutosVendidosTableAdapter
             // 
             this.ProdutosVendidosTableAdapter.ClearBeforeFill = true;
@@ -86,14 +87,15 @@
             this.ClientSize = new System.Drawing.Size(706, 341);
             this.Controls.Add(this.relVenda);
             this.Controls.Add(this.button1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRelCaixa";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Relatório de Caixa";
             this.TextAlign = System.Windows.Forms.VisualStyles.HorizontalAlign.Center;
             this.Theme = MetroFramework.MetroThemeStyle.Dark;
             this.Load += new System.EventHandler(this.FrmRelCaixa_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.DBcasa_carneDataSet4)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ProdutosVendidosBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DBcasa_carneDataSet4)).EndInit();
             this.ResumeLayout(false);
 
         }

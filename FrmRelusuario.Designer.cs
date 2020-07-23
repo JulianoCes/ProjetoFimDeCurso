@@ -29,7 +29,8 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRelusuario));
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DBcasa_carneDataSet3 = new MASYEV1.DBcasa_carneDataSet3();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -52,9 +53,9 @@
             // reportViewer1
             // 
             this.reportViewer1.BackColor = System.Drawing.SystemColors.WindowText;
-            reportDataSource2.Name = "RelUsuario";
-            reportDataSource2.Value = this.usuarioBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource2);
+            reportDataSource1.Name = "RelUsuario";
+            reportDataSource1.Value = this.usuarioBindingSource;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
             this.reportViewer1.LocalReport.ReportEmbeddedResource = "MASYEV1.RelUsuario.rdlc";
             this.reportViewer1.Location = new System.Drawing.Point(23, 63);
             this.reportViewer1.Name = "reportViewer1";
@@ -85,6 +86,7 @@
             this.ClientSize = new System.Drawing.Size(759, 359);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.reportViewer1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRelusuario";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "FrmRelusuario";

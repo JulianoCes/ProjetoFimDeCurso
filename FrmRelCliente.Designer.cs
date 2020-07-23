@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmRelCliente));
             this.ClienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DBcasa_carneDataSet1 = new MASYEV1.DBcasa_carneDataSet1();
             this.RelCliente = new Microsoft.Reporting.WinForms.ReportViewer();
@@ -86,6 +87,7 @@
             this.ClientSize = new System.Drawing.Size(788, 352);
             this.Controls.Add(this.btnSair);
             this.Controls.Add(this.RelCliente);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmRelCliente";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "FrmRelCliente";

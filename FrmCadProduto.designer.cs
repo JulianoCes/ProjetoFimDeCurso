@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadProduto));
             this.lblId = new System.Windows.Forms.Label();
             this.lblCodigo = new System.Windows.Forms.Label();
             this.lblNome = new System.Windows.Forms.Label();
@@ -251,6 +252,7 @@
             this.Controls.Add(this.lblCodigo);
             this.Controls.Add(this.lblId);
             this.ForeColor = System.Drawing.Color.MidnightBlue;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadProduto";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "Cadastro de Produto";

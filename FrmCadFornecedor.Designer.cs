@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCadFornecedor));
             this.dgvFornecedor = new System.Windows.Forms.DataGridView();
             this.dtpData = new System.Windows.Forms.DateTimePicker();
             this.txtCnpj = new System.Windows.Forms.TextBox();
@@ -304,6 +305,7 @@
             this.Controls.Add(this.lblEndereco);
             this.Controls.Add(this.lblNome);
             this.Controls.Add(this.lblId);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCadFornecedor";
             this.Style = MetroFramework.MetroColorStyle.Red;
             this.Text = "FrmCadFornecedor";
